@@ -6,14 +6,15 @@
 # Jihan Chung <jihanchung20@gmail.com>, 2015
 # Jihan Chung <jihanchung20@gmail.com>, 2015
 # Kyu Choi, 2022
+# Kyu Choi, 2022
 # Kyungil Choi <hanpama@gmail.com>, 2015,2017,2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
-"Last-Translator: Kyu Choi, 2022\n"
+"Last-Translator: Kyungil Choi <hanpama@gmail.com>, 2015,2017,2019\n"
 "Language-Team: Korean (http://www.transifex.com/torchbox/wagtail/language/"
 "ko/)\n"
 "MIME-Version: 1.0\n"
@@ -50,8 +51,8 @@ msgid ""
 "\"<em>giving</em>\".</p>"
 msgstr ""
 "<p>검색된 검색 결과는 검색 결과에 유기적으로 높게 표시되지 않을 수 있는 특정 "
-"페이지를 추천하는 수단입니다. 예를 들어, 기본 기부 페이지를 \"<em>기부</em>"
-"\"라는 용어로 검색하는 사용자에게 추천합니다.</p>"
+"페이지를 추천하는 수단입니다. 예를 들어, 기본 기부 페이지를 \"<em>기부</"
+"em>\"라는 용어로 검색하는 사용자에게 추천합니다.</p>"
 
 msgid ""
 "<p>The \"Search term(s)/phrase\" field below must contain the full and exact "
@@ -144,18 +145,18 @@ msgstr ""
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
-"생성된 프로모션 결과가 없습니다. 지금 프로모션 결과를 <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">추가 해 보시는건 어떨까요?"
+"생성된 프로모션 결과가 없습니다. 지금 프로모션 결과를 <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">추가 해 보시는건 어떨까요?"
 
 msgid "Search promoted results"
 msgstr "프로모션 결과 검색"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "'{0}' 를 위한 에디터의 선택이 추가 되었습니다."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "'%(query)s' 를 위한 에디터의 선택이 추가 되었습니다."
 
 msgid "Edit"
 msgstr "수정"
@@ -163,9 +164,9 @@ msgstr "수정"
 msgid "Recommendations have not been created due to errors"
 msgstr "에러로 인해 추천 결과를 생성할 수 없습니다"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "'{0}' 에 대한 에디터의 선택이 업데이트 되었습니다."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "'%(query)s' 에 대한 에디터의 선택이 업데이트 되었습니다."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "에러로 인해 추천 결과를 저장할 수 없습니다"

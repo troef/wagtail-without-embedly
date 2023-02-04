@@ -5,11 +5,12 @@
 # Translators:
 # Matas Dailyda <matas@dailyda.com>, 2017-2018
 # Naglis Jonaitis, 2022
+# Naglis Jonaitis, 2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-20 21:06+0000\n"
 "Last-Translator: Naglis Jonaitis, 2022\n"
 "Language-Team: Lithuanian (http://www.transifex.com/torchbox/wagtail/"
@@ -149,19 +150,19 @@ msgstr "Atsiprašome, joks dokumentas neatitinka \"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents in this collection. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents in this collection. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Nėra įkeltas joks dokumentas į šią kolekciją. Kodėl gi <a href="
-"\"%(wagtaildocs_add_document_url)s\">neįkėlus vieno</a>?"
+"Nėra įkeltas joks dokumentas į šią kolekciją. Kodėl gi <a "
+"href=\"%(wagtaildocs_add_document_url)s\">neįkėlus vieno</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Nėra įkeltas joks dokumentas. Kodėl gi <a href="
-"\"%(wagtaildocs_add_document_url)s\">neįkėlus vieno</a>?"
+"Nėra įkeltas joks dokumentas. Kodėl gi <a "
+"href=\"%(wagtaildocs_add_document_url)s\">neįkėlus vieno</a>?"
 
 #, python-format
 msgid "Usage of %(title)s"
@@ -235,28 +236,28 @@ msgstr "Redaguoti šį dokumentą"
 msgid "Search documents"
 msgstr "Ieškoti dokumentų"
 
-#, python-brace-format
-msgid "Document '{0}' added."
-msgstr "Dokumentas '{0}' pridėtas."
+#, python-format
+msgid "Document '%(document_title)s' added."
+msgstr "Dokumentas '%(document_title)s' pridėtas."
 
 msgid "The document could not be saved due to errors."
 msgstr "Dokumentas negali būti išsaugotas dėl klaidų."
 
-#, python-brace-format
-msgid "Document '{0}' updated"
-msgstr "Dokumentas '{0}' atnaujintas"
+#, python-format
+msgid "Document '%(document_title)s' updated"
+msgstr "Dokumentas '%(document_title)s' atnaujintas"
 
 msgid ""
 "The file could not be found. Please change the source or delete the document"
 msgstr "Byla nebuvo rasta. Prašome pakeisti šaltinį arba ištrinti dokumentą"
 
-#, python-brace-format
-msgid "Document '{0}' deleted."
-msgstr "Dokumentas '{0}' ištrintas."
+#, python-format
+msgid "Document '%(document_title)s' deleted."
+msgstr "Dokumentas '%(document_title)s' ištrintas."
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Redaguoti šį %s"
+msgid "Edit this %(object)s"
+msgstr "Redaguoti šį %(object)s"
 
 msgid "Document"
 msgstr "Dokumentas"

@@ -4,15 +4,16 @@
 #
 # Translators:
 # Amir Mahmoodi, 2022
+# Amir Mahmoodi, 2022
 # pyzenberg <pyzenberg@gmail.com>, 2017
 # pyzenberg <pyzenberg@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 11:54+0000\n"
-"Last-Translator: Amir Mahmoodi, 2022\n"
+"Last-Translator: pyzenberg <pyzenberg@gmail.com>, 2017\n"
 "Language-Team: Persian (http://www.transifex.com/torchbox/wagtail/language/"
 "fa/)\n"
 "MIME-Version: 1.0\n"
@@ -152,11 +153,11 @@ msgstr "هیچ گروهی با \"%(query)s\" همخوان نیست"
 
 #, python-format
 msgid ""
-"There are no groups configured. Why not <a href="
-"\"%(wagtailusers_create_group_url)s\">add some</a>?"
+"There are no groups configured. Why not <a "
+"href=\"%(wagtailusers_create_group_url)s\">add some</a>?"
 msgstr ""
-"هنوز گروهی تنظیم نشده. میتوانید یکی <a href="
-"\"%(wagtailusers_create_group_url)s\">ایجاد</a> کنید."
+"هنوز گروهی تنظیم نشده. میتوانید یکی <a "
+"href=\"%(wagtailusers_create_group_url)s\">ایجاد</a> کنید."
 
 msgid "Delete user"
 msgstr "حذف کاربر"
@@ -203,8 +204,8 @@ msgstr "متاسفانه هیچ کاربری با «<em>%(query_string)s</em>» 
 
 #, python-format
 msgid ""
-"There are no users configured. Why not <a href=\"%(wagtailusers_add_url)s"
-"\">add some</a>?"
+"There are no users configured. Why not <a "
+"href=\"%(wagtailusers_add_url)s\">add some</a>?"
 msgstr ""
 "هیچ کاربری تنظیم نشده است. میخواهید <a href=\"%(wagtailusers_add_url)s\">چند "
 "مورد اضافه کنید</a>؟"
@@ -218,35 +219,35 @@ msgstr "افزودن گروه"
 msgid "Search groups"
 msgstr "جستجوی گروه‌ها"
 
-#, python-brace-format
-msgid "Group '{0}' created."
-msgstr "گروه '{0}' ایجاد شد."
+#, python-format
+msgid "Group '%(object)s' created."
+msgstr "گروه '%(object)s' ایجاد شد."
 
-#, python-brace-format
-msgid "Group '{0}' updated."
-msgstr "گروه  '{0}'  بروزرسانی شد."
+#, python-format
+msgid "Group '%(object)s' updated."
+msgstr "گروه  '%(object)s'  بروزرسانی شد."
 
 msgid "The group could not be saved due to errors."
 msgstr "به دلیل بروز خطا گروه ذخیره نشد."
 
-#, python-brace-format
-msgid "Group '{0}' deleted."
-msgstr "گروه '{0}' حذف شد."
+#, python-format
+msgid "Group '%(object)s' deleted."
+msgstr "گروه '%(object)s' حذف شد."
 
-#, python-brace-format
-msgid "User '{0}' updated."
-msgstr "کاربر  '{0}' بروزرسانی شد."
+#, python-format
+msgid "User '%(object)s' updated."
+msgstr "کاربر  '%(object)s' بروزرسانی شد."
 
 msgid "The user could not be saved due to errors."
 msgstr "به دلیل بروز خطا کاربر ذخیره نشد"
 
 #, python-format
-msgid "Editing %s"
-msgstr "ویرایش %s"
+msgid "Editing %(object)s"
+msgstr "ویرایش %(object)s"
 
-#, python-brace-format
-msgid "User '{0}' deleted."
-msgstr "کاربر '{0}' حذف شد."
+#, python-format
+msgid "User '%(object)s' deleted."
+msgstr "کاربر '%(object)s' حذف شد."
 
 msgid "Edit"
 msgstr "ویرایش"

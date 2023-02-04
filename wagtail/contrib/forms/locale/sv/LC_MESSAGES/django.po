@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-09-11 15:42+0000\n"
 "Last-Translator: Thomas Kunambi <kunambi@gmail.com>, 2015-2017,2020,2022\n"
 "Language-Team: Swedish (http://www.transifex.com/torchbox/wagtail/language/"
@@ -35,8 +35,12 @@ msgid "Date to"
 msgstr "Datum till"
 
 #, python-format
-msgid "There is another field with the label %s, please change one of them."
-msgstr "Det finns ett annat fält med etiketten %s, vänligen ändra en av dem."
+msgid ""
+"There is another field with the label %(label_name)s, please change one of "
+"them."
+msgstr ""
+"Det finns ett annat fält med etiketten %(label_name)s, vänligen ändra en av "
+"dem."
 
 msgid "Single line text"
 msgstr "Text, enkelrad"
@@ -152,8 +156,8 @@ msgid "subject"
 msgstr "ämne"
 
 #, python-format
-msgid "%s submissions"
-msgstr "%s anmälningar"
+msgid "%(model_name)s submissions"
+msgstr "%(model_name)s anmälningar"
 
 #, python-format
 msgid "Delete form data %(title)s"

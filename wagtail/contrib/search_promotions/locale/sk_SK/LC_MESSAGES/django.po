@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
 "Last-Translator: dellax <michalnebbia@gmail.com>, 2015\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/torchbox/wagtail/"
@@ -105,13 +105,13 @@ msgstr "Žiadne"
 #, python-format
 msgid "Sorry, no promoted results match \"<em>%(query_string)s</em>\""
 msgstr ""
-"Prepáčte, žiadne propagované výsledky nevyhovujú \"<em>%(query_string)s</em>"
-"\""
+"Prepáčte, žiadne propagované výsledky nevyhovujú \"<em>%(query_string)s</"
+"em>\""
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
 "Zatiaľ neboli vytvorené žiadne propagované výsledky vyhľadávania. Prečo "
 "nevytvoriť <a href=\"%(wagtailsearchpromotions_add_url)s\">jeden výsledok</"
@@ -120,9 +120,9 @@ msgstr ""
 msgid "Search promoted results"
 msgstr "Hľadať propagované výsledky"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "Výbery Editora pre '{0}' boli vytvorené."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "Výbery Editora pre '%(query)s' boli vytvorené."
 
 msgid "Edit"
 msgstr "Upraviť"
@@ -130,9 +130,9 @@ msgstr "Upraviť"
 msgid "Recommendations have not been created due to errors"
 msgstr "Odporúčania nemôžu byť vytvorené kvôli chybám."
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "Výbery Editora pre '{0}' boli aktualizované."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "Výbery Editora pre '%(query)s' boli aktualizované."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "Odporúčania nemôžu byť uložené kvôli chybám."

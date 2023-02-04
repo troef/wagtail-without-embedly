@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Amós Oviedo <amos.oviedo@gmail.com>, 2014
+# Amós Oviedo <amos.oviedo@gmail.com>, 2014,2016
 # Amós Oviedo <amos.oviedo@gmail.com>, 2014,2016
 # Amós Oviedo <amos.oviedo@gmail.com>, 2014,2016
 # X Bello <xbello@gmail.com>, 2022
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-20 21:06+0000\n"
 "Last-Translator: X Bello <xbello@gmail.com>, 2022\n"
 "Language-Team: Galician (http://www.transifex.com/torchbox/wagtail/language/"
@@ -239,19 +239,19 @@ msgstr "Sentímolo, ningún documento contén \"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents in this collection. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents in this collection. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Non subiches ningún documento nesta colección. ¿Por que non <a href="
-"\"%(wagtaildocs_add_document_url)s\">subir un agora</a>?"
+"Non subiches ningún documento nesta colección. ¿Por que non <a "
+"href=\"%(wagtaildocs_add_document_url)s\">subir un agora</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Non subiches documentos. ¿Por qué non <a href="
-"\"%(wagtaildocs_add_document_url)s\">subir un agora</a>?"
+"Non subiches documentos. ¿Por qué non <a "
+"href=\"%(wagtaildocs_add_document_url)s\">subir un agora</a>?"
 
 #, python-format
 msgid "Usage of %(title)s"
@@ -368,16 +368,16 @@ msgstr "Editar este documento"
 msgid "Search documents"
 msgstr "Procurar documentos"
 
-#, python-brace-format
-msgid "Document '{0}' added."
-msgstr "Documento '{0}' engadido."
+#, python-format
+msgid "Document '%(document_title)s' added."
+msgstr "Documento '%(document_title)s' engadido."
 
 msgid "The document could not be saved due to errors."
 msgstr "O documento non puido ser gardado debido a erros."
 
-#, python-brace-format
-msgid "Document '{0}' updated"
-msgstr "Documento '{0}' actualizado"
+#, python-format
+msgid "Document '%(document_title)s' updated"
+msgstr "Documento '%(document_title)s' actualizado"
 
 msgid ""
 "The file could not be found. Please change the source or delete the document"
@@ -385,17 +385,17 @@ msgstr ""
 "O arquivo non puido ser atopado. Por favor, cambia a fonte ou elimina o "
 "documento."
 
-#, python-brace-format
-msgid "Document '{0}' deleted."
-msgstr "Documento '{0}' eliminado."
+#, python-format
+msgid "Document '%(document_title)s' deleted."
+msgstr "Documento '%(document_title)s' eliminado."
 
 #, python-format
-msgid "(Private %s)"
-msgstr "(%s privado)"
+msgid "(Private %(object)s)"
+msgstr "(%(object)s privado)"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Editar este %s"
+msgid "Edit this %(object)s"
+msgstr "Editar este %(object)s"
 
 msgid "Document"
 msgstr "Documento"

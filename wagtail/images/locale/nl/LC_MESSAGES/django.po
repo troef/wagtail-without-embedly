@@ -17,9 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 13:14+0100\n"
 "PO-Revision-Date: 2014-02-20 21:05+0000\n"
-"Last-Translator: Storm Heg <storm@stormbase.digital>, 2021-2022\n"
+"Last-Translator: Thijs Kramer <thijskramer@gmail.com>, 2015-2016,2022\n"
 "Language-Team: Dutch (http://www.transifex.com/torchbox/wagtail/language/"
 "nl/)\n"
 "MIME-Version: 1.0\n"
@@ -47,26 +47,29 @@ msgid "Supported formats: %(supported_formats)s."
 msgstr "Ondersteunde bestandsformaten: %(supported_formats)s."
 
 #, python-format
-msgid "Not a supported image format. Supported formats: %s."
-msgstr "Geen ondersteund afbeeldingsformaat. ondersteunde formaten: %s."
-
-#, python-format
-msgid "Not a valid %s image."
-msgstr "Geen juiste %s afbeelding."
-
-#, python-format
-msgid "This file is too big (%%s). Maximum filesize %s."
-msgstr "Dit bestand is te groot (%%s). De maximale bestandsgrootte is %s."
-
-#, python-format
-msgid "This file has too many pixels (%%s). Maximum pixels %s."
+msgid "Not a supported image format. Supported formats: %(supported_formats)s."
 msgstr ""
-"Dit bestand bevat teveel pixels (%%s). Het maximum aantal toegestane pixels "
-"is %s."
+"Geen ondersteund afbeeldingsformaat. ondersteunde formaten: "
+"%(supported_formats)s."
 
 #, python-format
-msgid "This file is too big. Maximum filesize %s."
-msgstr "Dit bestand is te groot. Maximale bestandsgrootte %s."
+msgid ""
+"This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
+msgstr ""
+"Dit bestand is te groot (%(file_size)s). De maximale bestandsgrootte is "
+"%(max_filesize)s."
+
+#, python-format
+msgid ""
+"This file has too many pixels (%(num_pixels)s). Maximum pixels "
+"%(max_pixels_count)s."
+msgstr ""
+"Dit bestand bevat teveel pixels (%(num_pixels)s). Het maximum aantal "
+"toegestane pixels is %(max_pixels_count)s."
+
+#, python-format
+msgid "This file is too big. Maximum filesize %(max_filesize)s."
+msgstr "Dit bestand is te groot. Maximale bestandsgrootte %(max_filesize)s."
 
 msgid "Full width"
 msgstr "Volledige breedte"
@@ -309,8 +312,8 @@ msgstr[0] ""
 "<span>%(total)s</span> afbeelding <span class=\"visuallyhidden\">aangemaakt "
 "ijn %(site_name)s</span>"
 msgstr[1] ""
-"<span>%(total)s</span> afbeeldingen <span class=\"visuallyhidden"
-"\">aangemaakt in %(site_name)s</span>"
+"<span>%(total)s</span> afbeeldingen <span "
+"class=\"visuallyhidden\">aangemaakt in %(site_name)s</span>"
 
 msgid "Change image file:"
 msgstr "Wijzig bestand:"
@@ -412,19 +415,19 @@ msgstr "Sorry, geen afbeelding overeenkomst \"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"You haven't uploaded any images in this collection. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images in this collection. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"Er zijn nog geen afbeeldingen toegevoegd aan deze collectie. Waarom <a href="
-"\"%(wagtailimages_add_image_url)s\">uploadt u er niet nu een</a>?"
+"Er zijn nog geen afbeeldingen toegevoegd aan deze collectie. Waarom <a "
+"href=\"%(wagtailimages_add_image_url)s\">uploadt u er niet nu een</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any images. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"Er zijn nog geen afbeeldingen toegevoegd. Waarom <a href="
-"\"%(wagtailimages_add_image_url)s\">uploadt u er niet nu een</a>?"
+"Er zijn nog geen afbeeldingen toegevoegd. Waarom <a "
+"href=\"%(wagtailimages_add_image_url)s\">uploadt u er niet nu een</a>?"
 
 msgid "Generating URL"
 msgstr "Bezig met URL genereren"
@@ -579,9 +582,9 @@ msgstr "Bestandsgrootte: (groot naar klein)"
 msgid "Search images"
 msgstr "Zoek afbeeldingen"
 
-#, python-brace-format
-msgid "Image '{0}' updated."
-msgstr "Afbeelding '{0}' is bijgewerkt."
+#, python-format
+msgid "Image '%(image_title)s' updated."
+msgstr "Afbeelding '%(image_title)s' is bijgewerkt."
 
 msgid "Edit again"
 msgstr "Bewerk opnieuw"
@@ -596,24 +599,24 @@ msgstr ""
 "Het bronbestand van de afbeelding kon niet worden gevonden. Kies een ander "
 "bronbestand of verwijder de afbeelding."
 
-#, python-brace-format
-msgid "Image '{0}' deleted."
-msgstr "Afbeelding '{0}' verwijderd."
+#, python-format
+msgid "Image '%(image_title)s' deleted."
+msgstr "Afbeelding '%(image_title)s' verwijderd."
 
-#, python-brace-format
-msgid "Image '{0}' added."
-msgstr "Afbeelding '{0}' toegevoegd."
+#, python-format
+msgid "Image '%(image_title)s' added."
+msgstr "Afbeelding '%(image_title)s' toegevoegd."
 
 msgid "The image could not be created due to errors."
 msgstr "De afbeelding kon vanwege fouten niet worden aangemaakt."
 
 #, python-format
-msgid "(Private %s)"
-msgstr "(Privé %s)"
+msgid "(Private %(object)s)"
+msgstr "(Privé %(object)s)"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Wijzig %s"
+msgid "Edit this %(object)s"
+msgstr "Wijzig %(object)s"
 
 msgid "Image"
 msgstr "Afbeelding"

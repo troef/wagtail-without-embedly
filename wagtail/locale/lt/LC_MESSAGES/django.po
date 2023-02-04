@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
 "Last-Translator: Naglis Jonaitis, 2020-2022\n"
 "Language-Team: Lithuanian (http://www.transifex.com/torchbox/wagtail/"
@@ -32,12 +32,12 @@ msgid "Add Comment"
 msgstr "Pridėti komentarą"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "Mažiausias vienetų kiekis %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "Mažiausias vienetų kiekis %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "Didžiausias vienetų kiekis %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "Didžiausias vienetų kiekis %(max_num)d"
 
 msgid "Move up"
 msgstr "Perkelti aukštyn"
@@ -162,9 +162,6 @@ msgstr ""
 
 msgid "latest revision created at"
 msgstr "paskutinė revizija sukurta"
-
-msgid "This slug is already in use"
-msgstr "Šis adreso trumpinys jau naudojamas"
 
 msgid "page"
 msgstr "puslapis"

@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: Istvan Farkas <istvan.farkas@gmail.com>, 2019-2022\n"
+"Last-Translator: Laszlo Molnar <lazlowmiller@gmail.com>, 2016\n"
 "Language-Team: Hungarian (http://www.transifex.com/torchbox/wagtail/language/"
 "hu/)\n"
 "MIME-Version: 1.0\n"
@@ -32,12 +32,12 @@ msgid "Add Comment"
 msgstr "Megjegyzés hozzáadása"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "Az elemek minimális száma %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "Az elemek minimális száma %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "Az elemek maximális száma %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "Az elemek maximális száma %(max_num)d"
 
 msgid "Move up"
 msgstr "Mozgatás fel"
@@ -82,32 +82,19 @@ msgstr "A megadott jelszó érvénytelen. Kérjük próbálja újra."
 msgid "Comment"
 msgstr "Megjegyzés"
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
-msgstr ""
-"<b>A(z) '{}' oldal zárolva van</b>, lezárta: <b>én</b>, időpont: <b>{}</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "<b>A(z) '{page_title}' oldal zárolva van</b>, lezáró: <b>én</b>."
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "<b>A(z) '{}' oldal zárolva van</b>, lezáró: <b>én</b>."
-
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr ""
-"<b>A(z) '{}' oldal zárolva van</b>, lezáró: <b>{}</b>, időpont: <b>{}</b>."
-
-msgid "<b>Page '{}' is locked</b>."
-msgstr "<b>A(z) '{}' oldal zárolva van</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "<b>A(z) '{page_title}' oldal zárolva van</b>."
 
 msgid "This page is currently awaiting moderation."
 msgstr "Ez az oldal jelenleg moderálásra vár."
 
-msgid "This page is awaiting <b>'{}'</b> in the <b>'{}'</b> workflow."
-msgstr ""
-"Az oldal jelenleg a(z) <b>'{}'</b> munkafolyamatvan vár erre:<b>'{}'</b> "
-
 msgid "Only reviewers for this task can edit the page."
 msgstr "Csak az ellenőrzők szerkeszthetik az oldalt."
-
-msgid "Page '{}' is locked and has been scheduled to go live at {}"
-msgstr "A(z) '{}' oldal le van zárva, és {} időpontban élesedik"
 
 msgid "latest revision"
 msgstr "utolsó verzió"
@@ -210,9 +197,6 @@ msgstr "Az oldal kerés oldalakon megjelenített leírása."
 
 msgid "latest revision created at"
 msgstr "a legutóbbi verzió letrehozásának időpontja"
-
-msgid "This slug is already in use"
-msgstr "Ez a rövidítés már használatban van"
 
 msgid "in moderation"
 msgstr "jóváhagyás alatt"
@@ -403,9 +387,10 @@ msgstr ""
 "Egy oldal esetén csak egyetlen folyamatban vagy változtatás szükséges "
 "munkafolyamat állapot lehet"
 
-#, python-brace-format
-msgid "Workflow '{0}' on Page '{1}': {2}"
-msgstr "'{0}' munkafolyamat a(z) '{1}' oldalon: {2}"
+#, python-format
+msgid "Workflow '%(workflow_name)s' on Page '%(page_title)s': %(status)s"
+msgstr ""
+"'%(workflow_name)s' munkafolyamat a(z) '%(page_title)s' oldalon: %(status)s"
 
 msgid "Not started"
 msgstr "Nincs elindítva"
@@ -437,9 +422,10 @@ msgstr "befejezve: "
 msgid "finished by"
 msgstr "befejező: "
 
-#, python-brace-format
-msgid "Task '{0}' on Page Revision '{1}': {2}"
-msgstr "'{0}' feladat a(z) '{1}' oldal verzión: {2}"
+#, python-format
+msgid "Task '%(task_name)s' on Page Revision '%(revision_info)s': %(status)s"
+msgstr ""
+"'%(task_name)s' feladat a(z) '%(revision_info)s' oldal verzión: %(status)s"
 
 msgid "Task state"
 msgstr "Feladat állapot"
@@ -477,12 +463,9 @@ msgstr "napló bejegyzés"
 msgid "log entries"
 msgstr "napló bejegyzések"
 
-msgid "The log action '{}' has not been registered."
-msgstr "A '{}' napló akció nincs regisztrálva."
-
 #, python-format
-msgid "user %(id)s (deleted)"
-msgstr "%(id)s felhasználó (törölt)"
+msgid "The log action '%(action_name)s' has not been registered."
+msgstr "A '%(action_name)s' napló akció nincs regisztrálva."
 
 msgid "system"
 msgstr "rendszer"

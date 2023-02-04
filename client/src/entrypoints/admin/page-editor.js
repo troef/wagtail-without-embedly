@@ -1,9 +1,11 @@
 import $ from 'jquery';
 import { cleanForSlug } from '../../utils/text';
-import { inlinePanel } from '../../includes/inlinePanel';
+import { InlinePanel } from '../../components/InlinePanel';
+import { MultipleChooserPanel } from '../../components/MultipleChooserPanel';
 import { ngettext } from '../../utils/gettext';
 
-window.InlinePanel = inlinePanel;
+window.InlinePanel = InlinePanel;
+window.MultipleChooserPanel = MultipleChooserPanel;
 window.cleanForSlug = cleanForSlug;
 
 function initSlugAutoPopulate() {
@@ -70,10 +72,10 @@ function initErrorDetection() {
       .find('[data-tabs-errors-statement]')
       .text(
         ngettext(
-          '({errorCount} error)',
-          '({errorCount} errors)',
+          '(%(errorCount)s error)',
+          '(%(errorCount)s errors)',
           errorCount,
-        ).replace('{errorCount}', errorCount),
+        ).replace('%(errorCount)s', errorCount),
       );
   });
 }
@@ -133,10 +135,11 @@ window.updateFooterSaveWarning = (formDirty, commentsDirty) => {
   }
   clearTimeout(updateFooterTextTimeout);
   const updateWarnings = () => {
-    for (const warning of warnings) {
+    warnings.each((_, warning) => {
       const visible = typeVisibility[warning.dataset.unsavedType];
+      // eslint-disable-next-line no-param-reassign
       warning.hidden = !visible;
-    }
+    });
   };
   if (hiding) {
     // If hiding, we want to keep the text as-is before it disappears

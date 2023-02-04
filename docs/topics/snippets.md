@@ -309,6 +309,45 @@ class Advert(RevisionMixin, models.Model):
         return self._revisions
 ```
 
+If your snippet model defines relations using Django's {class}`~django.db.models.ForeignKey` or {class}`~django.db.models.ManyToManyField`, you need to change the model class to inherit from `modelcluster.models.ClusterableModel` instead of `django.models.Model` and replace the `ForeignKey` and `ManyToManyField` with `ParentalKey` and `ParentalManyToManyField`, respectively. This is necessary in order to allow the relations to be stored in the revisions. For example:
+
+```python
+from django.db import models
+from modelcluster.fields import ParentalKey, ParentalManyToManyField
+from modelcluster.models import ClusterableModel
+from wagtail.models import RevisionMixin
+
+
+class ShirtColour(models.Model):
+    name = models.CharField(max_length=255)
+
+    panels = [FieldPanel("name")]
+
+
+class ShirtCategory(models.Model):
+    name = models.CharField(max_length=255)
+
+    panels = [FieldPanel("name")]
+
+
+@register_snippet
+class Shirt(RevisionMixin, ClusterableModel):
+    name = models.CharField(max_length=255)
+    colour = ParentalKey("shirts.ShirtColour")
+    categories = ParentalManyToManyField("shirts.ShirtCategory", blank=True)
+    _revisions = GenericRelation("wagtailcore.Revision", related_query_name="shirt")
+
+    panels = [
+        FieldPanel("name"),
+        FieldPanel("colour"),
+        FieldPanel("categories", widget=forms.CheckboxSelectMultiple),
+    ]
+
+    @property
+    def revisions(self):
+        return self._revisions
+```
+
 The `RevisionMixin` includes a `latest_revision` field that needs to be added to your database table. Make sure to run the `makemigrations` and `migrate` management commands after making the above changes to apply the changes to your database.
 
 With the `RevisionMixin` applied, any changes made from the snippets admin will create an instance of the `Revision` model that contains the state of the snippet instance. The revision instance is attached to the [audit log](audit_log) entry of the edit action, allowing you to revert to a previous revision or compare the changes between revisions from the snippet history page.
@@ -328,6 +367,8 @@ Support for scheduled publishing via `PublishingPanel` was introduced.
 ```
 
 If a snippet model inherits from {class}`~wagtail.models.DraftStateMixin`, Wagtail will automatically add a live/draft status column to the listing view, change the "Save" action menu to "Save draft", and add a new "Publish" action menu in the editor. Any changes you save in the snippets admin will be saved as revisions and will not be reflected in the "live" snippet instance until you publish the changes.
+
+As the `DraftStateMixin` works by saving draft changes as revisions, inheriting from this mixin also requires inheriting from `RevisionMixin`. See [](wagtailsnippets_saving_revisions_of_snippets) above for more details.
 
 Wagtail will also allow you to set publishing schedules for instances of the model if there is a `PublishingPanel` in the model's panels definition.
 
@@ -365,9 +406,105 @@ You can publish revisions programmatically by calling {meth}`instance.publish(re
 
 If you use the scheduled publishing feature, make sure that you run the [`publish_scheduled`](publish_scheduled) management command periodically. For more details, see [](scheduled_publishing).
 
+```{versionadded} 4.2
+For models that extend `DraftStateMixin`, `publish` permissions are automatically created.
+```
+
+Publishing a snippet instance requires `publish` permission on the snippet model. For models with `DraftStateMixin` applied, Wagtail automatically creates the corresponding `publish` permissions and display them in the 'Groups' area of the Wagtail admin interface. For more details on how to configure the permission, see [](permissions_overview).
+
 ```{warning}
 Wagtail does not yet have a mechanism to prevent editors from including unpublished ("draft") snippets in pages. When including a `DraftStateMixin`-enabled snippet in pages, make sure that you add necessary checks to handle how a draft snippet should be rendered (e.g. by checking its `live` field). We are planning to improve this in the future.
 ```
+
+(wagtailsnippets_locking_snippets)=
+
+## Locking snippets
+
+```{versionadded} 4.2
+The `LockableMixin` class was introduced.
+```
+
+If a snippet model inherits from {class}`~wagtail.models.LockableMixin`, Wagtail will automatically add the ability to lock instances of the model. When editing, Wagtail will show the locking information in the "Status" side panel, and a button to lock/unlock the instance if the user has the permission to do so.
+
+If the model is also configured to have scheduled publishing (as shown in [](wagtailsnippets_saving_draft_changes_of_snippets) above), Wagtail will lock any instances that are scheduled for publishing.
+
+Similar to pages, users who locked a snippet can still edit it, unless [`WAGTAILADMIN_GLOBAL_EDIT_LOCK`](wagtailadmin_global_edit_lock) is set to `True`.
+
+For example, instances of the `Advert` snippet could be locked by defining it as follows:
+
+```python
+# ...
+
+from wagtail.models import LockableMixin
+
+# ...
+
+@register_snippet
+class Advert(LockableMixin, models.Model):
+    url = models.URLField(null=True, blank=True)
+    text = models.CharField(max_length=255)
+
+    panels = [
+        FieldPanel('url'),
+        FieldPanel('text'),
+    ]
+```
+
+If you use the other mixins, make sure to apply `LockableMixin` after the other mixins, but before the `RevisionMixin` (in left-to-right order). For example, with `DraftStateMixin` and `RevisionMixin`, the correct inheritance of the model would be `class MyModel(DraftStateMixin, LockableMixin, RevisionMixin)`. There is a system check to enforce the ordering of the mixins.
+
+The `LockableMixin` includes additional fields that need to be added to your database table. Make sure to run the `makemigrations` and `migrate` management commands after making the above changes to apply the changes to your database.
+
+Locking and unlocking a snippet instance requires `lock` and `unlock` permissions on the snippet model, respectively. For models with `LockableMixin` applied, Wagtail automatically creates the corresponding `lock` and `unlock` permissions and display them in the 'Groups' area of the Wagtail admin interface. For more details on how to configure the permission, see [](permissions).
+
+(wagtailsnippets_enabling_workflows)=
+
+## Enabling workflows for snippets
+
+```{versionadded} 4.2
+The `WorkflowMixin` class was introduced.
+```
+
+If a snippet model inherits from {class}`~wagtail.models.WorkflowMixin`, Wagtail will automatically add the ability to assign a workflow to the model. With a workflow assigned to the snippet model, a "Submit for moderation" and other workflow action menu items will be shown in the editor. The status side panel will also show the information of the current workflow.
+
+Since the `WorkflowMixin` utilises revisions and publishing mechanisms in Wagtail, inheriting from this mixin also requires inheriting from `RevisionMixin` and `DraftStateMixin`. In addition, it is also recommended to enable locking by inheriting from `LockableMixin`, so that the snippet instance can be locked and only editable by reviewers when it is in a workflow. See the above sections for more details.
+
+For example, workflows (with locking) can be enabled for the `Advert` snippet by defining it as follows:
+
+```python
+# ...
+
+from wagtail.models import DraftStateMixin, LockableMixin, RevisionMixin, WorkflowMixin
+
+# ...
+
+@register_snippet
+class Advert(WorkflowMixin, DraftStateMixin, LockableMixin, RevisionMixin, models.Model):
+    url = models.URLField(null=True, blank=True)
+    text = models.CharField(max_length=255)
+    _revisions = GenericRelation("wagtailcore.Revision", related_query_name="advert")
+    workflow_states = GenericRelation(
+        "wagtailcore.WorkflowState",
+        content_type_field="base_content_type",
+        object_id_field="object_id",
+        related_query_name="advert",
+        for_concrete_model=False,
+    )
+
+    panels = [
+        FieldPanel('url'),
+        FieldPanel('text'),
+    ]
+
+    @property
+    def revisions(self):
+        return self._revisions
+```
+
+The other mixins required by `WorkflowMixin` includes additional fields that need to be added to your database table. Make sure to run the `makemigrations` and `migrate` management commands after making the above changes to apply the changes to your database.
+
+After enabling the mixin, you can assign a workflow to the snippet models through the workflow settings. For more information, see how to [configure workflows for moderation](https://guide.wagtail.org/en-latest/how-to-guides/configure-workflows-for-moderation/).
+
+The admin dashboard and workflow reports will also show you snippets (alongside pages) that have been submitted to workflows.
 
 ## Tagging snippets
 

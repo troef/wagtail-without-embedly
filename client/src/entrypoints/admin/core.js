@@ -1,8 +1,14 @@
 import $ from 'jquery';
+
+import { coreControllerDefinitions } from '../../controllers';
 import { escapeHtml } from '../../utils/text';
 import { initButtonSelects } from '../../includes/initButtonSelects';
+import { initStimulus } from '../../includes/initStimulus';
 import { initTagField } from '../../includes/initTagField';
 import { initTooltips } from '../../includes/initTooltips';
+
+/** initialise Wagtail Stimulus application with core controller definitions */
+window.Stimulus = initStimulus({ definitions: coreControllerDefinitions });
 
 /* generic function for adding a message to message area through JS alone */
 function addMessage(status, text) {
@@ -93,7 +99,8 @@ function enableDirtyFormCheck(formSelector, options) {
   const isFormDirty = () => {
     if (alwaysDirty) {
       return true;
-    } else if (!initialData) {
+    }
+    if (!initialData) {
       return false;
     }
 
@@ -110,7 +117,8 @@ function enableDirtyFormCheck(formSelector, options) {
       const oldValue = initialData.get(key);
       if (newValue === oldValue) {
         return false;
-      } else if (Array.isArray(newValue) && Array.isArray(oldValue)) {
+      }
+      if (Array.isArray(newValue) && Array.isArray(oldValue)) {
         return (
           newValue.length !== oldValue.length ||
           newValue.some((value, index) => value !== oldValue[index])
@@ -149,29 +157,22 @@ function enableDirtyFormCheck(formSelector, options) {
 
       $form.on('change keyup', updateDirtyCheck).trigger('change');
 
-      const validInputNodeInList = (nodeList) => {
-        for (const node of nodeList) {
-          if (
-            node.nodeType === node.ELEMENT_NODE &&
-            ['INPUT', 'TEXTAREA', 'SELECT'].includes(node.tagName)
-          ) {
-            return true;
-          }
-        }
-        return false;
-      };
+      const isValidInputNode = (node) =>
+        node.nodeType === node.ELEMENT_NODE &&
+        ['INPUT', 'TEXTAREA', 'SELECT'].includes(node.tagName);
 
       const observer = new MutationObserver((mutationList) => {
-        for (const mutation of mutationList) {
-          if (
-            validInputNodeInList(mutation.addedNodes) ||
-            validInputNodeInList(mutation.removedNodes)
-          ) {
-            updateDirtyCheck();
-            return;
-          }
+        const hasMutationWithValidInputNode = mutationList.some(
+          (mutation) =>
+            Array.from(mutation.addedNodes).some(isValidInputNode) ||
+            Array.from(mutation.removedNodes).some(isValidInputNode),
+        );
+
+        if (hasMutationWithValidInputNode) {
+          updateDirtyCheck();
         }
       });
+
       observer.observe($form[0], {
         childList: true,
         attributes: false,
@@ -268,8 +269,8 @@ $(() => {
     // eslint-disable-next-line func-names
     const search = function () {
       const newQuery = $input.val();
-      // eslint-disable-next-line @typescript-eslint/no-use-before-define
-      const currentQuery = getURLParam('q');
+      const searchParams = new URLSearchParams(window.location.search);
+      const currentQuery = searchParams.get('q') || '';
       // only do the query if it has changed for trimmed queries
       // for example - " " === "" and "firstword " ==== "firstword"
       if (currentQuery.trim() !== newQuery.trim()) {
@@ -278,7 +279,6 @@ $(() => {
         const index = searchNextIndex;
 
         // Update q, reset to first page, and keep other query params
-        const searchParams = new URLSearchParams(window.location.search);
         searchParams.set('q', newQuery);
         searchParams.delete('p');
         const queryString = searchParams.toString();
@@ -302,17 +302,6 @@ $(() => {
           },
         });
       }
-    };
-
-    // eslint-disable-next-line func-names
-    const getURLParam = function (name) {
-      const results = new RegExp('[\\?&]' + name + '=([^]*)').exec(
-        window.location.search,
-      );
-      if (results) {
-        return results[1];
-      }
-      return '';
     };
   }
 

@@ -6,7 +6,9 @@
 # Adrien <laadrien@gmail.com>, 2014
 # Bertrand Bordage <bordage.bertrand@gmail.com>, 2015,2018
 # fpoulain <fpoulain@metrodore.fr>, 2018
+# fpoulain <fpoulain@metrodore.fr>, 2018
 # Léo <leo@naeka.fr>, 2016
+# Loic Teixeira, 2020,2022
 # Loic Teixeira, 2020,2022
 # nahuel, 2014
 # Sebastien Andrivet <sebastien@andrivet.com>, 2016
@@ -15,9 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
-"Last-Translator: Loic Teixeira, 2020,2022\n"
+"Last-Translator: Tom Dyson <tom@torchbox.com>, 2015\n"
 "Language-Team: French (http://www.transifex.com/torchbox/wagtail/language/"
 "fr/)\n"
 "MIME-Version: 1.0\n"
@@ -161,18 +163,18 @@ msgstr ""
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
-"Aucun résultat de promotion n'a été créé. Pourquoi ne pas <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">en ajouter un</a> ?"
+"Aucun résultat de promotion n'a été créé. Pourquoi ne pas <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">en ajouter un</a> ?"
 
 msgid "Search promoted results"
 msgstr "Rechercher des résultats améliorés"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "Résultat amélioré pour « {0} » créé."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "Résultat amélioré pour « %(query)s » créé."
 
 msgid "Edit"
 msgstr "Modifier"
@@ -180,9 +182,9 @@ msgstr "Modifier"
 msgid "Recommendations have not been created due to errors"
 msgstr "Les recommandations ne peuvent être créées du fait d'erreurs"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "Résultat amélioré pour « {0} » mis à jour."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "Résultat amélioré pour « %(query)s » mis à jour."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "Les recommandations ne peuvent être enregistrées du fait d'erreurs"

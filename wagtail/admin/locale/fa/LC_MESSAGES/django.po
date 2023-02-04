@@ -4,19 +4,21 @@
 #
 # Translators:
 # Amir Mahmoodi, 2022
+# Amir Mahmoodi, 2022
 # Ehsan jahanbakhsh <man207ej@gmail.com>, 2020
 # Hamed NAJAND <hmd.nzhd@gmail.com>, 2020
 # Mehdi <myjahromi@gmail.com>, 2020
 # Mohammad reza Jelveh <mrj.eleven@gmail.com>, 2015
 # pyzenberg <pyzenberg@gmail.com>, 2017
 # pyzenberg <pyzenberg@gmail.com>, 2017
+# pyzenberg <pyzenberg@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:50+0000\n"
-"Last-Translator: Amir Mahmoodi, 2022\n"
+"Last-Translator: pyzenberg <pyzenberg@gmail.com>, 2017\n"
 "Language-Team: Persian (http://www.transifex.com/torchbox/wagtail/language/"
 "fa/)\n"
 "MIME-Version: 1.0\n"
@@ -31,11 +33,13 @@ msgstr "انتشار"
 msgid "Submit for moderation"
 msgstr "فرستادن برای نظارت"
 
-msgid "Resubmit to {}"
-msgstr "دوباره ثبت کردن در {}"
+#, python-format
+msgid "Resubmit to %(task_name)s"
+msgstr "دوباره ثبت کردن در %(task_name)s"
 
-msgid "Submit to {}"
-msgstr "ثبت کردن در {}"
+#, python-format
+msgid "Submit to %(workflow_name)s"
+msgstr "ثبت کردن در %(workflow_name)s"
 
 msgid "Unpublish"
 msgstr "لغو انتشار"
@@ -80,8 +84,8 @@ msgid "Enter password"
 msgstr "رمزعبور را وارد کنید"
 
 #, python-format
-msgid "Enter your %s"
-msgstr "%s خود را وارد کنید"
+msgid "Enter your %(username_field_name)s"
+msgstr "%(username_field_name)s خود را وارد کنید"
 
 msgid "Enter your email address to reset your password"
 msgstr "برای بازنشانی رمز، نشانی ایمیل خود را وارد کنید"
@@ -171,14 +175,14 @@ msgstr "دسترسی لازم برای کپی صفحه %(page_title)s را ند�
 
 #, python-format
 msgid ""
-"This slug is already in use within the context of its parent page \"%s\""
-msgstr "این اسلاگ در حال استفاده داخل محتوای صفحه والد خود \"%s\" است"
+"This slug is already in use within the context of its parent page "
+"\"%(parent_page_title)s\""
+msgstr ""
+"این اسلاگ در حال استفاده داخل محتوای صفحه والد خود \"%(parent_page_title)s\" "
+"است"
 
 msgid "You cannot copy a page into itself when copying subpages"
 msgstr "هنگامی که صفحه ها کپی میشوند نمی‌توان یک صفحه را به داخل خودش کپی کرد"
-
-msgid "This slug is already in use"
-msgstr "این اسلاگ در حال استفاده است"
 
 msgid "Visibility"
 msgstr "وضوح"
@@ -189,27 +193,27 @@ msgstr "این فیلد لازم است."
 msgid "Please select at least one group."
 msgstr "لطفا دست کم یک گروه را انتخاب نمایید."
 
-#, python-brace-format
-msgid "{0} documents selected"
-msgstr "{0} سند انتخاب شد"
+#, python-format
+msgid "%(objects)s documents selected"
+msgstr "%(objects)s سند انتخاب شد"
 
-#, python-brace-format
-msgid "All {0} documents on this screen selected"
-msgstr "همه {0} سند این صفحه انتخاب شدند"
+#, python-format
+msgid "All %(objects)s documents on this screen selected"
+msgstr "همه %(objects)s سند این صفحه انتخاب شدند"
 
 msgid "1 image selected"
 msgstr "1 تصویر انتخاب شد"
 
-#, python-brace-format
-msgid "All {0} images on this screen selected"
-msgstr "همه {0} تصویر این صفحه انتخاب شده"
+#, python-format
+msgid "All %(objects)s images on this screen selected"
+msgstr "همه %(objects)s تصویر این صفحه انتخاب شده"
 
 msgid "1 user selected"
 msgstr "1 کاربر انتخاب شده"
 
-#, python-brace-format
-msgid "{0} items selected"
-msgstr "{0} مورد انتخاب شده"
+#, python-format
+msgid "%(objects)s items selected"
+msgstr "%(objects)s مورد انتخاب شده"
 
 msgid "Content"
 msgstr "محتوا"
@@ -376,8 +380,8 @@ msgstr "نام"
 
 #, python-format
 msgid ""
-"No collections have been created. Why not <a href=\"%(add_collection_url)s"
-"\">add one</a>?"
+"No collections have been created. Why not <a "
+"href=\"%(add_collection_url)s\">add one</a>?"
 msgstr ""
 "مجموعه ای ایجاد نشد. چرا یکی <a href=\"%(add_collection_url)s\">ایجاد</a> "
 "نمیکنید؟"
@@ -978,13 +982,13 @@ msgstr "افزودن مجموعه"
 msgid "Add collection"
 msgstr "افزودن مجموعه"
 
-#, python-brace-format
-msgid "Collection '{0}' created."
-msgstr "مجموعه '{0}' ایجاد شد."
+#, python-format
+msgid "Collection '%(object)s' created."
+msgstr "مجموعه '%(object)s' ایجاد شد."
 
-#, python-brace-format
-msgid "Collection '{0}' updated."
-msgstr "مجموعه '{0}' بروزرسانی شد."
+#, python-format
+msgid "Collection '%(object)s' updated."
+msgstr "مجموعه '%(object)s' بروزرسانی شد."
 
 msgid "The collection could not be saved due to errors."
 msgstr "به دلیل بروز خطا امکان ذخیره مجموعه وجود ندارد."
@@ -992,9 +996,9 @@ msgstr "به دلیل بروز خطا امکان ذخیره مجموعه وجو�
 msgid "Delete collection"
 msgstr "حذف مجموعه"
 
-#, python-brace-format
-msgid "Collection '{0}' deleted."
-msgstr "مجموعه  '{0}' حذف شد."
+#, python-format
+msgid "Collection '%(object)s' deleted."
+msgstr "مجموعه  '%(object)s' حذف شد."
 
 msgid "Are you sure you want to delete this collection?"
 msgstr "آیا میخواهید این مجموعه را حذف کنید؟"
@@ -1045,13 +1049,13 @@ msgid_plural "1 page and %(num_child_objects)d child pages have been published"
 msgstr[0] "1 صفحه و %(num_child_objects)d صفحه فرزند منتشر شدند"
 msgstr[1] "1 صفحه و %(num_child_objects)d صفحه فرزند منتشر شدند"
 
-#, python-brace-format
-msgid "Page '{0}' and {1} subpages copied."
-msgstr "صفحه '{0}' و '{1}' زیرصفحه آن کپی شدند."
+#, python-format
+msgid "Page '%(page_title)s' and %(subpages_count)s subpages copied."
+msgstr "صفحه '%(page_title)s' و '%(subpages_count)s' زیرصفحه آن کپی شدند."
 
-#, python-brace-format
-msgid "Page '{0}' copied."
-msgstr "صفحه '{0}' کپی شد."
+#, python-format
+msgid "Page '%(page_title)s' copied."
+msgstr "صفحه '%(page_title)s' کپی شد."
 
 msgid "View draft"
 msgstr "دیدن پیشنویس"
@@ -1059,47 +1063,47 @@ msgstr "دیدن پیشنویس"
 msgid "View live"
 msgstr " دیدن صفحه منتشر شده"
 
-#, python-brace-format
-msgid "Page '{0}' created."
-msgstr "صفحه '{0}' ایجاد شد."
+#, python-format
+msgid "Page '%(page_title)s' created."
+msgstr "صفحه '%(page_title)s' ایجاد شد."
 
-#, python-brace-format
-msgid "Page '{0}' created and scheduled for publishing."
-msgstr "صفحه  '{0}' ایجاد و برای انتشار برنامه ریزی شد."
+#, python-format
+msgid "Page '%(page_title)s' created and scheduled for publishing."
+msgstr "صفحه  '%(page_title)s' ایجاد و برای انتشار برنامه ریزی شد."
 
-#, python-brace-format
-msgid "Page '{0}' created and published."
-msgstr "صفحه '{0}' ایجاد و انتشار یافت."
+#, python-format
+msgid "Page '%(page_title)s' created and published."
+msgstr "صفحه '%(page_title)s' ایجاد و انتشار یافت."
 
-#, python-brace-format
-msgid "Page '{0}' created and submitted for moderation."
-msgstr "صفحه '{0}' ایجاد و برای نظارت فرستاده شد."
+#, python-format
+msgid "Page '%(page_title)s' created and submitted for moderation."
+msgstr "صفحه '%(page_title)s' ایجاد و برای نظارت فرستاده شد."
 
 msgid "The page could not be created due to validation errors"
 msgstr "به دلیل بروز خطا صفحه ایجاد نشد."
 
-#, python-brace-format
-msgid "Page '{0}' deleted."
-msgstr "صفحه '{0}' حذف شد."
+#, python-format
+msgid "Page '%(page_title)s' deleted."
+msgstr "صفحه '%(page_title)s' حذف شد."
 
 msgid "This page is currently awaiting moderation"
 msgstr "این در انتظار نظارت است"
 
-#, python-brace-format
-msgid "Page '{0}' has been updated."
-msgstr "صفحه '{0}' بروزرسانی شد."
+#, python-format
+msgid "Page '%(page_title)s' has been updated."
+msgstr "صفحه '%(page_title)s' بروزرسانی شد."
 
-#, python-brace-format
-msgid "Page '{0}' has been scheduled for publishing."
-msgstr "صفحه '{0}' برای انتشار زمانبندی شد."
+#, python-format
+msgid "Page '%(page_title)s' has been scheduled for publishing."
+msgstr "صفحه '%(page_title)s' برای انتشار زمانبندی شد."
 
-#, python-brace-format
-msgid "Page '{0}' has been published."
-msgstr "صفحه '{0}' انتشار یافت."
+#, python-format
+msgid "Page '%(page_title)s' has been published."
+msgstr "صفحه '%(page_title)s' انتشار یافت."
 
-#, python-brace-format
-msgid "Page '{0}' has been submitted for moderation."
-msgstr "صفحه '{0}' برای نظارت فرستاده شد."
+#, python-format
+msgid "Page '%(page_title)s' has been submitted for moderation."
+msgstr "صفحه '%(page_title)s' برای نظارت فرستاده شد."
 
 msgid "The page could not be saved as it is locked"
 msgstr "بدلیل قفل بودن صفحه امکان ذخیره وجود ندارد"
@@ -1110,43 +1114,43 @@ msgstr "صفحه به دلیل وجود خطاهای معتبرسازی ذخیر
 msgid "Page history"
 msgstr "تاریخچه‌ی صفحه"
 
-#, python-brace-format
-msgid "Page '{0}' is now unlocked."
-msgstr "صفحه '{0}' باز شده است."
+#, python-format
+msgid "Page '%(page_title)s' is now unlocked."
+msgstr "صفحه '%(page_title)s' باز شده است."
 
-#, python-brace-format
-msgid "The page '{0}' is not currently awaiting moderation."
-msgstr "صفحه '{0}' در انتظار نظارت است."
+#, python-format
+msgid "The page '%(page_title)s' is not currently awaiting moderation."
+msgstr "صفحه '%(page_title)s' در انتظار نظارت است."
 
-#, python-brace-format
-msgid "Page '{0}' published."
-msgstr "صفحه '{0}' انتشار یافت."
+#, python-format
+msgid "Page '%(page_title)s' published."
+msgstr "صفحه '%(page_title)s' انتشار یافت."
 
 msgid "Failed to send approval notifications"
 msgstr "فرستادن آگاهسازی تایید ناموفق بود"
 
-#, python-brace-format
-msgid "Page '{0}' rejected for publication."
-msgstr "صفحه '{0}' برای انتشار رد شد."
+#, python-format
+msgid "Page '%(page_title)s' rejected for publication."
+msgstr "صفحه '%(page_title)s' برای انتشار رد شد."
 
 msgid "Failed to send rejection notifications"
 msgstr "فرستادن آگاهسازی رد انتشار ناموفق بود"
 
-#, python-brace-format
+#, python-format
 msgid ""
-"The slug '{0}' is already in use at the selected parent page. Make sure the "
-"slug is unique and try again"
+"The slug '%(page_slug)s' is already in use at the selected parent page. Make "
+"sure the slug is unique and try again"
 msgstr ""
-"اسلاگ {0} در حال حاضر توسط صفحه‌ی والد درحال استفاده است. لطفا مطمئن شوید "
-"اسلاگ یکتاست و دوباره امتحان کنید"
+"اسلاگ %(page_slug)s در حال حاضر توسط صفحه‌ی والد درحال استفاده است. لطفا "
+"مطمئن شوید اسلاگ یکتاست و دوباره امتحان کنید"
 
-#, python-brace-format
-msgid "Page '{0}' moved."
-msgstr "صفحه '{0}' انتقال یافت."
+#, python-format
+msgid "Page '%(page_title)s' moved."
+msgstr "صفحه '%(page_title)s' انتقال یافت."
 
-#, python-brace-format
-msgid "Page '{0}' unpublished."
-msgstr "صفحه '{0}' لغو انتشار شد."
+#, python-format
+msgid "Page '%(page_title)s' unpublished."
+msgstr "صفحه '%(page_title)s' لغو انتشار شد."
 
 msgid "Show"
 msgstr "نمایش"

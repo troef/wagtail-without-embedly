@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
 "Last-Translator: saevarom <saevar@saevar.is>, 2019-2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/torchbox/"
@@ -30,12 +30,12 @@ msgid "Add Comment"
 msgstr "Bæta við athugasemd"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "Fjöldi eininga má minnst vera %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "Fjöldi eininga má minnst vera %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "Fjöldi eininga má mest vera %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "Fjöldi eininga má mest vera %(max_num)d"
 
 msgid "Move up"
 msgstr "Færa upp"
@@ -80,29 +80,19 @@ msgstr "Lykilorðið sem þú slóst inn er ekki rétt. Vinsamlegast reynið aft
 msgid "Comment"
 msgstr "Athugasemd"
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
-msgstr "<b>Síðu '{}' var læst</b> af <b>þér</b> á <b>{}</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "<b>Síðu '{page_title}' er læst</b> af <b>þér</b>."
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "<b>Síðu '{}' er læst</b> af <b>þér</b>."
-
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr "<b>Síðu '{}' var læst</b> af <b>{}</b> á <b>{}</b>."
-
-msgid "<b>Page '{}' is locked</b>."
-msgstr "<b>Síða '{}' er læst</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "<b>Síða '{page_title}' er læst</b>."
 
 msgid "This page is currently awaiting moderation."
 msgstr "Þessi síða bíður yfirferðar."
 
-msgid "This page is awaiting <b>'{}'</b> in the <b>'{}'</b> workflow."
-msgstr "Þessi síða bíður eftir <b>'{}'</b> í vinnuflæðinu <b>'{}'</b> ."
-
 msgid "Only reviewers for this task can edit the page."
 msgstr "Aðeins þeir sem geta farið yfir þetta skref geta breytt síðunni."
-
-msgid "Page '{}' is locked and has been scheduled to go live at {}"
-msgstr "Síða '{}' er læst og hefur verið stillt á að fara í loftið {}"
 
 msgid "latest revision"
 msgstr "nýjasta útgáfa"
@@ -205,9 +195,6 @@ msgstr "Lýsandi texti sem birtist undir fyrirsögn í leitarvélum."
 
 msgid "latest revision created at"
 msgstr "síðasta útgáfa búin til"
-
-msgid "This slug is already in use"
-msgstr "Þessi vefslóð (e.slug) er þegar í notkun"
 
 msgid "in moderation"
 msgstr "bíður samþykktar"
@@ -398,9 +385,9 @@ msgstr ""
 "Aðeins eitt vinnuflæði með stöðuna \"í gangi\" eða \"þarfnast breytinga\" má "
 "vera á hverri síðu."
 
-#, python-brace-format
-msgid "Workflow '{0}' on Page '{1}': {2}"
-msgstr "Vinnuflæði '{0}' á síðu '{1}': {2}"
+#, python-format
+msgid "Workflow '%(workflow_name)s' on Page '%(page_title)s': %(status)s"
+msgstr "Vinnuflæði '%(workflow_name)s' á síðu '%(page_title)s': %(status)s"
 
 msgid "Not started"
 msgstr "Ekki byrjað"
@@ -432,9 +419,9 @@ msgstr "endaði"
 msgid "finished by"
 msgstr "endar"
 
-#, python-brace-format
-msgid "Task '{0}' on Page Revision '{1}': {2}"
-msgstr "Skref '{0}' á síðu útgáfu '{1}': {2}"
+#, python-format
+msgid "Task '%(task_name)s' on Page Revision '%(revision_info)s': %(status)s"
+msgstr "Skref '%(task_name)s' á síðu útgáfu '%(revision_info)s': %(status)s"
 
 msgid "Task state"
 msgstr "Staða skrefs"
@@ -472,12 +459,9 @@ msgstr "atburðaskráning"
 msgid "log entries"
 msgstr "atburðaskráningar"
 
-msgid "The log action '{}' has not been registered."
-msgstr "Aðgerð í atburðaskrá '{}' hefur ekki verið skráð."
-
 #, python-format
-msgid "user %(id)s (deleted)"
-msgstr "notandi %(id)s (eytt)"
+msgid "The log action '%(action_name)s' has not been registered."
+msgstr "Aðgerð í atburðaskrá '%(action_name)s' hefur ekki verið skráð."
 
 msgid "system"
 msgstr "kerfi"

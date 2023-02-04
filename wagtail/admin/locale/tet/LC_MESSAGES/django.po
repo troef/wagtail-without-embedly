@@ -7,6 +7,7 @@
 # Joanico Barros <joanico@catalpa.io>, 2019
 # Mariano de Deus <dedeus_mariano@yahoo.com>, 2019
 # Mario <mario@catalpa.io>, 2019
+# Mario <mario@catalpa.io>, 2019
 # Matt Westcott <matthew@torchbox.com>, 2020-2021
 # Onorio de Jesus Afonso <onorio@catalpa.io>, 2019-2020
 # Onorio de Jesus Afonso <onorio@catalpa.io>, 2019
@@ -15,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:50+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>, 2020-2021\n"
+"Last-Translator: Peter Coward <peter@catalpa.io>, 2019\n"
 "Language-Team: Tetum (Tetun) (http://www.transifex.com/torchbox/wagtail/"
 "language/tet/)\n"
 "MIME-Version: 1.0\n"
@@ -81,8 +82,8 @@ msgid "Enter password"
 msgstr "Hatama seña"
 
 #, python-format
-msgid "Enter your %s"
-msgstr "Hatama ita nia 1%s"
+msgid "Enter your %(username_field_name)s"
+msgstr "Hatama ita nia 1%(username_field_name)s"
 
 msgid "Enter your email address to reset your password"
 msgstr "Hatama ita boot nia enderessu email hodi defini fali ita boot nia seña"
@@ -168,15 +169,15 @@ msgstr "Ita boot laiha permisaun atu kopia pajina \"%(page_title)s\""
 
 #, python-format
 msgid ""
-"This slug is already in use within the context of its parent page \"%s\""
-msgstr "Slug nee uza tiha ona iha laran kontextu ninia pajina inan-aman \"%s\""
+"This slug is already in use within the context of its parent page "
+"\"%(parent_page_title)s\""
+msgstr ""
+"Slug nee uza tiha ona iha laran kontextu ninia pajina inan-aman "
+"\"%(parent_page_title)s\""
 
 msgid "You cannot copy a page into itself when copying subpages"
 msgstr ""
 "Ita boot labele kopia pajina iha rasik laran bainhira kopia pajina oan sira"
-
-msgid "This slug is already in use"
-msgstr "Slug nee uza tiha ona"
 
 msgid "Visibility"
 msgstr "Visibilidade"
@@ -345,8 +346,8 @@ msgstr "Naran"
 
 #, python-format
 msgid ""
-"No collections have been created. Why not <a href=\"%(add_collection_url)s"
-"\">add one</a>?"
+"No collections have been created. Why not <a "
+"href=\"%(add_collection_url)s\">add one</a>?"
 msgstr ""
 "Koleksaun sira seidauk kria. Karik <a href=\"%(add_collection_url)s\">hatama "
 "ida</a>?"
@@ -774,13 +775,13 @@ msgstr "Hatama Koleksaun"
 msgid "Add collection"
 msgstr "Hatama Koleksaun"
 
-#, python-brace-format
-msgid "Collection '{0}' created."
-msgstr "Koleksaun '{0}' kria ona."
+#, python-format
+msgid "Collection '%(object)s' created."
+msgstr "Koleksaun '%(object)s' kria ona."
 
-#, python-brace-format
-msgid "Collection '{0}' updated."
-msgstr "Koleksaun '{0}' hadia ona."
+#, python-format
+msgid "Collection '%(object)s' updated."
+msgstr "Koleksaun '%(object)s' hadia ona."
 
 msgid "The collection could not be saved due to errors."
 msgstr "Koleksaun iha erru, labele rai"
@@ -788,9 +789,9 @@ msgstr "Koleksaun iha erru, labele rai"
 msgid "Delete collection"
 msgstr "Hamoos Koleksaun"
 
-#, python-brace-format
-msgid "Collection '{0}' deleted."
-msgstr "Koleksaun '{0}' hamoos ona."
+#, python-format
+msgid "Collection '%(object)s' deleted."
+msgstr "Koleksaun '%(object)s' hamoos ona."
 
 msgid "Are you sure you want to delete this collection?"
 msgstr "Ita boot serteza hamoos koleksaun nee?"
@@ -807,12 +808,16 @@ msgstr "Painel kontrolu"
 msgid "View live"
 msgstr "Haree iha situ"
 
-#, python-brace-format
-msgid "Page '{0}' deleted."
-msgstr "Pajina '{0}' hammos ona."
+#, python-format
+msgid "Page '%(page_title)s' deleted."
+msgstr "Pajina '%(page_title)s' hammos ona."
 
 msgid "Pages"
 msgstr "Pajina sira"
+
+#, python-format
+msgid "Edit '%(title)s'"
+msgstr " Edit '%(title)s'"
 
 msgid "Add child page"
 msgstr "Aumenta pajina iha okos"

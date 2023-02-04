@@ -44,7 +44,13 @@ Compile the assets:
 npm run build
 ```
 
-Any Wagtail sites you start up in this virtualenv will now run against this development instance of Wagtail. We recommend using the [Wagtail Bakery demo site](https://github.com/wagtail/bakerydemo/) as a basis for developing Wagtail. Keep in mind that the setup steps for a Wagtail site may include installing a release version of Wagtail, which will override the development version you've just set up. In this case, you should install the site before running the `pip install -e` step, or re-run that step after the site is installed.
+Any Wagtail sites you start up in this virtualenv will now run against this development instance of Wagtail. We recommend using the [Wagtail Bakery demo site](https://github.com/wagtail/bakerydemo/) as a basis for developing Wagtail. Keep in mind that the setup steps for a Wagtail site may include installing a release version of Wagtail, which will override the development version you've just set up. In this case, to install the local Wagtail development instance in your virtualenv for your Wagtail site:
+
+```sh
+pip install -e path/to/wagtail"[testing, docs]" -U
+```
+
+Here, `path/to/wagtail` is the path to your local Wagtail copy.
 
 (development_on_windows)=
 
@@ -241,7 +247,6 @@ We want to make Wagtail accessible for users of a wide variety of assistive tech
 
 We aim for Wagtail to work in those environments. Our development standards ensure that the site is usable with other assistive technologies. In practice, testing with assistive technology can be a daunting task that requires specialised training – here are tools we rely on to help identify accessibility issues, to use during development and code reviews:
 
--   [react-axe](https://github.com/dequelabs/react-axe) integrated directly into our build tools, to identify actionable issues. Logs its results in the browser console.
 -   [@wordpress/jest-puppeteer-axe](https://github.com/WordPress/gutenberg/tree/trunk/packages/jest-puppeteer-axe) running Axe checks as part of integration tests.
 -   [Axe](https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd) Chrome extension for more comprehensive automated tests of a given page.
 -   [Accessibility Insights for Web](https://accessibilityinsights.io/docs/en/web/overview) Chrome extension for semi-automated tests, and manual audits.

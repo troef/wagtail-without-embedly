@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: Joanico Barros <joanico@catalpa.io>, 2019-2020\n"
+"Last-Translator: Peter Coward <peter@catalpa.io>, 2019\n"
 "Language-Team: Tetum (Tetun) (http://www.transifex.com/torchbox/wagtail/"
 "language/tet/)\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +24,12 @@ msgid "Wagtail core"
 msgstr "Wagtail fuan"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "Numeru minimum sasan %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "Numeru minimum sasan %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "Numeru maximum sasan %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "Numeru maximum sasan %(max_num)d"
 
 msgid "Move up"
 msgstr "Muda ba leten"
@@ -127,9 +127,6 @@ msgstr "Hatudu iha menus sira"
 
 msgid "latest revision created at"
 msgstr "Revizaun ikus kria ona iha"
-
-msgid "This slug is already in use"
-msgstr "Slug ida ne'e uza tiha ona"
 
 msgid "page"
 msgstr "Pajina"

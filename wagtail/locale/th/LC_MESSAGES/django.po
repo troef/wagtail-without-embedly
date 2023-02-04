@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
 "Last-Translator: Walaksawan Vervoort <nula_wala@yahoo.com>, 2019\n"
 "Language-Team: Thai (http://www.transifex.com/torchbox/wagtail/language/"
@@ -25,12 +25,12 @@ msgid "Wagtail core"
 msgstr "Wagtail core"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "ตัวเลขน้อยที่สุดของสิ่งนี้คือ %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "ตัวเลขน้อยที่สุดของสิ่งนี้คือ %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "จำนวนมากสุดของสิ่งนี้คือ %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "จำนวนมากสุดของสิ่งนี้คือ %(max_num)d"
 
 msgid "Move up"
 msgstr "เลื่อนขึ้น,ขยับขึ้น"
@@ -127,9 +127,6 @@ msgstr "อย่างไรก็ตามลิงค์ของหน้า
 
 msgid "latest revision created at"
 msgstr "การแก้ไขครั้งล่าสุดเกิดขึ้นเมื่อ"
-
-msgid "This slug is already in use"
-msgstr "Slug นี้กำลังใช้อยู่"
 
 msgid "page"
 msgstr "หน้า"

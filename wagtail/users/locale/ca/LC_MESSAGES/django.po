@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 11:54+0000\n"
 "Last-Translator: Roger Pons <rogerpons@gmail.com>, 2017,2020\n"
 "Language-Team: Catalan (http://www.transifex.com/torchbox/wagtail/language/"
@@ -173,11 +173,11 @@ msgstr "No s'ha trobat cap grup que concordi amb \"%(query)s\""
 
 #, python-format
 msgid ""
-"There are no groups configured. Why not <a href="
-"\"%(wagtailusers_create_group_url)s\">add some</a>?"
+"There are no groups configured. Why not <a "
+"href=\"%(wagtailusers_create_group_url)s\">add some</a>?"
 msgstr ""
-"No hi ha cap grup configurat. Per què no n'<a href="
-"\"%(wagtailusers_create_group_url)s\">afegiu un</a>?"
+"No hi ha cap grup configurat. Per què no n'<a "
+"href=\"%(wagtailusers_create_group_url)s\">afegiu un</a>?"
 
 msgid "Delete user"
 msgstr "Eliminar usuari"
@@ -227,19 +227,19 @@ msgstr "Ho sentim, cap usuari coincideix amb \"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"The %(group_name)s group has no users configured. Why not <a href="
-"\"%(wagtailusers_add_url)s\">add some</a>?"
+"The %(group_name)s group has no users configured. Why not <a "
+"href=\"%(wagtailusers_add_url)s\">add some</a>?"
 msgstr ""
-"El grup %(group_name)s no té cap usuari configurat. En voleu <a href="
-"\"%(wagtailusers_add_url)s\">afegir</a>?"
+"El grup %(group_name)s no té cap usuari configurat. En voleu <a "
+"href=\"%(wagtailusers_add_url)s\">afegir</a>?"
 
 #, python-format
 msgid ""
-"There are no users configured. Why not <a href=\"%(wagtailusers_add_url)s"
-"\">add some</a>?"
+"There are no users configured. Why not <a "
+"href=\"%(wagtailusers_add_url)s\">add some</a>?"
 msgstr ""
-"No hi ha cap usuari configurat. En voleu <a href=\"%(wagtailusers_add_url)s"
-"\">afegir</a>?"
+"No hi ha cap usuari configurat. En voleu <a "
+"href=\"%(wagtailusers_add_url)s\">afegir</a>?"
 
 msgid "Groups"
 msgstr "Grups"
@@ -250,35 +250,35 @@ msgstr "Afegir un grup"
 msgid "Search groups"
 msgstr "Cercar grups"
 
-#, python-brace-format
-msgid "Group '{0}' created."
-msgstr "S'ha creat el grup '{0}'."
+#, python-format
+msgid "Group '%(object)s' created."
+msgstr "S'ha creat el grup '%(object)s'."
 
-#, python-brace-format
-msgid "Group '{0}' updated."
-msgstr "S'ha actualitzat el grup '{0}'."
+#, python-format
+msgid "Group '%(object)s' updated."
+msgstr "S'ha actualitzat el grup '%(object)s'."
 
 msgid "The group could not be saved due to errors."
 msgstr "No s'ha pogut desar el grup a causa d'errors."
 
-#, python-brace-format
-msgid "Group '{0}' deleted."
-msgstr "S'ha eliminat el grup '{0}'."
+#, python-format
+msgid "Group '%(object)s' deleted."
+msgstr "S'ha eliminat el grup '%(object)s'."
 
-#, python-brace-format
-msgid "User '{0}' updated."
-msgstr "Usuari '{0}' actualitzat."
+#, python-format
+msgid "User '%(object)s' updated."
+msgstr "Usuari '%(object)s' actualitzat."
 
 msgid "The user could not be saved due to errors."
 msgstr "No s'ha pogut desar l'usuari degut a errors."
 
 #, python-format
-msgid "Editing %s"
-msgstr "Editant %s"
+msgid "Editing %(object)s"
+msgstr "Editant %(object)s"
 
-#, python-brace-format
-msgid "User '{0}' deleted."
-msgstr "S'ha eliminat l'usuari '{0}'."
+#, python-format
+msgid "User '%(object)s' deleted."
+msgstr "S'ha eliminat l'usuari '%(object)s'."
 
 msgid "Edit"
 msgstr "Editar"

@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: Coen van der Kamp <cvanderkamp@gmail.com>, 2022\n"
+"Last-Translator: Thijs Kramer <thijskramer@gmail.com>, 2015-2016,2022\n"
 "Language-Team: Dutch (http://www.transifex.com/torchbox/wagtail/language/"
 "nl/)\n"
 "MIME-Version: 1.0\n"
@@ -35,12 +35,12 @@ msgid "Add Comment"
 msgstr "Commentaar toevoegen"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "Het minimale aantal items is %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "Het minimale aantal items is %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "Het maximale aantal items is %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "Het maximale aantal items is %(max_num)d"
 
 msgid "Move up"
 msgstr "Omhoog"
@@ -85,30 +85,19 @@ msgstr "Het wachtwoord dat u heeft ingevuld is niet juist. Probeer opnieuw."
 msgid "Comment"
 msgstr "Opmerking"
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
-msgstr "De pagina '{}' is geblokkeerd</b> door jou op <b>{}</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "</b>De pagina '{page_title}' is geblokkeerd door jou."
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "</b>De pagina '{}' is geblokkeerd door jou."
-
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr "<b>De pagina '{}' is geblokkeerd</b> door <b>{}</b> op <b>{}</b>."
-
-msgid "<b>Page '{}' is locked</b>."
-msgstr "De pagina '{}' is geblokkeerd."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "De pagina '{page_title}' is geblokkeerd."
 
 msgid "This page is currently awaiting moderation."
 msgstr "Deze pagina is in afwachting van content goedkeuring."
 
-msgid "This page is awaiting <b>'{}'</b> in the <b>'{}'</b> workflow."
-msgstr ""
-"Deze pagina is in afwachting van <b>'{}'</b> in de <b>'{}'</b> workflow."
-
 msgid "Only reviewers for this task can edit the page."
 msgstr "Alleen reviewers van deze taak kunnen deze pagina bewerken."
-
-msgid "Page '{}' is locked and has been scheduled to go live at {}"
-msgstr "Pagina '{}' is vergrendeld en staat gepland om live te gaan op {}"
 
 msgid "latest revision"
 msgstr "Nieuwste revisie"
@@ -216,9 +205,6 @@ msgstr ""
 
 msgid "latest revision created at"
 msgstr "meest recente versie aangemaakt op"
-
-msgid "This slug is already in use"
-msgstr "Deze slug is al in gebruik"
 
 msgid "in moderation"
 msgstr "ter goedkeuring"
@@ -409,9 +395,9 @@ msgstr ""
 "Er mag maar één in behandeling of heeft wijziging nodig workflow-status zijn "
 "per pagina."
 
-#, python-brace-format
-msgid "Workflow '{0}' on Page '{1}': {2}"
-msgstr "Workflow '{0}' op pagina '{1}': {2}"
+#, python-format
+msgid "Workflow '%(workflow_name)s' on Page '%(page_title)s': %(status)s"
+msgstr "Workflow '%(workflow_name)s' op pagina '%(page_title)s': %(status)s"
 
 msgid "Not started"
 msgstr "Niet gestart"
@@ -443,9 +429,9 @@ msgstr "Afgerond op"
 msgid "finished by"
 msgstr "Afgerond door"
 
-#, python-brace-format
-msgid "Task '{0}' on Page Revision '{1}': {2}"
-msgstr "Taak '{0}' op pagina-revisie '{1}': {2}"
+#, python-format
+msgid "Task '%(task_name)s' on Page Revision '%(revision_info)s': %(status)s"
+msgstr "Taak '%(task_name)s' op pagina-revisie '%(revision_info)s': %(status)s"
 
 msgid "Task state"
 msgstr "Taak-status"
@@ -483,12 +469,9 @@ msgstr "logboekvermelding"
 msgid "log entries"
 msgstr "logboekvermeldingen"
 
-msgid "The log action '{}' has not been registered."
-msgstr "De logboek actie '{}' is niet geregistreerd."
-
 #, python-format
-msgid "user %(id)s (deleted)"
-msgstr "gebruiker %(id)s (verwijderd)"
+msgid "The log action '%(action_name)s' has not been registered."
+msgstr "De logboek actie '%(action_name)s' is niet geregistreerd."
 
 msgid "system"
 msgstr "systeem"

@@ -1,8 +1,8 @@
 #
 # Translators:
-# Eetu Häivälä, 2022
 # Aarni Koskela, 2022
 # Valter Maasalo <vmaasalo@gmail.com>, 2022
+# Loic Teixeira, 2022
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2022
 #
 msgid ""
@@ -13,14 +13,29 @@ msgstr ""
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "({number} new items in this menu)"
-msgstr "({number} uutta kohdetta tässä valikossa)"
+msgid "(%(errorCount)s error)"
+msgid_plural "(%(errorCount)s errors)"
+msgstr[0] "(%(errorCount)s virhe)"
+msgstr[1] "(%(errorCount)s virhettä)"
+
+msgid "(%(number)s new items in this menu)"
+msgstr "(%(number)s uutta kohdetta tässä valikossa)"
 
 msgid "(1 new item in this menu)"
 msgstr "(1 uusi kohde tässä valikossa)"
 
 msgid "(New)"
 msgstr "(Uusi)"
+
+msgid "%(num)s error"
+msgid_plural "%(num)s errors"
+msgstr[0] "%(num)s virhe"
+msgstr[1] "%(num)s virhettä"
+
+msgid "%(num)s pixel"
+msgid_plural "%(num)s pixels"
+msgstr[0] "%(num)s pikseli"
+msgstr[1] "%(num)s pikseliä"
 
 msgid "Add a comment"
 msgstr "Lisää kommentti"
@@ -70,8 +85,8 @@ msgstr "Poistetaan"
 msgid "Edit"
 msgstr "Muokkaa"
 
-msgid "Edit '{title}'"
-msgstr "Muokkaa '{title}'"
+msgid "Edit '%(title)s'"
+msgstr "Muokkaa '%(title)s'"
 
 msgid "Edit your account"
 msgstr "Muokkaa tiliäsi"
@@ -201,8 +216,8 @@ msgstr "Sivupalkki päälle/pois"
 msgid "Unfocus comment"
 msgstr "Poista kommentin kohdistus"
 
-msgid "View child pages of '{title}'"
-msgstr "Näytä sivun '{title}' alasivut"
+msgid "View child pages of '%(title)s'"
+msgstr "Näytä sivun '%(title)s' alasivut"
 
 msgid "Write something or type ‘/’ to insert a block"
 msgstr "Kirjoita jotain tai kirjoita ‘/’ lisätäksesi lohkon"

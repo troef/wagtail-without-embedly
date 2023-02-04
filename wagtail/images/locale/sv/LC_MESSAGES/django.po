@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 13:14+0100\n"
 "PO-Revision-Date: 2014-02-20 21:05+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>, 2022\n"
+"Last-Translator: Thomas Kunambi <kunambi@gmail.com>, 2015,2021\n"
 "Language-Team: Swedish (http://www.transifex.com/torchbox/wagtail/language/"
 "sv/)\n"
 "MIME-Version: 1.0\n"
@@ -43,24 +43,26 @@ msgid "Supported formats: %(supported_formats)s."
 msgstr "Format som stöds: %(supported_formats)s."
 
 #, python-format
-msgid "Not a supported image format. Supported formats: %s."
-msgstr "Bildformatet stöds inte. Format som stöds: %s."
+msgid "Not a supported image format. Supported formats: %(supported_formats)s."
+msgstr "Bildformatet stöds inte. Format som stöds: %(supported_formats)s."
 
 #, python-format
-msgid "Not a valid %s image."
-msgstr "Inte en giltig %s bild."
+msgid ""
+"This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
+msgstr ""
+"Filen är för stor (%(file_size)s). Maximal filstorlek %(max_filesize)s."
 
 #, python-format
-msgid "This file is too big (%%s). Maximum filesize %s."
-msgstr "Filen är för stor (%%s). Maximal filstorlek %s."
+msgid ""
+"This file has too many pixels (%(num_pixels)s). Maximum pixels "
+"%(max_pixels_count)s."
+msgstr ""
+"Filen har för hög upplösning (%(num_pixels)s). Maximal upplösning: "
+"%(max_pixels_count)s."
 
 #, python-format
-msgid "This file has too many pixels (%%s). Maximum pixels %s."
-msgstr "Filen har för hög upplösning (%%s). Maximal upplösning: %s."
-
-#, python-format
-msgid "This file is too big. Maximum filesize %s."
-msgstr "Filen är för stor. Maximal filstorlek %s."
+msgid "This file is too big. Maximum filesize %(max_filesize)s."
+msgstr "Filen är för stor. Maximal filstorlek %(max_filesize)s."
 
 msgid "Full width"
 msgstr "Full bredd"
@@ -332,19 +334,19 @@ msgstr "Ledsen, inga bilder matchar <em>\"%(query_string)s\"</em>"
 
 #, python-format
 msgid ""
-"You haven't uploaded any images in this collection. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images in this collection. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
 "Du har inte laddat upp några bilder till den här samlingen. Varför inte <a "
 "href=\"%(wagtailimages_add_image_url)s\">ladda upp en nu</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any images. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"Du har inte laddat upp några bilder  Varför inte <a href="
-"\"%(wagtailimages_add_image_url)s\">ladda upp en nu</a>?"
+"Du har inte laddat upp några bilder  Varför inte <a "
+"href=\"%(wagtailimages_add_image_url)s\">ladda upp en nu</a>?"
 
 msgid "Generating URL"
 msgstr "Genererar URL"
@@ -475,9 +477,9 @@ msgstr "Redigera denna bild"
 msgid "Search images"
 msgstr "Sök bilder"
 
-#, python-brace-format
-msgid "Image '{0}' updated."
-msgstr "Bild '{0}' uppdaterades."
+#, python-format
+msgid "Image '%(image_title)s' updated."
+msgstr "Bild '%(image_title)s' uppdaterades."
 
 msgid "Edit again"
 msgstr "Redigera igen"
@@ -492,24 +494,24 @@ msgstr ""
 "Filen för originalbilden kunde inte hittas. Vänligen ändra filen eller ta "
 "bort bilden."
 
-#, python-brace-format
-msgid "Image '{0}' deleted."
-msgstr "Bild '{0}' raderad."
+#, python-format
+msgid "Image '%(image_title)s' deleted."
+msgstr "Bild '%(image_title)s' raderad."
 
-#, python-brace-format
-msgid "Image '{0}' added."
-msgstr "Bild '{0}' lades till."
+#, python-format
+msgid "Image '%(image_title)s' added."
+msgstr "Bild '%(image_title)s' lades till."
 
 msgid "The image could not be created due to errors."
 msgstr "Bilden kunde inte skapas p.g.a. fel."
 
 #, python-format
-msgid "(Private %s)"
-msgstr "(Privat %s)"
+msgid "(Private %(object)s)"
+msgstr "(Privat %(object)s)"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Redigera %s"
+msgid "Edit this %(object)s"
+msgstr "Redigera %(object)s"
 
 msgid "Image"
 msgstr "Bild"

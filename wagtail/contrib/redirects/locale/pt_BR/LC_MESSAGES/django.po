@@ -17,10 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-20 21:04+0000\n"
-"Last-Translator: Rodrigo de Almeida Sottomaior Macedo "
-"<rmsolucoeseminformatica@protonmail.com>, 2022\n"
+"Last-Translator: Thiago Cangussu <cng.thg@gmail.com>, 2014\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/torchbox/"
 "wagtail/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -225,18 +224,18 @@ msgstr ""
 
 #, python-format
 msgid ""
-"No redirects have been created. Why not <a href="
-"\"%(wagtailredirects_add_redirect_url)s\">add one</a>?"
+"No redirects have been created. Why not <a "
+"href=\"%(wagtailredirects_add_redirect_url)s\">add one</a>?"
 msgstr ""
-"Não há redirecionamentos criados. Por que não foi <a href="
-"\"%(wagtailredirects_add_redirect_url)s\">adicionado</a>?"
+"Não há redirecionamentos criados. Por que não foi <a "
+"href=\"%(wagtailredirects_add_redirect_url)s\">adicionado</a>?"
 
 msgid "Search redirects"
 msgstr "Pesquisar redirecionamentos"
 
-#, python-brace-format
-msgid "Redirect '{0}' updated."
-msgstr "Redirecionar '{0}' atualizado."
+#, python-format
+msgid "Redirect '%(redirect_title)s' updated."
+msgstr "Redirecionar '%(redirect_title)s' atualizado."
 
 msgid "Edit"
 msgstr "Editar"
@@ -244,23 +243,16 @@ msgstr "Editar"
 msgid "The redirect could not be saved due to errors."
 msgstr "O redirecionamento não pôde ser salvo devido a erros."
 
-#, python-brace-format
-msgid "Redirect '{0}' deleted."
-msgstr "Redirecionar '{0}' excluída."
-
-#, python-brace-format
-msgid "Redirect '{0}' added."
-msgstr "Redirecionar '{0}' adicionada."
-
 msgid "The redirect could not be created due to errors."
 msgstr "O redirecionamento não pode ser criado devido a erros."
 
-msgid "File format of type \"{}\" is not supported"
-msgstr "O formato do arquivo com extensão \"{}\" não é suportado"
+#, python-format
+msgid "File format of type \"%(extension)s\" is not supported"
+msgstr "O formato do arquivo com extensão \"%(extension)s\" não é suportado"
 
 #, python-format
-msgid "Imported file has a wrong encoding: %s"
-msgstr "O arquivo importado têm uma codificação errada: %s"
+msgid "Imported file has a wrong encoding: %(error_message)s"
+msgstr "O arquivo importado têm uma codificação errada: %(error_message)s"
 
 #, python-format
 msgid "%(error)s encountered while trying to read file: %(filename)s"

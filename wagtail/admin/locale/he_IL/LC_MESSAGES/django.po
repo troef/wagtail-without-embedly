@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# 2ba49a64a97dc0c30b67cbb6522d98c8_d0a1309 <5628a6f4d3ab86b48aef276247790766_814>, 2015
 # Adi Ron <adi@bnop.co>, 2019
 # 2ba49a64a97dc0c30b67cbb6522d98c8_d0a1309 <5628a6f4d3ab86b48aef276247790766_814>, 2015
 # Gilad Levi <gilad.x@blobim.com>, 2022
@@ -11,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:50+0000\n"
-"Last-Translator: Gilad Levi <gilad.x@blobim.com>, 2022\n"
+"Last-Translator: lior abazon <abazon@v15.org.il>, 2015\n"
 "Language-Team: Hebrew (Israel) (http://www.transifex.com/torchbox/wagtail/"
 "language/he_IL/)\n"
 "MIME-Version: 1.0\n"
@@ -29,11 +30,13 @@ msgstr "פרסם"
 msgid "Submit for moderation"
 msgstr "שלח לעריכה"
 
-msgid "Resubmit to {}"
-msgstr "הרשמה מחודשת ל {}"
+#, python-format
+msgid "Resubmit to %(task_name)s"
+msgstr "הרשמה מחודשת ל %(task_name)s"
 
-msgid "Submit to {}"
-msgstr "הרשמה ל {}"
+#, python-format
+msgid "Submit to %(workflow_name)s"
+msgstr "הרשמה ל %(workflow_name)s"
 
 msgid "Restart workflow "
 msgstr "אתחול תזרים העבודה"
@@ -97,8 +100,8 @@ msgid "Enter password"
 msgstr "הזינו סיסמה"
 
 #, python-format
-msgid "Enter your %s"
-msgstr "הזינו את ה%s שלכם"
+msgid "Enter your %(username_field_name)s"
+msgstr "הזינו את ה%(username_field_name)s שלכם"
 
 msgid "Enter your email address to reset your password"
 msgstr "הזינו את כתובת הדוא\"ל שלכם כדי לאתחל את הסיסמה"
@@ -192,11 +195,10 @@ msgstr[3] ""
 
 #, python-format
 msgid ""
-"This slug is already in use within the context of its parent page \"%s\""
-msgstr "הכתובת שבחרת כבר בשימוש בתוך הקונטקסט של עמוד ההורה \"%s\""
-
-msgid "This slug is already in use"
-msgstr "שדה זה כבר בשימוש"
+"This slug is already in use within the context of its parent page "
+"\"%(parent_page_title)s\""
+msgstr ""
+"הכתובת שבחרת כבר בשימוש בתוך הקונטקסט של עמוד ההורה \"%(parent_page_title)s\""
 
 msgid "This field is required."
 msgstr "שדה חובה"
@@ -576,13 +578,13 @@ msgstr "עריכה"
 msgid "Dashboard"
 msgstr "לוח מחוונים"
 
-#, python-brace-format
-msgid "Page '{0}' and {1} subpages copied."
-msgstr "עמוד {0} ותת העמודים {1} הועתקו "
+#, python-format
+msgid "Page '%(page_title)s' and %(subpages_count)s subpages copied."
+msgstr "עמוד %(page_title)s ותת העמודים %(subpages_count)s הועתקו "
 
-#, python-brace-format
-msgid "Page '{0}' copied."
-msgstr "עמוד {0} הועתק "
+#, python-format
+msgid "Page '%(page_title)s' copied."
+msgstr "עמוד %(page_title)s הועתק "
 
 msgid "View draft"
 msgstr "הצג טיוטה"
@@ -590,24 +592,24 @@ msgstr "הצג טיוטה"
 msgid "View live"
 msgstr "תצוגה בחי"
 
-#, python-brace-format
-msgid "Page '{0}' created."
-msgstr "עמוד {0} נוצר"
+#, python-format
+msgid "Page '%(page_title)s' created."
+msgstr "עמוד %(page_title)s נוצר"
 
-#, python-brace-format
-msgid "Page '{0}' created and published."
-msgstr "עמוד {0} נוצר ופורסם"
+#, python-format
+msgid "Page '%(page_title)s' created and published."
+msgstr "עמוד %(page_title)s נוצר ופורסם"
 
-#, python-brace-format
-msgid "Page '{0}' created and submitted for moderation."
-msgstr "עמוד {0} נוצר והוזן לעריכה"
+#, python-format
+msgid "Page '%(page_title)s' created and submitted for moderation."
+msgstr "עמוד %(page_title)s נוצר והוזן לעריכה"
 
 msgid "The page could not be created due to validation errors"
 msgstr "העמוד לא יכל להיווצר עקב שגיאות אישור "
 
-#, python-brace-format
-msgid "Page '{0}' deleted."
-msgstr "עמוד {0} נמחק"
+#, python-format
+msgid "Page '%(page_title)s' deleted."
+msgstr "עמוד %(page_title)s נמחק"
 
 msgid "This page is currently awaiting moderation"
 msgstr "העמוד ממתין לעריכה"
@@ -618,29 +620,29 @@ msgstr "העמוד לא ניתן לשמירה מכיוון שהוא נעול "
 msgid "The page could not be saved due to validation errors"
 msgstr "העמוד לא ניתן לשמירה עקב שגיאות אישור"
 
-#, python-brace-format
-msgid "Page '{0}' is now unlocked."
-msgstr "עמוד {0} בלתי נעול כעת"
+#, python-format
+msgid "Page '%(page_title)s' is now unlocked."
+msgstr "עמוד %(page_title)s בלתי נעול כעת"
 
-#, python-brace-format
-msgid "The page '{0}' is not currently awaiting moderation."
-msgstr "העמוד {0} אינו ממתין לעריכה כרגע "
+#, python-format
+msgid "The page '%(page_title)s' is not currently awaiting moderation."
+msgstr "העמוד %(page_title)s אינו ממתין לעריכה כרגע "
 
-#, python-brace-format
-msgid "Page '{0}' published."
-msgstr "עמוד {0} פורסם"
+#, python-format
+msgid "Page '%(page_title)s' published."
+msgstr "עמוד %(page_title)s פורסם"
 
-#, python-brace-format
-msgid "Page '{0}' rejected for publication."
-msgstr "עמוד {0} נדחה עבור פרסום"
+#, python-format
+msgid "Page '%(page_title)s' rejected for publication."
+msgstr "עמוד %(page_title)s נדחה עבור פרסום"
 
-#, python-brace-format
-msgid "Page '{0}' moved."
-msgstr "עמוד {0} הוזז"
+#, python-format
+msgid "Page '%(page_title)s' moved."
+msgstr "עמוד %(page_title)s הוזז"
 
-#, python-brace-format
-msgid "Page '{0}' unpublished."
-msgstr "פרסום עמוד {0} בוטל"
+#, python-format
+msgid "Page '%(page_title)s' unpublished."
+msgstr "פרסום עמוד %(page_title)s בוטל"
 
 msgid "Pages"
 msgstr "עמודים"

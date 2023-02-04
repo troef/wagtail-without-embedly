@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
 "Last-Translator: Ole Kristian Losvik <ole@losol.no>, 2020\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/torchbox/wagtail/"
@@ -25,12 +25,12 @@ msgid "Wagtail core"
 msgstr "Wagtail-kjernen"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "De må være minst %d elementer"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "De må være minst %(min_num)d elementer"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "De må være maks %d elementer"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "De må være maks %(max_num)d elementer"
 
 msgid "Move up"
 msgstr "Flytt opp"
@@ -60,17 +60,13 @@ msgstr "Passord"
 msgid "The password you have entered is not correct. Please try again."
 msgstr "Passordet du har skrevet inn er feil. Prøv igjen."
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
-msgstr "<b>Siden '{}' ble låst</b> av <b>deg</b> den <b>{}</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "Siden '{page_title}' er låst</b> av <b>deg</b>."
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "Siden '{}' er låst</b> av <b>deg</b>."
-
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr "<b>Siden '{}' ble låst</b> av <b>{}</b> den <b>{}</b>."
-
-msgid "<b>Page '{}' is locked</b>."
-msgstr "<b>Siden '{}' er låst</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "<b>Siden '{page_title}' er låst</b>."
 
 msgid "live"
 msgstr "publisert"
@@ -152,9 +148,6 @@ msgstr ""
 
 msgid "latest revision created at"
 msgstr "siste utgave opprettet"
-
-msgid "This slug is already in use"
-msgstr "Denne permalenken er allerede i bruk"
 
 msgid "page"
 msgstr "side"

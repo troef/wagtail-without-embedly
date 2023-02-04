@@ -4,15 +4,19 @@
 #
 # Translators:
 # Andrey <talkerbox@live.com>, 2016
+# Andrey <talkerbox@live.com>, 2016
+# Eugene <eugene.mechanism@gmail.com>, 2015
 # Eugene <eugene.mechanism@gmail.com>, 2015
 # sergeybe <sergeybe@gmail.com>, 2020
+# sergeybe <sergeybe@gmail.com>, 2020
+# Sergey Khalymon <sergiykhalimon@gmail.com>, 2015
 # Sergey Khalymon <sergiykhalimon@gmail.com>, 2015
 # Влад <integration.into.society@gmail.com>, 2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
 "Last-Translator: Влад <integration.into.society@gmail.com>, 2022\n"
 "Language-Team: Russian (http://www.transifex.com/torchbox/wagtail/language/"
@@ -21,9 +25,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "Wagtail search promotions"
 msgstr "Поисковое продвижение Wagtail"
@@ -157,23 +161,23 @@ msgstr[3] "Есть %(counter)s совпадений"
 #, python-format
 msgid "Sorry, no promoted results match \"<em>%(query_string)s</em>\""
 msgstr ""
-"Извините, нет продвигаемых результатов, совпадающих с \"<em>"
-"%(query_string)s</em>\""
+"Извините, нет продвигаемых результатов, совпадающих с "
+"\"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
-"Продвигаемых поисковых запросов пока не создано. Почему бы не <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">добавить один</a>?"
+"Продвигаемых поисковых запросов пока не создано. Почему бы не <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">добавить один</a>?"
 
 msgid "Search promoted results"
 msgstr "Продвигаемые результаты"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "Подборка для '{0}' создана."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "Подборка для '%(query)s' создана."
 
 msgid "Edit"
 msgstr "Редактировать"
@@ -181,9 +185,9 @@ msgstr "Редактировать"
 msgid "Recommendations have not been created due to errors"
 msgstr "Рекомендации не были созданы из-за ошибок"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "Подборка для '{0}' обновлена."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "Подборка для '%(query)s' обновлена."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "Рекомендации не были сохранены из-за ошибок"

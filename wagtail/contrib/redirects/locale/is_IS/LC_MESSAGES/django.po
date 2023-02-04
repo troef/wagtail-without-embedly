@@ -5,11 +5,12 @@
 # Translators:
 # Arnar Tumi Þorsteinsson <arnartumi@gmail.com>, 2015-2016,2018,2020-2022
 # saevarom <saevar@saevar.is>, 2015,2019,2022
+# saevarom <saevar@saevar.is>, 2015,2019,2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-20 21:04+0000\n"
 "Last-Translator: saevarom <saevar@saevar.is>, 2015,2019,2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/torchbox/"
@@ -207,23 +208,23 @@ msgstr[1] " Það eru %(counter)s niðurstöður        "
 #, python-format
 msgid "Sorry, no redirects match \"<em>%(query_string)s</em>\""
 msgstr ""
-"Því miður finnast engar tilvísanir sem passa við \"<em>%(query_string)s</em>"
-"\""
+"Því miður finnast engar tilvísanir sem passa við \"<em>%(query_string)s</"
+"em>\""
 
 #, python-format
 msgid ""
-"No redirects have been created. Why not <a href="
-"\"%(wagtailredirects_add_redirect_url)s\">add one</a>?"
+"No redirects have been created. Why not <a "
+"href=\"%(wagtailredirects_add_redirect_url)s\">add one</a>?"
 msgstr ""
-"Engar tilvísanir hér. Viltu <a href=\"%(wagtailredirects_add_redirect_url)s"
-"\">búa til tilvísun</a>?"
+"Engar tilvísanir hér. Viltu <a "
+"href=\"%(wagtailredirects_add_redirect_url)s\">búa til tilvísun</a>?"
 
 msgid "Search redirects"
 msgstr "Leita í tilvísunum"
 
-#, python-brace-format
-msgid "Redirect '{0}' updated."
-msgstr "Tilvísun '{0}' uppfærð."
+#, python-format
+msgid "Redirect '%(redirect_title)s' updated."
+msgstr "Tilvísun '%(redirect_title)s' uppfærð."
 
 msgid "Edit"
 msgstr "Breyta"
@@ -232,24 +233,25 @@ msgid "The redirect could not be saved due to errors."
 msgstr ""
 "Ekki var hægt að búa til tilvísunina þar sem hún stóðst ekki villuprófanir"
 
-#, python-brace-format
-msgid "Redirect '{0}' deleted."
-msgstr "Tilvísun '{0}' eytt."
+#, python-format
+msgid "Redirect '%(redirect_title)s' deleted."
+msgstr "Tilvísun '%(redirect_title)s' eytt."
 
-#, python-brace-format
-msgid "Redirect '{0}' added."
-msgstr "Tilvísun '{0}' var bætt við."
+#, python-format
+msgid "Redirect '%(redirect_title)s' added."
+msgstr "Tilvísun '%(redirect_title)s' var bætt við."
 
 msgid "The redirect could not be created due to errors."
 msgstr ""
 "Ekki var hægt að búa til tilvísunina þar sem hún stóðst ekki villuprófanir"
 
-msgid "File format of type \"{}\" is not supported"
-msgstr "Skráarsnið af tegundinni \"{}\" er ekki stutt"
+#, python-format
+msgid "File format of type \"%(extension)s\" is not supported"
+msgstr "Skráarsnið af tegundinni \"%(extension)s\" er ekki stutt"
 
 #, python-format
-msgid "Imported file has a wrong encoding: %s"
-msgstr "Innlesin skrá er vitlaust kóðuð: %s"
+msgid "Imported file has a wrong encoding: %(error_message)s"
+msgstr "Innlesin skrá er vitlaust kóðuð: %(error_message)s"
 
 #, python-format
 msgid "%(error)s encountered while trying to read file: %(filename)s"

@@ -1,6 +1,7 @@
 #
 # Translators:
 # Amós Oviedo <amos.oviedo@gmail.com>, 2022
+# Loic Teixeira, 2022
 # X Bello <xbello@gmail.com>, 2022
 #
 msgid ""
@@ -11,8 +12,13 @@ msgstr ""
 "Language: gl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "({number} new items in this menu)"
-msgstr "({number} novos elementos neste menú)"
+msgid "(%(errorCount)s error)"
+msgid_plural "(%(errorCount)s errors)"
+msgstr[0] "(%(errorCount)s erro)"
+msgstr[1] "(%(errorCount)s erros)"
+
+msgid "(%(number)s new items in this menu)"
+msgstr "(%(number)s novos elementos neste menú)"
 
 msgid "(1 new item in this menu)"
 msgstr "(1 novo elemento neste menu)"
@@ -20,10 +26,15 @@ msgstr "(1 novo elemento neste menu)"
 msgid "(New)"
 msgstr "(Novo)"
 
-msgid "{num} error"
-msgid_plural "{num} errors"
-msgstr[0] "{num} erro"
-msgstr[1] "{num} erros"
+msgid "%(num)s error"
+msgid_plural "%(num)s errors"
+msgstr[0] "%(num)s erro"
+msgstr[1] "%(num)s erros"
+
+msgid "%(num)s pixel"
+msgid_plural "%(num)s pixels"
+msgstr[0] "%(num)s píxel"
+msgstr[1] "%(num)s píxels"
 
 msgid "Add a comment"
 msgstr "Engadir un comentario"
@@ -73,8 +84,8 @@ msgstr "Eliminando"
 msgid "Edit"
 msgstr "Editar"
 
-msgid "Edit '{title}'"
-msgstr "Editar '{title}'"
+msgid "Edit '%(title)s'"
+msgstr "Editar '%(title)s'"
 
 msgid "Edit your account"
 msgstr "Editar a túa conta"
@@ -206,8 +217,8 @@ msgstr "Permutar barra lateral"
 msgid "Unfocus comment"
 msgstr "Desenfocar comentario"
 
-msgid "View child pages of '{title}'"
-msgstr "Ver as páxinas fillas de '{title}'"
+msgid "View child pages of '%(title)s'"
+msgstr "Ver as páxinas fillas de '%(title)s'"
 
 msgid "Write something or type ‘/’ to insert a block"
 msgstr "Escribe algo ou pulsa '/' para inserir un bloque"

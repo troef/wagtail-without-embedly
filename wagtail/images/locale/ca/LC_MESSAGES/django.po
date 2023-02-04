@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 13:14+0100\n"
 "PO-Revision-Date: 2014-02-20 21:05+0000\n"
 "Last-Translator: Roger Pons <rogerpons@gmail.com>, 2017,2020,2022\n"
 "Language-Team: Catalan (http://www.transifex.com/torchbox/wagtail/language/"
@@ -40,24 +40,28 @@ msgid "Supported formats: %(supported_formats)s."
 msgstr "Formats permesos: %(supported_formats)s."
 
 #, python-format
-msgid "Not a supported image format. Supported formats: %s."
-msgstr "No és un format d'imatge permès. Formats permesos: %s."
+msgid "Not a supported image format. Supported formats: %(supported_formats)s."
+msgstr ""
+"No és un format d'imatge permès. Formats permesos: %(supported_formats)s."
 
 #, python-format
-msgid "Not a valid %s image."
-msgstr "No és una imatge %s vàlida"
+msgid ""
+"This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
+msgstr ""
+"Aquest fitxer és massa gran (%(file_size)s). Mida màxima de fitxer "
+"%(max_filesize)s."
 
 #, python-format
-msgid "This file is too big (%%s). Maximum filesize %s."
-msgstr "Aquest fitxer és massa gran (%%s). Mida màxima de fitxer %s."
+msgid ""
+"This file has too many pixels (%(num_pixels)s). Maximum pixels "
+"%(max_pixels_count)s."
+msgstr ""
+"El fitxer té massa píxels (%(num_pixels)s). Píxels màxims "
+"%(max_pixels_count)s."
 
 #, python-format
-msgid "This file has too many pixels (%%s). Maximum pixels %s."
-msgstr "El fitxer té massa píxels (%%s). Píxels màxims %s."
-
-#, python-format
-msgid "This file is too big. Maximum filesize %s."
-msgstr "Aquest fitxer és massa gran. Mida màxima de fitxer %s."
+msgid "This file is too big. Maximum filesize %(max_filesize)s."
+msgstr "Aquest fitxer és massa gran. Mida màxima de fitxer %(max_filesize)s."
 
 msgid "Full width"
 msgstr "Amplada completa"
@@ -295,19 +299,19 @@ msgstr "Ho sentim, cap imatge coincideix amb \"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"You haven't uploaded any images in this collection. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images in this collection. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"No heu pujat cap imatge a aquesta col·lecció. Per què no en <a href="
-"\"%(wagtailimages_add_image_url)s\">pugeu una ara</a>?"
+"No heu pujat cap imatge a aquesta col·lecció. Per què no en <a "
+"href=\"%(wagtailimages_add_image_url)s\">pugeu una ara</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any images. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"No heu pujat cap imatge. Per què no en <a href="
-"\"%(wagtailimages_add_image_url)s\">pugeu una ara</a>?"
+"No heu pujat cap imatge. Per què no en <a "
+"href=\"%(wagtailimages_add_image_url)s\">pugeu una ara</a>?"
 
 msgid "Generating URL"
 msgstr "Generant URL"
@@ -413,9 +417,9 @@ msgstr "Editar aquesta imatge"
 msgid "Search images"
 msgstr "Cercar imatges"
 
-#, python-brace-format
-msgid "Image '{0}' updated."
-msgstr "Imatge '{0}' actualitzada."
+#, python-format
+msgid "Image '%(image_title)s' updated."
+msgstr "Imatge '%(image_title)s' actualitzada."
 
 msgid "Edit again"
 msgstr "Tornar a editar"
@@ -430,20 +434,20 @@ msgstr ""
 "No s'ha trobat el fitxer origen de la imatge. Canvieu l'origen o elimineu la "
 "imatge."
 
-#, python-brace-format
-msgid "Image '{0}' deleted."
-msgstr "Imatge '{0}' eliminada."
+#, python-format
+msgid "Image '%(image_title)s' deleted."
+msgstr "Imatge '%(image_title)s' eliminada."
 
-#, python-brace-format
-msgid "Image '{0}' added."
-msgstr "Imatge '{0}' afegida."
+#, python-format
+msgid "Image '%(image_title)s' added."
+msgstr "Imatge '%(image_title)s' afegida."
 
 msgid "The image could not be created due to errors."
 msgstr "No s'ha pogut crear la imatge."
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Editar aquest %s"
+msgid "Edit this %(object)s"
+msgstr "Editar aquest %(object)s"
 
 msgid "Image"
 msgstr "Imatge"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-20 21:04+0000\n"
 "Last-Translator: Thijs Kramer <thijskramer@gmail.com>, 2015-2016,2021-2022\n"
 "Language-Team: Dutch (http://www.transifex.com/torchbox/wagtail/language/"
@@ -217,18 +217,18 @@ msgstr ""
 
 #, python-format
 msgid ""
-"No redirects have been created. Why not <a href="
-"\"%(wagtailredirects_add_redirect_url)s\">add one</a>?"
+"No redirects have been created. Why not <a "
+"href=\"%(wagtailredirects_add_redirect_url)s\">add one</a>?"
 msgstr ""
-"Er zijn nog geen doorverwijzingen aangemaakt. Waarom <a href="
-"\"%(wagtailredirects_add_redirect_url)s\">voegt u er niet een toe</a>?"
+"Er zijn nog geen doorverwijzingen aangemaakt. Waarom <a "
+"href=\"%(wagtailredirects_add_redirect_url)s\">voegt u er niet een toe</a>?"
 
 msgid "Search redirects"
 msgstr "Zoek doorverwijzingen"
 
-#, python-brace-format
-msgid "Redirect '{0}' updated."
-msgstr "Doorverwijzing '{0}' gewijzigd."
+#, python-format
+msgid "Redirect '%(redirect_title)s' updated."
+msgstr "Doorverwijzing '%(redirect_title)s' gewijzigd."
 
 msgid "Edit"
 msgstr "Wijzig"
@@ -236,23 +236,25 @@ msgstr "Wijzig"
 msgid "The redirect could not be saved due to errors."
 msgstr "De doorverwijzing kon niet worden opgeslagen door fouten."
 
-#, python-brace-format
-msgid "Redirect '{0}' deleted."
-msgstr "Doorverwijzing '{0}' verwijderd."
+#, python-format
+msgid "Redirect '%(redirect_title)s' deleted."
+msgstr "Doorverwijzing '%(redirect_title)s' verwijderd."
 
-#, python-brace-format
-msgid "Redirect '{0}' added."
-msgstr "Doorverwijzing '{0}' toegevoegd."
+#, python-format
+msgid "Redirect '%(redirect_title)s' added."
+msgstr "Doorverwijzing '%(redirect_title)s' toegevoegd."
 
 msgid "The redirect could not be created due to errors."
 msgstr "De doorverwijzing kon niet worden aangemaakt door fouten."
 
-msgid "File format of type \"{}\" is not supported"
-msgstr "Het bestandsformaat \"{}\" wordt niet ondersteund"
+#, python-format
+msgid "File format of type \"%(extension)s\" is not supported"
+msgstr "Het bestandsformaat \"%(extension)s\" wordt niet ondersteund"
 
 #, python-format
-msgid "Imported file has a wrong encoding: %s"
-msgstr "Het geïmporteerde bestand heeft een verkeerde encoding: %s"
+msgid "Imported file has a wrong encoding: %(error_message)s"
+msgstr ""
+"Het geïmporteerde bestand heeft een verkeerde encoding: %(error_message)s"
 
 #, python-format
 msgid "%(error)s encountered while trying to read file: %(filename)s"

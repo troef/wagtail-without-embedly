@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-20 21:06+0000\n"
-"Last-Translator: Istvan Farkas <istvan.farkas@gmail.com>, 2019-2022\n"
+"Last-Translator: Laszlo Molnar <lazlowmiller@gmail.com>, 2016\n"
 "Language-Team: Hungarian (http://www.transifex.com/torchbox/wagtail/language/"
 "hu/)\n"
 "MIME-Version: 1.0\n"
@@ -242,19 +242,19 @@ msgstr "Sajnos nincs találat a \"<em>%(query_string)s</em>\" kifejezésre"
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents in this collection. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents in this collection. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Még nem töltött fel dokumentumot ebbe a gyűjteménybe. Miért nem <a href="
-"\"%(wagtaildocs_add_document_url)s\">tölt fel egyet most</a>?"
+"Még nem töltött fel dokumentumot ebbe a gyűjteménybe. Miért nem <a "
+"href=\"%(wagtaildocs_add_document_url)s\">tölt fel egyet most</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Még nem töltött fel dokumentumot. Nem szeretne <a href="
-"\"%(wagtaildocs_add_document_url)s\">feltölteni egyet</a>?"
+"Még nem töltött fel dokumentumot. Nem szeretne <a "
+"href=\"%(wagtaildocs_add_document_url)s\">feltölteni egyet</a>?"
 
 #, python-format
 msgid "Usage of %(title)s"
@@ -370,16 +370,16 @@ msgstr "Dokumentum szerkesztése"
 msgid "Search documents"
 msgstr "Keresés a dokumentumokban"
 
-#, python-brace-format
-msgid "Document '{0}' added."
-msgstr "A '{0}' indexű dokumentum hozzáadva."
+#, python-format
+msgid "Document '%(document_title)s' added."
+msgstr "A '%(document_title)s' indexű dokumentum hozzáadva."
 
 msgid "The document could not be saved due to errors."
 msgstr "A dokumentumot nem lehetett elmenteni."
 
-#, python-brace-format
-msgid "Document '{0}' updated"
-msgstr "A '{0}' indexű dokumentum frissítésre került."
+#, python-format
+msgid "Document '%(document_title)s' updated"
+msgstr "A '%(document_title)s' indexű dokumentum frissítésre került."
 
 msgid ""
 "The file could not be found. Please change the source or delete the document"
@@ -387,17 +387,17 @@ msgstr ""
 "A fájl nem található. Kérjük adjon meg új forrásfájlt, vagy törölje a "
 "dokumentumot"
 
-#, python-brace-format
-msgid "Document '{0}' deleted."
-msgstr "'{0}' dokumentum törölve."
+#, python-format
+msgid "Document '%(document_title)s' deleted."
+msgstr "'%(document_title)s' dokumentum törölve."
 
 #, python-format
-msgid "(Private %s)"
-msgstr "(Privát %s)"
+msgid "(Private %(object)s)"
+msgstr "(Privát %(object)s)"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "%s szerkesztése"
+msgid "Edit this %(object)s"
+msgstr "%(object)s szerkesztése"
 
 msgid "Document"
 msgstr "Dokumentum"

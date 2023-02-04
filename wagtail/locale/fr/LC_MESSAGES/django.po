@@ -7,7 +7,9 @@
 # Benoît Vogel <contact@spicy-informatique.com>, 2016
 # Bertrand Bordage <bordage.bertrand@gmail.com>, 2015-2018
 # fpoulain <fpoulain@metrodore.fr>, 2018
+# fpoulain <fpoulain@metrodore.fr>, 2018
 # Léo <leo@naeka.fr>, 2016
+# Loic Teixeira, 2018
 # Loic Teixeira, 2020-2022
 # Loic Teixeira, 2018
 # nahuel, 2014
@@ -18,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
 "Last-Translator: Loic Teixeira, 2020-2022\n"
 "Language-Team: French (http://www.transifex.com/torchbox/wagtail/language/"
@@ -40,12 +42,12 @@ msgid "Add Comment"
 msgstr "Ajouter un commentaire"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "Le nombre minimum d'éléments est %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "Le nombre minimum d'éléments est %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "Le nombre maximum d'éléments est %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "Le nombre maximum d'éléments est %(max_num)d"
 
 msgid "Move up"
 msgstr "Monter"
@@ -92,32 +94,48 @@ msgstr ""
 msgid "Comment"
 msgstr "Commentaire"
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
+#, python-brace-format
+msgid ""
+"<b>Page '{page_title}' was locked</b> by <b>you</b> on <b>{datetime}</b>."
 msgstr ""
-"<b>Cette page « {} » a été verrouillée</b> par <b>vous</b> le <b>{}</b>."
+"<b>Cette page « {page_title} » a été verrouillée</b> par <b>vous</b> le "
+"<b>{datetime}</b>."
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "<b>Cette page « {} » est verrouillée</b> par <b>vous</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "<b>Cette page « {page_title} » est verrouillée</b> par <b>vous</b>."
 
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr "<b>Cette page « {} » a été verrouillée</b> par <b>{}</b> le <b>{}</b>."
+#, python-brace-format
+msgid ""
+"<b>Page '{page_title}' was locked</b> by <b>{user}</b> on <b>{datetime}</b>."
+msgstr ""
+"<b>Cette page « {page_title} » a été verrouillée</b> par <b>{user}</b> le "
+"<b>{datetime}</b>."
 
-msgid "<b>Page '{}' is locked</b>."
-msgstr "<b>Cette page « {} » est verrouillée</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "<b>Cette page « {page_title} » est verrouillée</b>."
 
 msgid "This page is currently awaiting moderation."
 msgstr "Cette page est actuellement en attente de modération."
 
-msgid "This page is awaiting <b>'{}'</b> in the <b>'{}'</b> workflow."
+#, python-brace-format
+msgid ""
+"This page is awaiting <b>'{task_name}'</b> in the <b>'{workflow_name}'</b> "
+"workflow."
 msgstr ""
-"Cette page est en attente « <b>{}</b> » dans le workflow « <b>{}</b> »."
+"Cette page est en attente « <b>{task_name}</b> » dans le workflow "
+"« <b>{workflow_name}</b> »."
 
 msgid "Only reviewers for this task can edit the page."
 msgstr "Seul les modérateurs pour cette tâche peuvent modifier cette page."
 
-msgid "Page '{}' is locked and has been scheduled to go live at {}"
+#, python-brace-format
+msgid ""
+"Page '{page_title}' is locked and has been scheduled to go live at {datetime}"
 msgstr ""
-"La page « {} » est verrouillée et a été planifiée pour la publication le {}"
+"La page « {page_title} » est verrouillée et a été planifiée pour la "
+"publication le {datetime}"
 
 msgid "latest revision"
 msgstr "dernière version"
@@ -227,8 +245,13 @@ msgstr ""
 msgid "latest revision created at"
 msgstr "dernière version créée le"
 
-msgid "This slug is already in use"
-msgstr "Ce slug est déjà utilisé"
+#, python-format
+msgid ""
+"The slug '%(page_slug)s' is already in use within the parent page at "
+"'%(parent_url_path)s'"
+msgstr ""
+"Le slug « %(page_slug)s » est déjà utilisé au niveau de la page parent "
+"sélectionnée à « %(parent_url_path)s »"
 
 msgid "in moderation"
 msgstr "en cours de modération"
@@ -420,9 +443,10 @@ msgstr ""
 "Il ne peut y avoir qu'un seul état de workflow « en cours » ou « "
 "modifications nécessaires » par page"
 
-#, python-brace-format
-msgid "Workflow '{0}' on Page '{1}': {2}"
-msgstr "Workflow « {0} » sur la page « {1} » : {2}"
+#, python-format
+msgid "Workflow '%(workflow_name)s' on Page '%(page_title)s': %(status)s"
+msgstr ""
+"Workflow « %(workflow_name)s » sur la page « %(page_title)s » : %(status)s"
 
 msgid "Not started"
 msgstr "Pas commencé"
@@ -454,9 +478,11 @@ msgstr "terminé à"
 msgid "finished by"
 msgstr "terminé par"
 
-#, python-brace-format
-msgid "Task '{0}' on Page Revision '{1}': {2}"
-msgstr "Tâche « {0} » sur la version de page « {1} » : {2}"
+#, python-format
+msgid "Task '%(task_name)s' on Page Revision '%(revision_info)s': %(status)s"
+msgstr ""
+"Tâche « %(task_name)s » sur la version de page « %(revision_info)s » : "
+"%(status)s"
 
 msgid "Task state"
 msgstr "État de tâche"
@@ -494,12 +520,9 @@ msgstr "entrée de journal"
 msgid "log entries"
 msgstr "entrées de journal"
 
-msgid "The log action '{}' has not been registered."
-msgstr "L'action de journal « {} » n'a pas été déclarée."
-
 #, python-format
-msgid "user %(id)s (deleted)"
-msgstr "utilisateur « %(id)s » (supprimé)"
+msgid "The log action '%(action_name)s' has not been registered."
+msgstr "L'action de journal « %(action_name)s » n'a pas été déclarée."
 
 msgid "system"
 msgstr "système"

@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 19:01+0000\n"
-"Last-Translator: Ahmed Miske Sidi Med <boutien321@gmail.com>, 2020\n"
+"Last-Translator: ultraify media <ultraify@gmail.com>, 2018\n"
 "Language-Team: Arabic (http://www.transifex.com/torchbox/wagtail/language/"
 "ar/)\n"
 "MIME-Version: 1.0\n"
@@ -38,6 +38,10 @@ msgstr "احفظ"
 
 msgid "Wagtail snippets"
 msgstr "قصاصات Wagtail"
+
+#, python-format
+msgid "%(model_name)s '%(object)s' deleted."
+msgstr "تم حذف '%(object)s' '%(model_name)s'."
 
 #, python-format
 msgid "Delete %(snippet_type_name)s"
@@ -90,11 +94,11 @@ msgstr "قصاصات"
 
 #, python-format
 msgid ""
-"No %(snippet_type_name_plural)s have been created. Why not <a href="
-"\"%(wagtailsnippets_create_url)s\">add one</a>?"
+"No %(snippet_type_name_plural)s have been created. Why not <a "
+"href=\"%(wagtailsnippets_create_url)s\">add one</a>?"
 msgstr ""
-"لا %(snippet_type_name_plural)s تم إنشاؤها. لماذا لا <a href="
-"\"%(wagtailsnippets_create_url)s\"> تضيف واحدة</a>؟"
+"لا %(snippet_type_name_plural)s تم إنشاؤها. لماذا لا <a "
+"href=\"%(wagtailsnippets_create_url)s\"> تضيف واحدة</a>؟"
 
 msgid "Live version"
 msgstr "نسخة حية"
@@ -138,12 +142,20 @@ msgstr "اسم"
 msgid "The snippet could not be created due to errors."
 msgstr "لم تنشئ القصااصة بسبب أخطاء"
 
+#, python-format
+msgid "%(model_name)s '%(object)s' created."
+msgstr "تم إنشاء '%(object)s' '%(model_name)s'"
+
 msgid "The snippet could not be saved due to errors."
 msgstr "لم تحفظ القصااصة بسبب أخطاء"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "تحرير هذا %s"
+msgid "%(model_name)s '%(object)s' updated."
+msgstr "تم تحديث '%(object)s' '%(model_name)s'."
+
+#, python-format
+msgid "Edit this %(object)s"
+msgstr "تحرير هذا %(object)s"
 
 msgid "User"
 msgstr "مستعمل"
@@ -156,9 +168,9 @@ msgid "Edit '%(title)s'"
 msgstr "عَدِّلْ '%(title)s'"
 
 #, python-format
-msgid "Choose %s"
-msgstr "اختر %s"
+msgid "Choose %(object)s"
+msgstr "اختر %(object)s"
 
 #, python-format
-msgid "Choose another %s"
-msgstr "اختر %s اخر"
+msgid "Choose another %(object)s"
+msgstr "اختر %(object)s اخر"

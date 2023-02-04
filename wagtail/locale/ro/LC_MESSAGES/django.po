@@ -4,14 +4,15 @@
 #
 # Translators:
 # Bogdan Mateescu, 2019
+# Bogdan Mateescu, 2019
 # Dan Braghis, 2014-2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: Dan Braghis, 2014-2022\n"
+"Last-Translator: Bogdan Mateescu, 2019\n"
 "Language-Team: Romanian (http://www.transifex.com/torchbox/wagtail/language/"
 "ro/)\n"
 "MIME-Version: 1.0\n"
@@ -31,12 +32,12 @@ msgid "Add Comment"
 msgstr "Adaugă comentariu"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "Numărul minim de articole este %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "Numărul minim de articole este %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "Numărul maxim de articole este %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "Numărul maxim de articole este %(max_num)d"
 
 msgid "Move up"
 msgstr "Deplasează în sus"
@@ -81,29 +82,19 @@ msgstr "Parola introdusă nu este corectă. Vă rugăm să încercați din nou."
 msgid "Comment"
 msgstr "Comentariu"
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
-msgstr "<b>Pagina '{}' a fost blocată</b> de <b>tine</b> la <b>{}</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "<b>Pagina '{page_title}' esta blocată</b> de <b>tine</b>."
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "<b>Pagina '{}' esta blocată</b> de <b>tine</b>."
-
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr "<b>Pagina '{}' a fost blocată</b> de <b>{}</b> la <b>{}</b>."
-
-msgid "<b>Page '{}' is locked</b>."
-msgstr "<b>Pagina '{}' este blocată</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "<b>Pagina '{page_title}' este blocată</b>."
 
 msgid "This page is currently awaiting moderation."
 msgstr "Această pagină este în moderare"
 
-msgid "This page is awaiting <b>'{}'</b> in the <b>'{}'</b> workflow."
-msgstr "Acestă pagină așteaptă <b>'{}'</b> în fluxul de lucru <b>'{}'</b>"
-
 msgid "Only reviewers for this task can edit the page."
 msgstr "Numai revizuitorii acestei sarcini pot să editeze pagina."
-
-msgid "Page '{}' is locked and has been scheduled to go live at {}"
-msgstr "Pagina '{}' este încuiată și programată să devină live la {}"
 
 msgid "latest revision"
 msgstr "ultima revizie"
@@ -211,9 +202,6 @@ msgstr ""
 
 msgid "latest revision created at"
 msgstr "ultima revizie creată la"
-
-msgid "This slug is already in use"
-msgstr "Slug-ul acesta a fost deja folosit"
 
 msgid "in moderation"
 msgstr "în moderație"
@@ -404,9 +392,10 @@ msgstr ""
 "Numai un statut de în progres sau necesită schimbări este permis pentru o "
 "pagină."
 
-#, python-brace-format
-msgid "Workflow '{0}' on Page '{1}': {2}"
-msgstr "Fluxul de lucru '{0}' în pagina '{1}': {2}"
+#, python-format
+msgid "Workflow '%(workflow_name)s' on Page '%(page_title)s': %(status)s"
+msgstr ""
+"Fluxul de lucru '%(workflow_name)s' în pagina '%(page_title)s': %(status)s"
 
 msgid "Not started"
 msgstr "Neînceput"
@@ -438,9 +427,10 @@ msgstr "terminat la"
 msgid "finished by"
 msgstr "terminat de"
 
-#, python-brace-format
-msgid "Task '{0}' on Page Revision '{1}': {2}"
-msgstr "Sarcina '{0}' la revizia paginii '{1}': {2}"
+#, python-format
+msgid "Task '%(task_name)s' on Page Revision '%(revision_info)s': %(status)s"
+msgstr ""
+"Sarcina '%(task_name)s' la revizia paginii '%(revision_info)s': %(status)s"
 
 msgid "Task state"
 msgstr "Stare sarcină"
@@ -478,12 +468,9 @@ msgstr "intrare jurnal"
 msgid "log entries"
 msgstr "intrări jurnal"
 
-msgid "The log action '{}' has not been registered."
-msgstr "Acțiunea de jurnal '{}' a fost înregistrată."
-
 #, python-format
-msgid "user %(id)s (deleted)"
-msgstr "utilizator %(id)s (șters)"
+msgid "The log action '%(action_name)s' has not been registered."
+msgstr "Acțiunea de jurnal '%(action_name)s' a fost înregistrată."
 
 msgid "system"
 msgstr "sistem"

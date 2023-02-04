@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
 "Last-Translator: Walaksawan Vervoort <nula_wala@yahoo.com>, 2019\n"
 "Language-Team: Thai (http://www.transifex.com/torchbox/wagtail/language/"
@@ -104,18 +104,18 @@ msgstr "ขออภัย,ไม่มีผลโปรโมทที่ต�
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
-"ไม่มีผลการโปรโมทถูกสร้างขึ้น ทำไมคุฯไม่ <a href=\"%(wagtailsearchpromotions_add_url)s"
-"\">เพิ่มสักหนึ่งอัน</a>?"
+"ไม่มีผลการโปรโมทถูกสร้างขึ้น ทำไมคุฯไม่ <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">เพิ่มสักหนึ่งอัน</a>?"
 
 msgid "Search promoted results"
 msgstr "หาผลที่โปรโมท"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "สิ่งที่โปรแกรมการจัดการข้อมูล'{0}'ถูกสร้างขึ้นแล้ว"
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "สิ่งที่โปรแกรมการจัดการข้อมูล'%(query)s'ถูกสร้างขึ้นแล้ว"
 
 msgid "Edit"
 msgstr "แก้ไข"
@@ -123,9 +123,9 @@ msgstr "แก้ไข"
 msgid "Recommendations have not been created due to errors"
 msgstr "คำแนะนำไม่สามารถถูกสร้างขึ้นได้ในขณะที่มีข้อผิดพลาด"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "สิ่งที่โปรแกรมการจัดการข้อมูลเลือกสำหรับ'{0}'ถูกอัพเดทแล้ว"
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "สิ่งที่โปรแกรมการจัดการข้อมูลเลือกสำหรับ'%(query)s'ถูกอัพเดทแล้ว"
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "คำแนะนำไม่สามารถถูกเซฟในขณะที่มีข้อผิดพลาด"

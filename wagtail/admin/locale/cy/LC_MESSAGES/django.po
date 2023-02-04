@@ -5,11 +5,12 @@
 # Translators:
 # Adam Hughes <adamhughes31@gmail.com>, 2017,2020-2021
 # Philip Crisp, 2022
+# Philip Crisp, 2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:50+0000\n"
 "Last-Translator: Philip Crisp, 2022\n"
 "Language-Team: Welsh (http://www.transifex.com/torchbox/wagtail/language/"
@@ -27,11 +28,13 @@ msgstr "Cyhoeddi"
 msgid "Submit for moderation"
 msgstr "Cyflwyno i'w gymedroli"
 
-msgid "Resubmit to {}"
-msgstr "Ailgyflwyno i {}"
+#, python-format
+msgid "Resubmit to %(task_name)s"
+msgstr "Ailgyflwyno i %(task_name)s"
 
-msgid "Submit to {}"
-msgstr "Cyflwyno i {}"
+#, python-format
+msgid "Submit to %(workflow_name)s"
+msgstr "Cyflwyno i %(workflow_name)s"
 
 msgid "Restart workflow "
 msgstr "Ailgychwyn llif gwaith"
@@ -96,8 +99,8 @@ msgid "Enter password"
 msgstr "Rhowch cyfrinair "
 
 #, python-format
-msgid "Enter your %s"
-msgstr "Rhowch eich %s"
+msgid "Enter your %(username_field_name)s"
+msgstr "Rhowch eich %(username_field_name)s"
 
 msgid "Enter your email address to reset your password"
 msgstr "Rhowch eich cyfeiriad ebost i ailosod eich cyfrinair"
@@ -223,16 +226,14 @@ msgstr "Nid oes gennych ganiatâd i gopïo i'r dudalen \"%(page_title)s\""
 
 #, python-format
 msgid ""
-"This slug is already in use within the context of its parent page \"%s\""
+"This slug is already in use within the context of its parent page "
+"\"%(parent_page_title)s\""
 msgstr ""
 "Mae'r wlithen hon eisoes yn cael ei defnyddio yng nghyd-destun ei riant-"
-"dudalen \"%s\""
+"dudalen \"%(parent_page_title)s\""
 
 msgid "You cannot copy a page into itself when copying subpages"
 msgstr "Ni allwch gopïo tudalen ynddo'i hun wrth gopïo is-dudalennau"
-
-msgid "This slug is already in use"
-msgstr "Mae'r wlithen hon eisoes yn cael ei defnyddio"
 
 msgid "Visibility"
 msgstr "Gwelededd"

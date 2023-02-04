@@ -3,22 +3,29 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# 79353a696ad19dc202b261b3067b7640_bec941e, 2015
+# afc855de1dd00c1e4f7aa3cae5754e5d_0bf750b <15c35d934145d5adf5690c1365dd87dc_240248>, 2014
 # aw.wunderweiss, 2021
 # aw.wunderweiss, 2022
+# aw.wunderweiss, 2021-2022
+# benebun <benedikt.breinbauer@gmail.com>, 2021
 # benebun <benedikt.breinbauer@gmail.com>, 2021
 # Benedikt Willi <ben.willi@gmail.com>, 2020
 # Benjamin Kaspar <bennykaspar@gmail.com>, 2021
 # fd3e232e7013009a14520c2bc2e16691_e19811b, 2018-2019
+# Bohreromir, 2020
 # Oliver Engel <codeangel@posteo.de>, 2021-2022
 # Daniel Manser <me@danielmanser.com>, 2015
 # Ettore Atalan <atalanttore@googlemail.com>, 2015-2017,2019-2020
-# Florian Vogt <flori@vorlif.org>, 2022
+# Florian Vogt <flori@vorlif.org>, 2016,2022
 # Henrik Kröger <hedwig@riseup.net>, 2015-2016,2018
+# Herbert Poul, 2015,2021
 # Herbert Poul, 2015,2021
 # Oliver Engel <codeangel@posteo.de>, 2021
 # unicode_it <info@unicode-it.de>, 2021
 # jnns, 2016
 # Bohreromir, 2020
+# jnns, 2016
 # Johannes Spielmann <j@spielmannsolutions.com>, 2014-2015
 # karlsander <karlsander@gmail.com>, 2014
 # karlsander <karlsander@gmail.com>, 2014
@@ -27,29 +34,37 @@
 # Martin Löhle <martin.loehle@web-forest.de>, 2016
 # Matt Westcott <matthew@torchbox.com>, 2015
 # Matthias Martin, 2019
+# Matthias Martin, 2019
 # Matti Borchers, 2022
+# Matti Borchers, 2022
+# Matt Westcott <matthew@torchbox.com>, 2015
 # Max Pfeiffer <max.pfeiffer@alp-phone.ch>, 2015
 # Moritz Pfeiffer <moritz@alp-phone.ch>, 2016-2018
 # Norman Uekermann <nue@melexis.com>, 2019
+# Oliver Engel <codeangel@posteo.de>, 2021
 # Oliver Engel <codeangel@posteo.de>, 2021
 # pcraston <patrick@craston.com>, 2014
 # Patrick Hebner <hebner.tec@gmail.com>, 2020
 # pcraston <patrick@craston.com>, 2014
 # Peter Dreuw <archandha@gmx.net>, 2019
-# th3hamm0r <stefan@hammerworxx.com>, 2021
-# th3hamm0r <stefan@hammerworxx.com>, 2021-2022
+# Scriptim <Scriptim@gmx.de>, 2020
+# Stefan Hammer <stefan@hammerworxx.com>, 2021-2022
+# Stefan Hammer <stefan@hammerworxx.com>, 2021-2022
+# Stefan Hammer <stefan@hammerworxx.com>, 2021
+# Tibor <tibor@lpld.io>, 2020
 # Tibor <tibor@lpld.io>, 2020
 # Scriptim <Scriptim@gmx.de>, 2020
 # tobias schmidt <tobias.schmidt82@gmail.com>, 2016
+# unicode_it <info@unicode-it.de>, 2021
 # Florian Vogt <flori@vorlif.org>, 2016
 # 79353a696ad19dc202b261b3067b7640_bec941e, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:50+0000\n"
-"Last-Translator: Florian Vogt <flori@vorlif.org>, 2022\n"
+"Last-Translator: Stefan Hammer <stefan@hammerworxx.com>, 2021-2022\n"
 "Language-Team: German (http://www.transifex.com/torchbox/wagtail/language/"
 "de/)\n"
 "MIME-Version: 1.0\n"
@@ -64,11 +79,13 @@ msgstr "Veröffentlichen"
 msgid "Submit for moderation"
 msgstr "Zur Moderation einreichen"
 
-msgid "Resubmit to {}"
-msgstr "Erneut in {} einreichen"
+#, python-format
+msgid "Resubmit to %(task_name)s"
+msgstr "Erneut in %(task_name)s einreichen"
 
-msgid "Submit to {}"
-msgstr "In {} einreichen"
+#, python-format
+msgid "Submit to %(workflow_name)s"
+msgstr "In %(workflow_name)s einreichen"
 
 msgid "Restart workflow "
 msgstr "Workflow neustarten"
@@ -132,8 +149,8 @@ msgid "Enter password"
 msgstr "Bitte geben Sie Ihr Passwort ein"
 
 #, python-format
-msgid "Enter your %s"
-msgstr "Bitte %s eingeben"
+msgid "Enter your %(username_field_name)s"
+msgstr "Bitte %(username_field_name)s eingeben"
 
 msgid "Enter your email address to reset your password"
 msgstr "Geben Sie Ihre E-Mail-Adresse ein, um Ihr Passwort zurückzusetzen"
@@ -259,17 +276,21 @@ msgstr ""
 
 #, python-format
 msgid ""
-"This slug is already in use within the context of its parent page \"%s\""
+"This slug is already in use within the context of its parent page "
+"\"%(parent_page_title)s\""
 msgstr ""
-"Dieser Kurztitel wird bereits im Rahmen der übergeordneten Seite „%s“ "
-"verwendet"
+"Dieser Kurztitel wird bereits im Rahmen der übergeordneten Seite "
+"„%(parent_page_title)s“ verwendet"
 
 msgid "You cannot copy a page into itself when copying subpages"
 msgstr ""
 "Sie können beim Kopieren von Unterseiten keine Seite in sich selbst kopieren"
 
-msgid "This slug is already in use"
-msgstr "Der Kurztitel wird bereits verwendet"
+#, python-format
+msgid "The slug '%(page_slug)s' is already in use within the parent page"
+msgstr ""
+"Der Kurztitel '%(page_slug)s' wird innerhalb der übergeordneten Seite "
+"bereits verwendet"
 
 msgid "Select a new parent for this page."
 msgstr "Wählen Sie eine neue übergeordnete Seite aus."
@@ -291,9 +312,9 @@ msgstr "Bitte wählen Sie mindestens eine Gruppe aus."
 msgid "All types"
 msgstr "Alle Arten"
 
-#, python-brace-format
-msgid "This page already has workflow '{0}' assigned."
-msgstr "Dieser Seite wurde bereits Workflow ‚{0}‘ zugewiesen."
+#, python-format
+msgid "This page already has workflow '%(workflow_name)s' assigned."
+msgstr "Dieser Seite wurde bereits Workflow ‚%(workflow_name)s‘ zugewiesen."
 
 msgid "You cannot assign this workflow to the same page multiple times."
 msgstr "Sie können diesen Workflow nicht mehrfach derselben Seite zuweisen."
@@ -310,13 +331,13 @@ msgstr "Arbeitsschritt"
 msgid "1 page selected"
 msgstr "1 Seite ausgewählt"
 
-#, python-brace-format
-msgid "{0} pages selected"
-msgstr "{0} Seiten ausgewählt"
+#, python-format
+msgid "%(objects)s pages selected"
+msgstr "%(objects)s Seiten ausgewählt"
 
-#, python-brace-format
-msgid "All {0} pages on this screen selected"
-msgstr "Alle {0} Seiten auf dem Bildschirm ausgewählt"
+#, python-format
+msgid "All %(objects)s pages on this screen selected"
+msgstr "Alle %(objects)s Seiten auf dem Bildschirm ausgewählt"
 
 msgid "All pages in listing selected"
 msgstr "Alle Seiten der Auflistung ausgewählt"
@@ -324,13 +345,13 @@ msgstr "Alle Seiten der Auflistung ausgewählt"
 msgid "1 document selected"
 msgstr "1 Dokument ausgewählt"
 
-#, python-brace-format
-msgid "{0} documents selected"
-msgstr "{0} Dokumente ausgewählt"
+#, python-format
+msgid "%(objects)s documents selected"
+msgstr "%(objects)s Dokumente ausgewählt"
 
-#, python-brace-format
-msgid "All {0} documents on this screen selected"
-msgstr "Alle {0} Dokumente auf dem Bildschirm ausgewählt"
+#, python-format
+msgid "All %(objects)s documents on this screen selected"
+msgstr "Alle %(objects)s Dokumente auf dem Bildschirm ausgewählt"
 
 msgid "All documents in listing selected"
 msgstr "Alle Dokumente der Auflistung ausgewählt"
@@ -338,13 +359,13 @@ msgstr "Alle Dokumente der Auflistung ausgewählt"
 msgid "1 image selected"
 msgstr "1 Bild ausgewählt"
 
-#, python-brace-format
-msgid "{0} images selected"
-msgstr "{0} Bilder ausgewählt"
+#, python-format
+msgid "%(objects)s images selected"
+msgstr "%(objects)s Bilder ausgewählt"
 
-#, python-brace-format
-msgid "All {0} images on this screen selected"
-msgstr "Alle {0} Bilder auf dem Bildschirm ausgewählt"
+#, python-format
+msgid "All %(objects)s images on this screen selected"
+msgstr "Alle %(objects)s Bilder auf dem Bildschirm ausgewählt"
 
 msgid "All images in listing selected"
 msgstr "Alle Bilder der Auflistung ausgewählt"
@@ -352,13 +373,13 @@ msgstr "Alle Bilder der Auflistung ausgewählt"
 msgid "1 user selected"
 msgstr "1 Benutzer ausgewählt"
 
-#, python-brace-format
-msgid "{0} users selected"
-msgstr "{0} Benutzer ausgewählt"
+#, python-format
+msgid "%(objects)s users selected"
+msgstr "%(objects)s Benutzer ausgewählt"
 
-#, python-brace-format
-msgid "All {0} users on this screen selected"
-msgstr "Alle {0} Benutzer auf dem Bildschirm ausgewählt"
+#, python-format
+msgid "All %(objects)s users on this screen selected"
+msgstr "Alle %(objects)s Benutzer auf dem Bildschirm ausgewählt"
 
 msgid "All users in listing selected"
 msgstr "Alle Benutzer der Auflistung ausgewählt"
@@ -366,13 +387,13 @@ msgstr "Alle Benutzer der Auflistung ausgewählt"
 msgid "1 snippet selected"
 msgstr "1 Schnipsel ausgewählt"
 
-#, python-brace-format
-msgid "{0} snippets selected"
-msgstr "{0} Schnipsel ausgewählt"
+#, python-format
+msgid "%(objects)s snippets selected"
+msgstr "%(objects)s Schnipsel ausgewählt"
 
-#, python-brace-format
-msgid "All {0} snippets on this screen selected"
-msgstr "Alle {0} Schnipsel auf dem Bildschirm ausgewählt"
+#, python-format
+msgid "All %(objects)s snippets on this screen selected"
+msgstr "Alle %(objects)s Schnipsel auf dem Bildschirm ausgewählt"
 
 msgid "All snippets in listing selected"
 msgstr "Alle Schnipsel der Auflistung ausgewählt"
@@ -380,13 +401,13 @@ msgstr "Alle Schnipsel der Auflistung ausgewählt"
 msgid "1 item selected"
 msgstr "1 Element ausgewählt"
 
-#, python-brace-format
-msgid "{0} items selected"
-msgstr "{0} Elemente ausgewählt"
+#, python-format
+msgid "%(objects)s items selected"
+msgstr "%(objects)s Elemente ausgewählt"
 
-#, python-brace-format
-msgid "All {0} items on this screen selected"
-msgstr "Alle {0} Elemente auf dem Bildschirm ausgewählt"
+#, python-format
+msgid "All %(objects)s items on this screen selected"
+msgstr "Alle %(objects)s Elemente auf dem Bildschirm ausgewählt"
 
 msgid "All items in listing selected"
 msgstr "Alle Elemente der Auflistung ausgewählt"
@@ -551,15 +572,15 @@ msgstr "in internen Link umwandeln"
 
 #, python-format
 msgid ""
-"The URL you entered, <a target=\"_blank\" rel=\"noreferrer\" href="
-"\"%(submitted_url)s\">%(submitted_url)s</a>, looks like it matches the "
-"internal page %(page)s, which has the URL <a target=\"_blank\" rel="
-"\"noreferrer\" href=\"%(internal_url)s\">%(internal_url)s</a>."
+"The URL you entered, <a target=\"_blank\" rel=\"noreferrer\" "
+"href=\"%(submitted_url)s\">%(submitted_url)s</a>, looks like it matches the "
+"internal page %(page)s, which has the URL <a target=\"_blank\" "
+"rel=\"noreferrer\" href=\"%(internal_url)s\">%(internal_url)s</a>."
 msgstr ""
-"Der eingegebene URL: <a target=\"_blank\" rel=\"noreferrer\" href="
-"\"%(submitted_url)s\">%(submitted_url)s</a>, zeigt offensichtlich auf die "
-"interne Seite %(page)s, mit dem URL <a target=\"_blank\" rel=\"noreferrer\" "
-"href=\"%(internal_url)s\">%(internal_url)s</a>."
+"Der eingegebene URL: <a target=\"_blank\" rel=\"noreferrer\" "
+"href=\"%(submitted_url)s\">%(submitted_url)s</a>, zeigt offensichtlich auf "
+"die interne Seite %(page)s, mit dem URL <a target=\"_blank\" "
+"rel=\"noreferrer\" href=\"%(internal_url)s\">%(internal_url)s</a>."
 
 #, python-format
 msgid ""
@@ -642,11 +663,11 @@ msgstr "Name"
 
 #, python-format
 msgid ""
-"No collections have been created. Why not <a href=\"%(add_collection_url)s"
-"\">add one</a>?"
+"No collections have been created. Why not <a "
+"href=\"%(add_collection_url)s\">add one</a>?"
 msgstr ""
-"Es wurden noch keine Sammlungen erstellt. Warum nicht <a href="
-"\"%(add_collection_url)s\">eine anlegen</a>?"
+"Es wurden noch keine Sammlungen erstellt. Warum nicht <a "
+"href=\"%(add_collection_url)s\">eine anlegen</a>?"
 
 #, python-format
 msgid "Sorry, there are no matches for \"<em>%(search_query)s</em>\""
@@ -815,15 +836,16 @@ msgstr "Dinge in Wagtail %(version)s haben sich geändert!"
 
 #, python-format
 msgid ""
-"Don't worry, we've got your back. Check out the <a class=\"w-whats-new__link"
-"\" href=\"%(editor_guide_link)s\" target=\"_blank\" rel=\"noreferrer"
-"\">Wagtail Editor Guide</a> to get the low down on what's changed and some "
-"exciting new features!"
+"Don't worry, we've got your back. Check out the <a class=\"w-whats-"
+"new__link\" href=\"%(editor_guide_link)s\" target=\"_blank\" "
+"rel=\"noreferrer\">Wagtail Editor Guide</a> to get the low down on what's "
+"changed and some exciting new features!"
 msgstr ""
-"<a class=\"w-whats-new__link\" href=\"%(editor_guide_link)s\" target=\"_blank"
-"\" rel=\"noreferrer\">Keine Sorge, wir halten Ihnen den Rücken frei. Sehen "
-"Sie sich den Wagtail Leitfaden für Redakteure an, um einen Überblick über "
-"die Änderungen und aufregende neue Funktionen zu erhalten!"
+"<a class=\"w-whats-new__link\" href=\"%(editor_guide_link)s\" "
+"target=\"_blank\" rel=\"noreferrer\">Keine Sorge, wir halten Ihnen den "
+"Rücken frei. Sehen Sie sich den Wagtail Leitfaden für Redakteure an, um "
+"einen Überblick über die Änderungen und aufregende neue Funktionen zu "
+"erhalten!"
 
 msgid "Awaiting your review"
 msgstr "Ihre Überprüfung steht aus"
@@ -987,16 +1009,16 @@ msgid ""
 "The page \"%(title)s\" has been rejected during \"%(task)s\" in workflow "
 "\"%(workflow)s\" by %(rejector)s."
 msgstr ""
-"Die Seite \"%(title)s\" wurde während \"%(task)s\" im Workflow \"%(workflow)s"
-"\" von %(rejector)s abgelehnt."
+"Die Seite \"%(title)s\" wurde während \"%(task)s\" im Workflow "
+"\"%(workflow)s\" von %(rejector)s abgelehnt."
 
 #, python-format
 msgid ""
 "The page \"%(title)s\" has been rejected during \"%(task)s\" in workflow "
 "\"%(workflow)s\"."
 msgstr ""
-"Die Seite \"%(title)s\" wurde während \"%(task)s\" im Workflow \"%(workflow)s"
-"\" abgelehnt."
+"Die Seite \"%(title)s\" wurde während \"%(task)s\" im Workflow "
+"\"%(workflow)s\" abgelehnt."
 
 #, python-format
 msgid "The following comment was left: \"%(comment)s\""
@@ -1455,8 +1477,8 @@ msgid ""
 "This page is currently at <strong>%(task)s</strong> in <strong>%(workflow)s</"
 "strong>."
 msgstr ""
-"Diese Seite ist aktuell in <strong>%(task)s</strong> in <strong>"
-"%(workflow)s</strong>."
+"Diese Seite ist aktuell in <strong>%(task)s</strong> in "
+"<strong>%(workflow)s</strong>."
 
 msgid "Publishing this page will cancel the current workflow."
 msgstr ""
@@ -1900,8 +1922,9 @@ msgstr "Filter"
 msgid "Apply filters"
 msgstr "Filter anwenden"
 
-msgid "New: "
-msgstr "Neu: "
+#, python-format
+msgid "New: %(model_name)s"
+msgstr "Neu: %(model_name)s"
 
 #, python-format
 msgid "Editing %(page_type)s %(title)s"
@@ -1952,6 +1975,9 @@ msgstr "Seitenleisten"
 
 msgid "Toggle side panel"
 msgstr "Seitenleiste ein-/ausblenden"
+
+msgid "Side panel width"
+msgstr "Breite der Seitenleiste"
 
 msgid "Minimap"
 msgstr "Minikarte"
@@ -2094,14 +2120,11 @@ msgstr "Vorschaumodus"
 msgid "First published "
 msgstr "Erste Veröffentlichung: "
 
-msgid "Errors Count: "
-msgstr "Fehleranzahl: "
-
 msgid ""
 "JavaScript is required to use Wagtail, but it is currently disabled.<br /> "
-"Here are the <a href=\"https://www.enable-javascript.com/\" target=\"_blank"
-"\" rel=\"noreferrer\">instructions how to enable JavaScript in your web "
-"browser</a>."
+"Here are the <a href=\"https://www.enable-javascript.com/\" "
+"target=\"_blank\" rel=\"noreferrer\">instructions how to enable JavaScript "
+"in your web browser</a>."
 msgstr ""
 "Zur Nutzung von Wagtail wird JavaScript benötigt, aber es ist momentan "
 "deaktiviert.<br /> Hier ist eine <a href=\"https://www.enable-javascript.com/"
@@ -2155,8 +2178,9 @@ msgstr "Erstellen"
 #, python-format
 msgid ""
 "Workflows apply to child pages too. If you select a parent page here, its "
-"child pages will also use this workflow. See <a href=\"%(workflow_pages_url)s"
-"\">the list of the pages</a> your workflow applies to."
+"child pages will also use this workflow. See <a "
+"href=\"%(workflow_pages_url)s\">the list of the pages</a> your workflow "
+"applies to."
 msgstr ""
 "Workflows gelten auch für Unterseiten. Wenn Sie hier eine übergeordnete "
 "Seite auswählen, werden deren Unterseiten diesen Workflow auch übernehmen. "
@@ -2209,8 +2233,8 @@ msgstr[1] "+%(counter)s weitere"
 msgid ""
 "No workflows have been created. Why not <a href=\"%(add_url)s\">add one</a>?"
 msgstr ""
-"Es wurde noch kein Workflow erstellt. Warum nicht <a href=\"%(add_url)s"
-"\">einen hinzufügen</a>?"
+"Es wurde noch kein Workflow erstellt. Warum nicht <a "
+"href=\"%(add_url)s\">einen hinzufügen</a>?"
 
 #, python-format
 msgid ""
@@ -2353,10 +2377,6 @@ msgid "%(time)s by %(user_display_name)s"
 msgstr "%(time)s von %(user_display_name)s"
 
 #, python-format
-msgid "%(time)s"
-msgstr "%(time)s"
-
-#, python-format
 msgid "just now by %(user_display_name)s"
 msgstr "jetzt gerade von %(user_display_name)s"
 
@@ -2424,13 +2444,13 @@ msgstr "Sammlung hinzufügen"
 msgid "Add collection"
 msgstr "Sammlung hinzufügen"
 
-#, python-brace-format
-msgid "Collection '{0}' created."
-msgstr "Sammlung ‚{0}‘ erstellt."
+#, python-format
+msgid "Collection '%(object)s' created."
+msgstr "Sammlung ‚%(object)s‘ erstellt."
 
-#, python-brace-format
-msgid "Collection '{0}' updated."
-msgstr "Sammlung ‚{0}‘ aktualisiert."
+#, python-format
+msgid "Collection '%(object)s' updated."
+msgstr "Sammlung ‚%(object)s‘ aktualisiert."
 
 msgid "The collection could not be saved due to errors."
 msgstr "Beim Speichern der Sammlung sind Fehler aufgetreten."
@@ -2438,63 +2458,66 @@ msgstr "Beim Speichern der Sammlung sind Fehler aufgetreten."
 msgid "Delete collection"
 msgstr "Sammlung löschen"
 
-#, python-brace-format
-msgid "Collection '{0}' deleted."
-msgstr "Sammlung ‚{0}‘ gelöscht."
+#, python-format
+msgid "Collection '%(object)s' deleted."
+msgstr "Sammlung ‚%(object)s‘ gelöscht."
 
 msgid "Are you sure you want to delete this collection?"
 msgstr "Sind Sie sicher, dass Sie diese Sammlung löschen möchten?"
 
 #, python-format
 msgid ""
-"You are viewing a previous version of this %(model_name)s from <b>"
-"%(created_at)s</b> by %(user)s"
+"You are viewing a previous version of this %(model_name)s from "
+"<b>%(created_at)s</b> by %(user)s"
 msgstr ""
-"Sie betrachten eine frühere Version dieses „%(model_name)s“-Objekts vom <b>"
-"%(created_at)s</b> von %(user)s"
+"Sie betrachten eine frühere Version dieses „%(model_name)s“-Objekts vom "
+"<b>%(created_at)s</b> von %(user)s"
 
-#, python-brace-format
+#, python-format
 msgid ""
-"{model_name} '{instance}' has been replaced with version from {timestamp}."
+"%(model_name)s '%(object)s' has been replaced with version from "
+"%(timestamp)s."
 msgstr ""
-"{model_name} '{instance}' wurde durch die Version vom {timestamp} ersetzt."
+"%(model_name)s '%(object)s' wurde durch die Version vom %(timestamp)s "
+"ersetzt."
 
-#, python-brace-format
+#, python-format
 msgid ""
-"Version from {timestamp} of {model_name} '{instance}' has been published."
+"Version from %(timestamp)s of %(model_name)s '%(object)s' has been published."
 msgstr ""
-"Version vom {timestamp} von {model_name} '{instance}' wurde veröffentlicht."
+"Version vom %(timestamp)s von %(model_name)s '%(object)s' wurde "
+"veröffentlicht."
 
-#, python-brace-format
+#, python-format
 msgid ""
-"Version from {timestamp} of {model_name} '{instance}' has been scheduled for "
-"publishing."
+"Version from %(timestamp)s of %(model_name)s '%(object)s' has been scheduled "
+"for publishing."
 msgstr ""
-"Version vom {timestamp} von {model_name} '{instance}' wurde zur "
+"Version vom %(timestamp)s von %(model_name)s '%(object)s' wurde zur "
 "Veröffentlichung eingeplant."
 
 #, python-format
 msgid "Search %(model_name)s"
 msgstr "Suche %(model_name)s"
 
-#, python-brace-format
-msgid "'{0}' created and scheduled for publishing."
-msgstr "'{0}' erstellt und zur Veröffentlichung eingeplant."
+#, python-format
+msgid "'%(object)s' created and scheduled for publishing."
+msgstr "'%(object)s' erstellt und zur Veröffentlichung eingeplant."
 
-#, python-brace-format
-msgid "'{0}' created and published."
-msgstr "'{0}' erstellt und veröffentlicht."
+#, python-format
+msgid "'%(object)s' created and published."
+msgstr "'%(object)s' erstellt und veröffentlicht."
 
 msgid "Editing"
 msgstr "Bearbeite"
 
-#, python-brace-format
-msgid "'{0}' updated and scheduled for publishing."
-msgstr "'{0}' geändert und zur Veröffentlichung eingeplant."
+#, python-format
+msgid "'%(object)s' updated and scheduled for publishing."
+msgstr "'%(object)s' geändert und zur Veröffentlichung eingeplant."
 
-#, python-brace-format
-msgid "'{0}' updated and published."
-msgstr "'{0}' geändert und veröffentlicht."
+#, python-format
+msgid "'%(object)s' updated and published."
+msgstr "'%(object)s' geändert und veröffentlicht."
 
 msgid "Earliest"
 msgstr "Früheste"
@@ -2502,19 +2525,19 @@ msgstr "Früheste"
 msgid "Latest"
 msgstr "Späteste"
 
-#, python-brace-format
-msgid "'{object_name}' unpublished."
-msgstr "Veröffentlichung von '{object_name}' aufgehoben."
+#, python-format
+msgid "'%(object)s' unpublished."
+msgstr "Veröffentlichung von '%(object)s' aufgehoben."
 
-#, python-brace-format
-msgid "Version {revision_id} of \"{object}\" unscheduled."
+#, python-format
+msgid "Version %(revision_id)s of \"%(object)s\" unscheduled."
 msgstr ""
-"Geplante Veröffentlichung der Version {revision_id} von \"{object}\" "
+"Geplante Veröffentlichung der Version %(revision_id)s von \"%(object)s\" "
 "aufgehoben."
 
-#, python-brace-format
-msgid "revision {revision_id} of \"{object}\""
-msgstr "Revision {revision_id} von \"{object}\""
+#, python-format
+msgid "revision %(revision_id)s of \"%(object)s\""
+msgstr "Revision %(revision_id)s von \"%(object)s\""
 
 msgid "Dashboard"
 msgstr "Dashboard"
@@ -2627,17 +2650,17 @@ msgstr[1] ""
 "Veröffentlichung von %(num_parent_objects)d Seiten und %(num_child_objects)d "
 "Unterseiten wurden zurückgezogen"
 
-#, python-brace-format
-msgid "Page '{0}' has been converted into an ordinary page."
-msgstr "Die Seite '{0}' wurde in eine reguläre Seite umgewandelt."
+#, python-format
+msgid "Page '%(page_title)s' has been converted into an ordinary page."
+msgstr "Die Seite '%(page_title)s' wurde in eine reguläre Seite umgewandelt."
 
-#, python-brace-format
-msgid "Page '{0}' and {1} subpages copied."
-msgstr "Seite ‚{0}‘ und {1} Unterseiten kopiert."
+#, python-format
+msgid "Page '%(page_title)s' and %(subpages_count)s subpages copied."
+msgstr "Seite ‚%(page_title)s‘ und %(subpages_count)s Unterseiten kopiert."
 
-#, python-brace-format
-msgid "Page '{0}' copied."
-msgstr "Seite ‚{0}‘ kopiert."
+#, python-format
+msgid "Page '%(page_title)s' copied."
+msgstr "Seite ‚%(page_title)s‘ kopiert."
 
 msgid "View draft"
 msgstr "Entwurf anzeigen"
@@ -2645,75 +2668,86 @@ msgstr "Entwurf anzeigen"
 msgid "View live"
 msgstr "Live anzeigen"
 
-#, python-brace-format
-msgid "Page '{0}' created."
-msgstr "Seite ‚{0}‘ erstellt."
+#, python-format
+msgid "Page '%(page_title)s' created."
+msgstr "Seite ‚%(page_title)s‘ erstellt."
 
-#, python-brace-format
-msgid "Page '{0}' created and scheduled for publishing."
+#, python-format
+msgid "Page '%(page_title)s' created and scheduled for publishing."
 msgstr ""
-"Die Seite „{0}“ wurde erstellt und zur Veröffentlichung (zu einem Termin) "
-"eingeplant."
+"Die Seite „%(page_title)s“ wurde erstellt und zur Veröffentlichung (zu einem "
+"Termin) eingeplant."
 
-#, python-brace-format
-msgid "Page '{0}' created and published."
-msgstr "Die Seite ‚{0}‘ wurde erstellt und veröffentlicht."
+#, python-format
+msgid "Page '%(page_title)s' created and published."
+msgstr "Die Seite ‚%(page_title)s‘ wurde erstellt und veröffentlicht."
 
-#, python-brace-format
-msgid "Page '{0}' created and submitted for moderation."
-msgstr "Seite ‚{0}‘ erstellt und zur Moderation eingereicht."
+#, python-format
+msgid "Page '%(page_title)s' created and submitted for moderation."
+msgstr "Seite ‚%(page_title)s‘ erstellt und zur Moderation eingereicht."
 
 msgid "The page could not be created due to validation errors"
 msgstr "Die Seite konnte wegen Prüfungsfehlern nicht erstellt werden."
 
-#, python-brace-format
-msgid "Page '{0}' deleted."
-msgstr "Seite ‚{0}‘ gelöscht."
+#, python-format
+msgid "Page '%(page_title)s' deleted."
+msgstr "Seite ‚%(page_title)s‘ gelöscht."
 
 msgid "This page is currently awaiting moderation"
 msgstr "Diese Seite wartet derzeit auf Moderation"
 
-#, python-brace-format
-msgid "Page '{0}' has been replaced with version from {1}."
-msgstr "Seite ‚{0}‘ wurde durch die Version vom {1} ersetzt."
-
-#, python-brace-format
-msgid "Page '{0}' has been updated."
-msgstr "Seite ‚{0}‘ wurde aktualisiert."
-
-#, python-brace-format
-msgid "Workflow on page '{0}' has been cancelled."
-msgstr "Workflow auf Seite ‚{0}‘ wurde abgebrochen."
-
-#, python-brace-format
-msgid "Version from {0} of page '{1}' has been scheduled for publishing."
-msgstr "Version vom {0} von Seite '{1}' wurde zur Veröffentlichung eingeplant."
-
-#, python-brace-format
-msgid "Page '{0}' is live and this version has been scheduled for publishing."
+#, python-format
+msgid ""
+"Page '%(page_title)s' has been replaced with version from "
+"%(previous_revision_datetime)s."
 msgstr ""
-"Seite '{0}' ist veröffentlicht und diese Version wurde zur Veröffentlichung "
-"eingeplant."
+"Seite ‚%(page_title)s‘ wurde durch die Version vom "
+"%(previous_revision_datetime)s ersetzt."
 
-#, python-brace-format
-msgid "Page '{0}' has been scheduled for publishing."
-msgstr "Seite ‚{0}‘ wurde zur Veröffentlichung eingeplant."
+#, python-format
+msgid "Page '%(page_title)s' has been updated."
+msgstr "Seite ‚%(page_title)s‘ wurde aktualisiert."
 
-#, python-brace-format
-msgid "Version from {0} of page '{1}' has been published."
-msgstr "Version vom {0} von Seite '{1}' wurde veröffentlicht."
+#, python-format
+msgid "Workflow on page '%(page_title)s' has been cancelled."
+msgstr "Workflow auf Seite ‚%(page_title)s‘ wurde abgebrochen."
 
-#, python-brace-format
-msgid "Page '{0}' has been published."
-msgstr "Seite ‚{0}‘ wurde veröffentlicht."
+#, python-format
+msgid ""
+"Version from %(previous_revision_datetime)s of page '%(page_title)s' has "
+"been scheduled for publishing."
+msgstr ""
+"Version vom %(previous_revision_datetime)s von Seite '%(page_title)s' wurde "
+"zur Veröffentlichung eingeplant."
 
-#, python-brace-format
-msgid "Page '{0}' has been submitted for moderation."
-msgstr "Seite ‚{0}‘ wurde zur Moderation eingereicht."
+#, python-format
+msgid ""
+"Page '%(page_title)s' is live and this version has been scheduled for "
+"publishing."
+msgstr ""
+"Seite '%(page_title)s' ist veröffentlicht und diese Version wurde zur "
+"Veröffentlichung eingeplant."
 
-#, python-brace-format
-msgid "Workflow on page '{0}' has been restarted."
-msgstr "Workflow auf Seite ‚{0}‘ wurde neu gestartet."
+#, python-format
+msgid "Page '%(page_title)s' has been scheduled for publishing."
+msgstr "Seite ‚%(page_title)s‘ wurde zur Veröffentlichung eingeplant."
+
+#, python-format
+msgid "Version from %(datetime)s of page '%(page_title)s' has been published."
+msgstr ""
+"Version vom %(datetime)s von Seite '%(page_title)s' wurde veröffentlicht."
+
+#, python-format
+msgid "Page '%(page_title)s' has been published."
+msgstr "Seite ‚%(page_title)s‘ wurde veröffentlicht."
+
+#, python-format
+msgid "Page '%(page_title)s' has been submitted for moderation."
+msgstr "Seite ‚%(page_title)s‘ wurde zur Moderation eingereicht."
+
+#, python-format
+msgid "Workflow on page '%(page_title)s' has been restarted."
+msgstr "Workflow auf Seite ‚%(page_title)s‘ wurde neu gestartet."
 
 msgid "The page could not be saved as it is locked"
 msgstr "Diese Seite konnte nicht gespeichert werden, da sie gesperrt ist."
@@ -2729,40 +2763,40 @@ msgstr "Kommentaraktionen verbergen"
 msgid "Page history"
 msgstr "Seitenhistorie"
 
-#, python-brace-format
-msgid "Page '{0}' is now unlocked."
-msgstr "Die Seite ‚{0}‘ ist jetzt entsperrt."
+#, python-format
+msgid "Page '%(page_title)s' is now unlocked."
+msgstr "Die Seite ‚%(page_title)s‘ ist jetzt entsperrt."
 
-#, python-brace-format
-msgid "The page '{0}' is not currently awaiting moderation."
-msgstr "Die Seite ‚{0}‘ wartet derzeit nicht auf Moderation."
+#, python-format
+msgid "The page '%(page_title)s' is not currently awaiting moderation."
+msgstr "Die Seite ‚%(page_title)s‘ wartet derzeit nicht auf Moderation."
 
-#, python-brace-format
-msgid "Page '{0}' published."
-msgstr "Seite ‚{0}‘ veröffentlicht."
+#, python-format
+msgid "Page '%(page_title)s' published."
+msgstr "Seite ‚%(page_title)s‘ veröffentlicht."
 
 msgid "Failed to send approval notifications"
 msgstr "Bestätigungsbenachrichtigungen konnten nicht versendet werden"
 
-#, python-brace-format
-msgid "Page '{0}' rejected for publication."
-msgstr "Die Veröffentlichung der Seite ‚{0}‘ wurde abgelehnt."
+#, python-format
+msgid "Page '%(page_title)s' rejected for publication."
+msgstr "Die Veröffentlichung der Seite ‚%(page_title)s‘ wurde abgelehnt."
 
 msgid "Failed to send rejection notifications"
 msgstr "Ablehnungsbenachrichtigungen konnten nicht versendet werden"
 
-#, python-brace-format
+#, python-format
 msgid ""
-"The slug '{0}' is already in use at the selected parent page. Make sure the "
-"slug is unique and try again"
+"The slug '%(page_slug)s' is already in use at the selected parent page. Make "
+"sure the slug is unique and try again"
 msgstr ""
-"Der Kurztitel ‚{0}‘ wird in der ausgewählten, übergeordneten Seite bereits "
-"verwendet. Bitte wählen Sie einen eindeutigen Kurztitel und versuchen Sie es "
-"erneut."
+"Der Kurztitel ‚%(page_slug)s‘ wird in der ausgewählten, übergeordneten Seite "
+"bereits verwendet. Bitte wählen Sie einen eindeutigen Kurztitel und "
+"versuchen Sie es erneut."
 
-#, python-brace-format
-msgid "Page '{0}' moved."
-msgstr "Seite ‚{0}‘ verschoben."
+#, python-format
+msgid "Page '%(page_title)s' moved."
+msgstr "Seite ‚%(page_title)s‘ verschoben."
 
 #, python-format
 msgid ""
@@ -2772,14 +2806,17 @@ msgstr ""
 "Sie betrachten eine frühere Version dieser Seite vom <b>%(created_at)s</b> "
 "von %(user)s"
 
-#, python-brace-format
-msgid "Page '{0}' unpublished."
-msgstr "Veröffentlichung der Seite \"{0}\" aufgehoben."
+#, python-format
+msgid "Page '%(page_title)s' unpublished."
+msgstr "Veröffentlichung der Seite \"%(page_title)s\" aufgehoben."
 
-#, python-brace-format
-msgid "The page '{0}' is not currently awaiting moderation in task '{1}'."
+#, python-format
+msgid ""
+"The page '%(page_title)s' is not currently awaiting moderation in task "
+"'%(task_name)s'."
 msgstr ""
-"Die Seite'{0}' wartet derzeit nicht auf Moderation in der Aufgabe '{1}'."
+"Die Seite'%(page_title)s' wartet derzeit nicht auf Moderation in der Aufgabe "
+"'%(task_name)s'."
 
 msgid "Last published before"
 msgstr "Zuletzt veröffentlich vor"
@@ -2835,16 +2872,16 @@ msgstr "Workflow hinzufügen"
 msgid "New workflow"
 msgstr "Neuer Workflow"
 
-#, python-brace-format
-msgid "Workflow '{0}' created."
-msgstr "Workflow ‚{0}‘ erstellt."
+#, python-format
+msgid "Workflow '%(object)s' created."
+msgstr "Workflow ‚%(object)s‘ erstellt."
 
 msgid "Editing workflow"
 msgstr "Bearbeite Workflow"
 
-#, python-brace-format
-msgid "Workflow '{0}' updated."
-msgstr "Workflow ‚{0}‘ aktualisiert."
+#, python-format
+msgid "Workflow '%(object)s' updated."
+msgstr "Workflow ‚%(object)s‘ aktualisiert."
 
 msgid "Disable"
 msgstr "Deaktivieren"
@@ -2855,9 +2892,9 @@ msgstr "Aktivieren"
 msgid "Disable workflow"
 msgstr "Workflow deaktivieren"
 
-#, python-brace-format
-msgid "Workflow '{0}' disabled."
-msgstr "Workflow ‚{0}‘ deaktiviert."
+#, python-format
+msgid "Workflow '%(object)s' disabled."
+msgstr "Workflow ‚%(object)s‘ deaktiviert."
 
 #, python-format
 msgid ""
@@ -2873,27 +2910,27 @@ msgstr[1] ""
 "Dieser Workflow ist in Bearbeitung auf %(states_in_progress)d Seiten. Die "
 "Deaktivierung dieses Workflows wird die Moderation diesen Seiten abbrechen. "
 
-#, python-brace-format
-msgid "Workflow '{0}' enabled."
-msgstr "Workflow ‚{0}‘ aktiviert."
+#, python-format
+msgid "Workflow '%(workflow_name)s' enabled."
+msgstr "Workflow ‚%(workflow_name)s‘ aktiviert."
 
-#, python-brace-format
-msgid "Workflow removed from Page '{0}'."
-msgstr "Workflow von Seite ‚{0}‘ entfernt."
+#, python-format
+msgid "Workflow removed from Page '%(page_title)s'."
+msgstr "Workflow von Seite ‚%(page_title)s‘ entfernt."
 
 msgid "New workflow task"
 msgstr "Neue Workflow-Aufgabe"
 
-#, python-brace-format
-msgid "Task '{0}' created."
-msgstr "Aufgabe ‚{0}‘ erstellt."
+#, python-format
+msgid "Task '%(object)s' created."
+msgstr "Aufgabe ‚%(object)s‘ erstellt."
 
 msgid "Editing workflow task"
 msgstr "Bearbeite Workflow-Aufgabe"
 
-#, python-brace-format
-msgid "Task '{0}' updated."
-msgstr "Aufgabe ‚{0}‘ aktualisiert."
+#, python-format
+msgid "Task '%(object)s' updated."
+msgstr "Aufgabe ‚%(object)s‘ aktualisiert."
 
 #, python-format
 msgid "Editing %(task_type)s"
@@ -2902,9 +2939,9 @@ msgstr "Bearbeite %(task_type)s"
 msgid "Disable task"
 msgstr "Aufgabe deaktivieren"
 
-#, python-brace-format
-msgid "Task '{0}' disabled."
-msgstr "Aufgabe ‚{0}‘ deaktiviert."
+#, python-format
+msgid "Task '%(object)s' disabled."
+msgstr "Aufgabe ‚%(object)s‘ deaktiviert."
 
 #, python-format
 msgid ""
@@ -2926,9 +2963,9 @@ msgstr[1] ""
 "Moderation übersprungen wird und nicht zur Auswahl bei der Bearbeitung eines "
 "Workflows zur Verfügung steht."
 
-#, python-brace-format
-msgid "Task '{0}' enabled."
-msgstr "Aufgabe ‚{0}‘ aktiviert."
+#, python-format
+msgid "Task '%(task_name)s' enabled."
+msgstr "Aufgabe ‚%(task_name)s‘ aktiviert."
 
 msgid "Choose another"
 msgstr "Auswahl ändern"
@@ -3023,9 +3060,9 @@ msgstr "Code"
 msgid "Reports"
 msgstr "Berichte"
 
-#, python-brace-format
-msgid "What's new in Wagtail {version}"
-msgstr "Was ist neu in Wagtail {version}"
+#, python-format
+msgid "What's new in Wagtail %(version)s"
+msgstr "Was ist neu in Wagtail %(version)s"
 
 msgid "Editor Guide"
 msgstr "Editor-Leitfaden"

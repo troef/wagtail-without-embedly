@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 11:54+0000\n"
-"Last-Translator: Storm Heg <storm@stormbase.digital>, 2021-2022\n"
+"Last-Translator: Thijs Kramer <thijskramer@gmail.com>, 2015-2016,2022\n"
 "Language-Team: Dutch (http://www.transifex.com/torchbox/wagtail/language/"
 "nl/)\n"
 "MIME-Version: 1.0\n"
@@ -263,11 +263,11 @@ msgstr ""
 
 #, python-format
 msgid ""
-"There are no groups configured. Why not <a href="
-"\"%(wagtailusers_create_group_url)s\">add some</a>?"
+"There are no groups configured. Why not <a "
+"href=\"%(wagtailusers_create_group_url)s\">add some</a>?"
 msgstr ""
-"Er zijn nog geen groepen geconfigureerd. Waarom <a href="
-"\"%(wagtailusers_create_group_url)s\">voegt u er niet een toe</a>?"
+"Er zijn nog geen groepen geconfigureerd. Waarom <a "
+"href=\"%(wagtailusers_create_group_url)s\">voegt u er niet een toe</a>?"
 
 msgid "Delete user"
 msgstr "Verwijder gebruiker"
@@ -326,19 +326,23 @@ msgstr "Sorry, geen gebruikers gevonden \"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"The %(group_name)s group has no users configured. Why not <a href="
-"\"%(wagtailusers_add_url)s\">add some</a>?"
+"The %(group_name)s group has no users configured. Why not <a "
+"href=\"%(wagtailusers_add_url)s\">add some</a>?"
 msgstr ""
-"De groep %(group_name)s heeft geen gebruikers. <a href="
-"\"%(wagtailusers_add_url)s\">Voeg gebruikers toe</a>."
+"De groep %(group_name)s heeft geen gebruikers. <a "
+"href=\"%(wagtailusers_add_url)s\">Voeg gebruikers toe</a>."
 
 #, python-format
 msgid ""
-"There are no users configured. Why not <a href=\"%(wagtailusers_add_url)s"
-"\">add some</a>?"
+"There are no users configured. Why not <a "
+"href=\"%(wagtailusers_add_url)s\">add some</a>?"
 msgstr ""
 "Er zijn geen gebruikers ingesteld. <a href=\"%(wagtailusers_add_url)s\">Voeg "
 "gebruikers toe</a>."
+
+#, python-format
+msgid "user %(id)s (deleted)"
+msgstr "gebruiker %(id)s (verwijderd)"
 
 msgid "Assign role to selected users"
 msgstr "Wijs rol toe aan geselecteerde gebruikers"
@@ -382,35 +386,35 @@ msgstr "Voeg een groep toe"
 msgid "Search groups"
 msgstr "Zoek groepen"
 
-#, python-brace-format
-msgid "Group '{0}' created."
-msgstr "Groep '{0}' aangemaakt."
+#, python-format
+msgid "Group '%(object)s' created."
+msgstr "Groep '%(object)s' aangemaakt."
 
-#, python-brace-format
-msgid "Group '{0}' updated."
-msgstr "Groep '{0}' is gewijzigd."
+#, python-format
+msgid "Group '%(object)s' updated."
+msgstr "Groep '%(object)s' is gewijzigd."
 
 msgid "The group could not be saved due to errors."
 msgstr "De groep kon vanwege fouten niet worden opgeslagen."
 
-#, python-brace-format
-msgid "Group '{0}' deleted."
-msgstr "Groep '{0}' verwijderd."
+#, python-format
+msgid "Group '%(object)s' deleted."
+msgstr "Groep '%(object)s' verwijderd."
 
-#, python-brace-format
-msgid "User '{0}' updated."
-msgstr "Gebruiker '{0}' is gewijzigd."
+#, python-format
+msgid "User '%(object)s' updated."
+msgstr "Gebruiker '%(object)s' is gewijzigd."
 
 msgid "The user could not be saved due to errors."
 msgstr "De gebruiker kon vanwege fouten niet worden opgeslagen."
 
 #, python-format
-msgid "Editing %s"
-msgstr "Wijzigen %s"
+msgid "Editing %(object)s"
+msgstr "Wijzigen %(object)s"
 
-#, python-brace-format
-msgid "User '{0}' deleted."
-msgstr "Gebruiker '{0}' is verwijderd."
+#, python-format
+msgid "User '%(object)s' deleted."
+msgstr "Gebruiker '%(object)s' is verwijderd."
 
 msgid "Edit"
 msgstr "Wijzig"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-20 21:06+0000\n"
 "Last-Translator: Ole Kristian Losvik <ole@losol.no>, 2020\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/torchbox/wagtail/"
@@ -143,19 +143,19 @@ msgstr "Beklager, ingen dokumenter samsvarer med <em>\"%(query_string)s\"</em>"
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents in this collection. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents in this collection. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
 "Du har ikke lastet opp noen dokumenter til denne samlingen. Hvorfor ikke <a "
 "href=\"%(wagtaildocs_add_document_url)s\">laste opp et nå</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Du har ikke lastet opp noen dokumenter. Hvorfor ikke <a href="
-"\"%(wagtaildocs_add_document_url)s\">laste opp et nå</a>?"
+"Du har ikke lastet opp noen dokumenter. Hvorfor ikke <a "
+"href=\"%(wagtaildocs_add_document_url)s\">laste opp et nå</a>?"
 
 #, python-format
 msgid "Usage of %(title)s"
@@ -218,28 +218,28 @@ msgstr "Endre dette dokumentet"
 msgid "Search documents"
 msgstr "Søk i dokumenter"
 
-#, python-brace-format
-msgid "Document '{0}' added."
-msgstr "Dokumentet \"{0}\" er lagt til."
+#, python-format
+msgid "Document '%(document_title)s' added."
+msgstr "Dokumentet \"%(document_title)s\" er lagt til."
 
 msgid "The document could not be saved due to errors."
 msgstr "Dokumentet kunne ikke lagres grunnet feil."
 
-#, python-brace-format
-msgid "Document '{0}' updated"
-msgstr "Dokumentet \"{0}\" er oppdatert"
+#, python-format
+msgid "Document '%(document_title)s' updated"
+msgstr "Dokumentet \"%(document_title)s\" er oppdatert"
 
 msgid ""
 "The file could not be found. Please change the source or delete the document"
 msgstr "Filen ble ikke funnet. Endre kilde for dokumentet eller slett det"
 
-#, python-brace-format
-msgid "Document '{0}' deleted."
-msgstr "Dokumentet \"{0}\" er slettet."
+#, python-format
+msgid "Document '%(document_title)s' deleted."
+msgstr "Dokumentet \"%(document_title)s\" er slettet."
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Endre %s"
+msgid "Edit this %(object)s"
+msgstr "Endre %(object)s"
 
 msgid "Document"
 msgstr "Dokument"

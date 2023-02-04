@@ -3,9 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2015
 # Jose Lourenco <jose@lourenco.ws>, 2015
 # Luís Tiago Favas <traducoes@favas.eu>, 2020
 # Luís Tiago Favas <traducoes@favas.eu>, 2021
+# Luís Tiago Favas <traducoes@favas.eu>, 2020-2021
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2015
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2015
 # Thiago Cangussu <cangussu.thg@gmail.com>, 2014
@@ -14,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-20 21:06+0000\n"
-"Last-Translator: Tiago Henriques <trinosauro@gmail.com>, 2015-2016,2022\n"
+"Last-Translator: Thiago Cangussu <cangussu.thg@gmail.com>, 2014\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/torchbox/"
 "wagtail/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -218,19 +220,19 @@ msgstr "Desculpe, nenhum documento corresponde a \"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents in this collection. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents in this collection. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Ainda não carregou nenhum documento nesta coleção. Que tal <a href="
-"\"%(wagtaildocs_add_document_url)s\">carregar um agora</a>?"
+"Ainda não carregou nenhum documento nesta coleção. Que tal <a "
+"href=\"%(wagtaildocs_add_document_url)s\">carregar um agora</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Ainda não carregou nenhum documento. Que tal <a href="
-"\"%(wagtaildocs_add_document_url)s\">carregar um agora</a>?"
+"Ainda não carregou nenhum documento. Que tal <a "
+"href=\"%(wagtaildocs_add_document_url)s\">carregar um agora</a>?"
 
 #, python-format
 msgid "Usage of %(title)s"
@@ -333,29 +335,29 @@ msgstr "Alterar este documento"
 msgid "Search documents"
 msgstr "Pesquisar documentos"
 
-#, python-brace-format
-msgid "Document '{0}' added."
-msgstr "Documento '{0}' adicionado."
+#, python-format
+msgid "Document '%(document_title)s' added."
+msgstr "Documento '%(document_title)s' adicionado."
 
 msgid "The document could not be saved due to errors."
 msgstr "O documento não pôde ser guardado devido a erros."
 
-#, python-brace-format
-msgid "Document '{0}' updated"
-msgstr "Documento '{0}' atualizado"
+#, python-format
+msgid "Document '%(document_title)s' updated"
+msgstr "Documento '%(document_title)s' atualizado"
 
 msgid ""
 "The file could not be found. Please change the source or delete the document"
 msgstr ""
 "O ficheiro não foi encontrado. Por favor mude a origem ou apague o documento"
 
-#, python-brace-format
-msgid "Document '{0}' deleted."
-msgstr "Documento '{0}' apagado."
+#, python-format
+msgid "Document '%(document_title)s' deleted."
+msgstr "Documento '%(document_title)s' apagado."
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Alterar este %s"
+msgid "Edit this %(object)s"
+msgstr "Alterar este %(object)s"
 
 msgid "Document"
 msgstr "Documento"

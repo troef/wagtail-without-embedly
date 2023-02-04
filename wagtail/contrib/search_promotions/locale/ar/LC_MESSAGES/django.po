@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
-"Last-Translator: abdulaziz alfuhigi <abajall@gmail.com>, 2018\n"
+"Last-Translator: ROGER MICHAEL ASHLEY ALLEN <rogermaallen@gmail.com>, 2015\n"
 "Language-Team: Arabic (http://www.transifex.com/torchbox/wagtail/language/"
 "ar/)\n"
 "MIME-Version: 1.0\n"
@@ -103,18 +103,18 @@ msgstr "عذرًا ، لا توجد نتائج تمت ترقيتها تطابق 
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
-"لم يتم إنشاء نتائج ترويجية. لماذا لا <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">تضيف واحدة</a>؟"
+"لم يتم إنشاء نتائج ترويجية. لماذا لا <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">تضيف واحدة</a>؟"
 
 msgid "Search promoted results"
 msgstr "بحث النتائج التي تم الترويج لها"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "اختيارات المحرر لـ '{0}' تم إنشاؤها."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "اختيارات المحرر لـ '%(query)s' تم إنشاؤها."
 
 msgid "Edit"
 msgstr "تحرير"
@@ -122,9 +122,9 @@ msgstr "تحرير"
 msgid "Recommendations have not been created due to errors"
 msgstr "لم تنشأ توصيات بسسبب أخطاء"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "اختيارات المحرر لـ '{0}' محدثة."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "اختيارات المحرر لـ '%(query)s' محدثة."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "لم تحفظ توصيات بسبب أخطاء "

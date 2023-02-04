@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 11:54+0000\n"
-"Last-Translator: Stein Strindhaug <stein.strindhaug@gmail.com>, 2016-2019\n"
+"Last-Translator: Eirik Krogstad <eirikkr@gmail.com>, 2015\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/torchbox/wagtail/"
 "language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -165,11 +165,11 @@ msgstr "Beklager, ingen grupper samsvarer med \"%(query)s\""
 
 #, python-format
 msgid ""
-"There are no groups configured. Why not <a href="
-"\"%(wagtailusers_create_group_url)s\">add some</a>?"
+"There are no groups configured. Why not <a "
+"href=\"%(wagtailusers_create_group_url)s\">add some</a>?"
 msgstr ""
-"Det er ingen grupper konfigurert. Hvorfor ikke <a href="
-"\"%(wagtailusers_create_group_url)s\">legge en til</a>?"
+"Det er ingen grupper konfigurert. Hvorfor ikke <a "
+"href=\"%(wagtailusers_create_group_url)s\">legge en til</a>?"
 
 msgid "Delete user"
 msgstr "Slett bruker"
@@ -226,35 +226,35 @@ msgstr "Legg til en gruppe"
 msgid "Search groups"
 msgstr "Søk i grupper"
 
-#, python-brace-format
-msgid "Group '{0}' created."
-msgstr "Gruppa \"{0}\" er opprettet."
+#, python-format
+msgid "Group '%(object)s' created."
+msgstr "Gruppa \"%(object)s\" er opprettet."
 
-#, python-brace-format
-msgid "Group '{0}' updated."
-msgstr "Gruppa \"{0}\" er oppdatert."
+#, python-format
+msgid "Group '%(object)s' updated."
+msgstr "Gruppa \"%(object)s\" er oppdatert."
 
 msgid "The group could not be saved due to errors."
 msgstr "Gruppa kunne ikke lagres grunnet feil."
 
-#, python-brace-format
-msgid "Group '{0}' deleted."
-msgstr "Gruppa \"{0}\" er slettet."
+#, python-format
+msgid "Group '%(object)s' deleted."
+msgstr "Gruppa \"%(object)s\" er slettet."
 
-#, python-brace-format
-msgid "User '{0}' updated."
-msgstr "Brukeren «{0}» er oppdatert."
+#, python-format
+msgid "User '%(object)s' updated."
+msgstr "Brukeren «%(object)s» er oppdatert."
 
 msgid "The user could not be saved due to errors."
 msgstr "Brukeren kunne ikke lagres grunnet feil."
 
 #, python-format
-msgid "Editing %s"
-msgstr "Redigerer %s"
+msgid "Editing %(object)s"
+msgstr "Redigerer %(object)s"
 
-#, python-brace-format
-msgid "User '{0}' deleted."
-msgstr "Brukeren \"{0}\" er slettet."
+#, python-format
+msgid "User '%(object)s' deleted."
+msgstr "Brukeren \"%(object)s\" er slettet."
 
 msgid "Edit"
 msgstr "Endre"

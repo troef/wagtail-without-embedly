@@ -6,12 +6,13 @@
 # Cihad GÜNDOĞDU <cihadgundogdu@gmail.com>, 2016,2019
 # José Luis <alagunajs@gmail.com>, 2015
 # Py Data Geek <pydatageek@gmail.com>, 2019
+# Py Data Geek <pydatageek@gmail.com>, 2019
 # Ragıp Ünal <ragip@ragipunal.com>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
 "Last-Translator: Py Data Geek <pydatageek@gmail.com>, 2019\n"
 "Language-Team: Turkish (http://www.transifex.com/torchbox/wagtail/language/"
@@ -26,12 +27,12 @@ msgid "Wagtail core"
 msgstr "Wagtail core (çekirdek)"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "Asgari öğe sayısı %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "Asgari öğe sayısı %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "Azami öğe sayısı %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "Azami öğe sayısı %(max_num)d"
 
 msgid "Move up"
 msgstr "Yukarı çıkar"
@@ -134,9 +135,6 @@ msgstr ""
 
 msgid "latest revision created at"
 msgstr "en son oluşturulan revizyon zamanı"
-
-msgid "This slug is already in use"
-msgstr "Bu başlık url'si zaten kullanılıyor"
 
 msgid "page"
 msgstr "sayfa"

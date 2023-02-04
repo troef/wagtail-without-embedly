@@ -8,6 +8,7 @@
 # shuhei hirota, 2019
 # SHIMIZU Taku <shimizu.taku@gmail.com>, 2015
 # SHIMIZU Taku <shimizu.taku@gmail.com>, 2015
+# shuhei hirota, 2019
 # 小口英昭 <oguchi@bluff-lab.com>, 2019
 # 山本 卓也 <takuya.miraidenshi@gmail.com>, 2019
 # 石田秀 <ishidashu@gmail.com>, 2015
@@ -15,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: Goto Hayato <habita.gh@gmail.com>, 2021\n"
+"Last-Translator: 石田秀 <ishidashu@gmail.com>, 2015\n"
 "Language-Team: Japanese (http://www.transifex.com/torchbox/wagtail/language/"
 "ja/)\n"
 "MIME-Version: 1.0\n"
@@ -33,12 +34,12 @@ msgid "Add Comment"
 msgstr "コメントを追加"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "項目の最小数は%dです。"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "項目の最小数は%(min_num)dです。"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "項目の最大数は%dです。"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "項目の最大数は%(max_num)dです。"
 
 msgid "Move up"
 msgstr "上に移動"
@@ -155,9 +156,6 @@ msgstr "検索エンジンの検索結果でヘッドラインの下に表示さ
 
 msgid "latest revision created at"
 msgstr "最終更新日時"
-
-msgid "This slug is already in use"
-msgstr "このスラッグはすでに使われています"
 
 msgid "page"
 msgstr "ページ"

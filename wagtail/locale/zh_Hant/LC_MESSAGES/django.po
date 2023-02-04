@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Chih Wang <ihcgno@icloud.com>, 2022
+# Chih Wang <ihcgno@icloud.com>, 2020,2022
 # Chih Wang <ihcgno@icloud.com>, 2022
 # Chih Wang <ihcgno@icloud.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: Chih Wang <ihcgno@icloud.com>, 2022\n"
+"Last-Translator: Chih Wang <ihcgno@icloud.com>, 2020,2022\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/torchbox/"
 "wagtail/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -28,12 +28,12 @@ msgid "Add Comment"
 msgstr "新增評論"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "條目的最小數是%d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "條目的最小數是%(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "條目的最大數是%d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "條目的最大數是%(max_num)d"
 
 msgid "Move up"
 msgstr "上移"
@@ -158,9 +158,6 @@ msgstr "是否需要在自動生成的選單中出現此頁面的Link。"
 
 msgid "latest revision created at"
 msgstr "最近修訂版本創建於"
-
-msgid "This slug is already in use"
-msgstr "此縮略名已被使用"
 
 msgid "in moderation"
 msgstr "審核中"

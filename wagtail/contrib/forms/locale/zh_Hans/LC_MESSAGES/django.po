@@ -3,7 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Aosp T, 2016
 # hanfeng <appweb.cn@gmail.com>, 2014-2015
+# Ed <724195301@qq.com>, 2018
 # Ed <724195301@qq.com>, 2018
 # Feng Wang <wangfeng.w@gmail.com>, 2015
 # First Last <abc+github@mynook.info>, 2019
@@ -14,13 +16,14 @@
 # Vincent Zhao <zhaopu2008@gmail.com>, 2017
 # 祝沙军 <zhushajun@gmail.com>, 2017
 # 汇民 王 <whuim@qq.com>, 2017-2018,2020
+# 祝沙军 <zhushajun@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-09-11 15:42+0000\n"
-"Last-Translator: 汇民 王 <whuim@qq.com>, 2017-2018,2020\n"
+"Last-Translator: 祝沙军 <zhushajun@gmail.com>, 2017\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/torchbox/wagtail/"
 "language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -39,8 +42,10 @@ msgid "Date to"
 msgstr "结束日期"
 
 #, python-format
-msgid "There is another field with the label %s, please change one of them."
-msgstr "%s 标签被其它字段使用，请更换一个标签。"
+msgid ""
+"There is another field with the label %(label_name)s, please change one of "
+"them."
+msgstr "%(label_name)s 标签被其它字段使用，请更换一个标签。"
 
 msgid "Single line text"
 msgstr "单行文本"
@@ -141,8 +146,8 @@ msgid "subject"
 msgstr "主题"
 
 #, python-format
-msgid "%s submissions"
-msgstr "%s提交"
+msgid "%(model_name)s submissions"
+msgstr "%(model_name)s提交"
 
 #, python-format
 msgid "Delete form data %(title)s"

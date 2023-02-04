@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 13:14+0100\n"
 "PO-Revision-Date: 2014-02-20 21:05+0000\n"
 "Last-Translator: Arnar Tumi Þorsteinsson <arnartumi@gmail.com>, "
 "2015-2018,2021-2022\n"
@@ -40,24 +40,29 @@ msgid "Supported formats: %(supported_formats)s."
 msgstr "Studd skráarsnið: %(supported_formats)s."
 
 #, python-format
-msgid "Not a supported image format. Supported formats: %s."
-msgstr "Ekki stuðningur við skráarsniðið. Einungis stuðningur við: %s."
+msgid "Not a supported image format. Supported formats: %(supported_formats)s."
+msgstr ""
+"Ekki stuðningur við skráarsniðið. Einungis stuðningur við: "
+"%(supported_formats)s."
 
 #, python-format
-msgid "Not a valid %s image."
-msgstr "Ekki gild %s mynd"
+msgid ""
+"This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
+msgstr ""
+"Þessi skrá er of stór (%(file_size)s). Skráin má vera allt að "
+"%(max_filesize)s."
 
 #, python-format
-msgid "This file is too big (%%s). Maximum filesize %s."
-msgstr "Þessi skrá er of stór (%%s). Skráin má vera allt að %s."
+msgid ""
+"This file has too many pixels (%(num_pixels)s). Maximum pixels "
+"%(max_pixels_count)s."
+msgstr ""
+"Þessi mynd hefur of marga pixla (%(num_pixels)s). Hámarksfjöldi pixla "
+"%(max_pixels_count)s."
 
 #, python-format
-msgid "This file has too many pixels (%%s). Maximum pixels %s."
-msgstr "Þessi mynd hefur of marga pixla (%%s). Hámarksfjöldi pixla %s."
-
-#, python-format
-msgid "This file is too big. Maximum filesize %s."
-msgstr "Þessi skrá er of stór. Skráin má vera allt að %s."
+msgid "This file is too big. Maximum filesize %(max_filesize)s."
+msgstr "Þessi skrá er of stór. Skráin má vera allt að %(max_filesize)s."
 
 msgid "Full width"
 msgstr "Full breidd"
@@ -395,19 +400,19 @@ msgstr "Því miður passa engar myndir við \"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"You haven't uploaded any images in this collection. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images in this collection. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"Þú hefur ekki hlaðið neinum myndum í þetta safn. Hví ekki að<a href="
-"\"%(wagtailimages_add_image_url)s\">smella inn nokkrum núna</a>?"
+"Þú hefur ekki hlaðið neinum myndum í þetta safn. Hví ekki að<a "
+"href=\"%(wagtailimages_add_image_url)s\">smella inn nokkrum núna</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any images. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"Þú hefur ekki hlaðið neinum myndum. Hví ekki að<a href="
-"\"%(wagtailimages_add_image_url)s\">smella inn nokkrum núna</a>?"
+"Þú hefur ekki hlaðið neinum myndum. Hví ekki að<a "
+"href=\"%(wagtailimages_add_image_url)s\">smella inn nokkrum núna</a>?"
 
 msgid "Generating URL"
 msgstr "Bý til slóð"
@@ -564,9 +569,9 @@ msgstr "Skráarstærð: (stórar fyrst)"
 msgid "Search images"
 msgstr "Leita að myndum"
 
-#, python-brace-format
-msgid "Image '{0}' updated."
-msgstr "Mynd '{0}' uppfærð."
+#, python-format
+msgid "Image '%(image_title)s' updated."
+msgstr "Mynd '%(image_title)s' uppfærð."
 
 msgid "Edit again"
 msgstr "Breyta aftur"
@@ -580,24 +585,24 @@ msgid ""
 msgstr ""
 "Upprunamyndin fannst ekki. Vinsamlegast breyttu upprunanum eða eyddu skránni"
 
-#, python-brace-format
-msgid "Image '{0}' deleted."
-msgstr "Mynd '{0}' eydd."
+#, python-format
+msgid "Image '%(image_title)s' deleted."
+msgstr "Mynd '%(image_title)s' eydd."
 
-#, python-brace-format
-msgid "Image '{0}' added."
-msgstr "Mynd '{0}' bætt við."
+#, python-format
+msgid "Image '%(image_title)s' added."
+msgstr "Mynd '%(image_title)s' bætt við."
 
 msgid "The image could not be created due to errors."
 msgstr "Ekki var hægt að búa myndina til þar sem hún stóðst ekki villuprófanir"
 
 #, python-format
-msgid "(Private %s)"
-msgstr "(Einka %s)"
+msgid "(Private %(object)s)"
+msgstr "(Einka %(object)s)"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Breyta þessu %s"
+msgid "Edit this %(object)s"
+msgstr "Breyta þessu %(object)s"
 
 msgid "Image"
 msgstr "Mynd"

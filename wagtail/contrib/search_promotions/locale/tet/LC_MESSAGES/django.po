@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
 "Last-Translator: Matt Westcott <matthew@torchbox.com>, 2021\n"
 "Language-Team: Tetum (Tetun) (http://www.transifex.com/torchbox/wagtail/"
@@ -104,9 +104,9 @@ msgstr "Deskulpa, rezultadu promove la korresponde \" %(query_string)s 1\""
 msgid "Search promoted results"
 msgstr "Buka rezultadu ne'ebé promove tiha ona"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "Hadia nain hatudu katak ba '{0}' kria tiha ona."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "Hadia nain hatudu katak ba '%(query)s' kria tiha ona."
 
 msgid "Edit"
 msgstr "Hadia"
@@ -114,9 +114,9 @@ msgstr "Hadia"
 msgid "Recommendations have not been created due to errors"
 msgstr "Rekomendasaun la kria tiha ona tanba erru sira"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "Hadia nain hatudu katak ba '{0}' atualiza."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "Hadia nain hatudu katak ba '%(query)s' atualiza."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "Rekomendasaun la salva tiha ona tanba erru sira"

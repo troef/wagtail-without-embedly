@@ -974,9 +974,9 @@ def register_reports_menu():
 
 @hooks.register("register_help_menu_item")
 def register_whats_new_in_wagtail_version_menu_item():
-    version = "4.1"
+    version = "5.0"
     return DismissibleMenuItem(
-        _("What's new in Wagtail {version}").format(version=version),
+        _("What's new in Wagtail %(version)s") % {"version": version},
         wagtail_feature_release_whats_new_link(),
         icon_name="help",
         order=1000,
@@ -1045,6 +1045,7 @@ def register_icons(icons):
         "comment-add.svg",
         "comment-add-reversed.svg",
         "cross.svg",
+        "crosshairs.svg",
         "cut.svg",
         "date.svg",
         "desktop.svg",
@@ -1126,6 +1127,7 @@ def register_icons(icons):
         "tag.svg",
         "tasks.svg",
         "thumbtack.svg",
+        "thumbtack-crossed.svg",
         "tick-inverse.svg",
         "tick.svg",
         "time.svg",

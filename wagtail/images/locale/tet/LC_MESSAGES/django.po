@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 13:14+0100\n"
 "PO-Revision-Date: 2014-02-20 21:05+0000\n"
 "Last-Translator: Peter Coward <peter@catalpa.io>, 2019\n"
 "Language-Team: Tetum (Tetun) (http://www.transifex.com/torchbox/wagtail/"
@@ -39,24 +39,28 @@ msgid "Supported formats: %(supported_formats)s."
 msgstr "Suporta formatu: %(supported_formats)s."
 
 #, python-format
-msgid "Not a supported image format. Supported formats: %s."
-msgstr "La suporta formatu imajen. Suporta formatu: %s."
+msgid "Not a supported image format. Supported formats: %(supported_formats)s."
+msgstr "La suporta formatu imajen. Suporta formatu: %(supported_formats)s."
 
 #, python-format
-msgid "Not a valid %s image."
-msgstr "La validu %simajen"
+msgid ""
+"This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
+msgstr ""
+"Dokumentus ne'e bo'ot demais (%(file_size)s). Maximu Dokumentus nia medida "
+"%(max_filesize)s. "
 
 #, python-format
-msgid "This file is too big (%%s). Maximum filesize %s."
-msgstr "Dokumentus ne'e bo'ot demais (%%s). Maximu Dokumentus nia medida %s. "
+msgid ""
+"This file has too many pixels (%(num_pixels)s). Maximum pixels "
+"%(max_pixels_count)s."
+msgstr ""
+"Dokumentu ne'e iha  piksel barak (%(num_pixels)s).  Maximu piksel "
+"%(max_pixels_count)s."
 
 #, python-format
-msgid "This file has too many pixels (%%s). Maximum pixels %s."
-msgstr "Dokumentu ne'e iha  piksel barak (%%s).  Maximu piksel %s."
-
-#, python-format
-msgid "This file is too big. Maximum filesize %s."
-msgstr "Dokumentus ne'e bo'ot demais. Maximu medida dokumentus %s. "
+msgid "This file is too big. Maximum filesize %(max_filesize)s."
+msgstr ""
+"Dokumentus ne'e bo'ot demais. Maximu medida dokumentus %(max_filesize)s. "
 
 msgid "Full width"
 msgstr "Luan tomak"
@@ -168,11 +172,11 @@ msgstr "Uza"
 
 #, python-format
 msgid ""
-"You haven't uploaded any images. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"Ita seidauk hatama tiha imajen balu. Tamba sa la<a href="
-"\"%(wagtailimages_add_image_url)s\">hatama ida agora</a>?"
+"Ita seidauk hatama tiha imajen balu. Tamba sa la<a "
+"href=\"%(wagtailimages_add_image_url)s\">hatama ida agora</a>?"
 
 msgid "Generating URL"
 msgstr "Gerandu URL"
@@ -227,17 +231,17 @@ msgstr ""
 "Fonte  dokumentus imajen lahetan. Favor troka nia fonte ou hamoos imajen "
 "ne'e."
 
-#, python-brace-format
-msgid "Image '{0}' deleted."
-msgstr "Imajen '{0}' hamoos ona."
-
-#, python-brace-format
-msgid "Image '{0}' added."
-msgstr "Imajen '{0}' hatama ona"
+#, python-format
+msgid "Image '%(image_title)s' deleted."
+msgstr "Imajen '%(image_title)s' hamoos ona."
 
 #, python-format
-msgid "Edit this %s"
-msgstr "hadia iha %s"
+msgid "Image '%(image_title)s' added."
+msgstr "Imajen '%(image_title)s' hatama ona"
+
+#, python-format
+msgid "Edit this %(object)s"
+msgstr "hadia iha %(object)s"
 
 msgid "Image"
 msgstr "Imagen"

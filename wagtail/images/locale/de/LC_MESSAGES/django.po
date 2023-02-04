@@ -3,9 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# 79353a696ad19dc202b261b3067b7640_bec941e, 2015
+# afc855de1dd00c1e4f7aa3cae5754e5d_0bf750b <15c35d934145d5adf5690c1365dd87dc_240248>, 2014
 # fd3e232e7013009a14520c2bc2e16691_e19811b, 2018
+# Bohreromir, 2019-2020
 # Oliver Engel <codeangel@posteo.de>, 2022
 # Ettore Atalan <atalanttore@googlemail.com>, 2017,2019-2020
+# fd3e232e7013009a14520c2bc2e16691_e19811b, 2018
 # Henrik Kröger <hedwig@riseup.net>, 2016,2018
 # Oliver Engel <codeangel@posteo.de>, 2021
 # Bohreromir, 2020
@@ -14,24 +18,28 @@
 # Krzysztof Jeziorny <github@jeziorny.net>, 2021
 # afc855de1dd00c1e4f7aa3cae5754e5d_0bf750b <15c35d934145d5adf5690c1365dd87dc_240248>, 2014
 # Matti Borchers, 2022
+# Matti Borchers, 2022
 # Matt Westcott <matthew@torchbox.com>, 2022
 # Max Pfeiffer <max.pfeiffer@alp-phone.ch>, 2015
 # Moritz Pfeiffer <moritz@alp-phone.ch>, 2016,2018
+# Oliver Engel <codeangel@posteo.de>, 2021-2022
 # Oliver Engel <codeangel@posteo.de>, 2021
 # pcraston <patrick@craston.com>, 2014
 # pcraston <patrick@craston.com>, 2014
 # Peter Dreuw <archandha@gmx.net>, 2019
-# th3hamm0r <stefan@hammerworxx.com>, 2022
+# Stefan Hammer <stefan@hammerworxx.com>, 2022
+# Stefan Hammer <stefan@hammerworxx.com>, 2022
 # Tammo van Lessen <tvanlessen@gmail.com>, 2015
+# Stefan Hammer <stefan@hammerworxx.com>, 2022
 # Wasilis Mandratzis-Walz, 2015
 # 79353a696ad19dc202b261b3067b7640_bec941e, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 13:14+0100\n"
 "PO-Revision-Date: 2014-02-20 21:05+0000\n"
-"Last-Translator: th3hamm0r <stefan@hammerworxx.com>, 2022\n"
+"Last-Translator: Stefan Hammer <stefan@hammerworxx.com>, 2022\n"
 "Language-Team: German (http://www.transifex.com/torchbox/wagtail/language/"
 "de/)\n"
 "MIME-Version: 1.0\n"
@@ -59,24 +67,36 @@ msgid "Supported formats: %(supported_formats)s."
 msgstr "Unterstütze Dateiformate: %(supported_formats)s."
 
 #, python-format
-msgid "Not a supported image format. Supported formats: %s."
-msgstr "Nicht unterstütztes Bildformat. Unterstützte Bildformate: %s."
+msgid "Not a supported image format. Supported formats: %(supported_formats)s."
+msgstr ""
+"Nicht unterstütztes Bildformat. Unterstützte Bildformate: "
+"%(supported_formats)s."
 
 #, python-format
-msgid "Not a valid %s image."
-msgstr "Kein gültiges %s Bild."
+msgid ""
+"Not a valid %(extension)s image. The extension does not match the file "
+"format (%(image_format)s)"
+msgstr ""
+"Kein gültiges %(extension)s-Bild. Die Erweiterung stimmt nicht mit dem "
+"Dateiformat überein (%(image_format)s)"
 
 #, python-format
-msgid "This file is too big (%%s). Maximum filesize %s."
-msgstr "Die Datei ist zu groß (%%s). Maximale Dateigröße %s."
+msgid ""
+"This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
+msgstr ""
+"Die Datei ist zu groß (%(file_size)s). Maximale Dateigröße %(max_filesize)s."
 
 #, python-format
-msgid "This file has too many pixels (%%s). Maximum pixels %s."
-msgstr "Dieses Bild hat zu viele Pixel (%%s). Das Maximum ist %s."
+msgid ""
+"This file has too many pixels (%(num_pixels)s). Maximum pixels "
+"%(max_pixels_count)s."
+msgstr ""
+"Dieses Bild hat zu viele Pixel (%(num_pixels)s). Das Maximum ist "
+"%(max_pixels_count)s."
 
 #, python-format
-msgid "This file is too big. Maximum filesize %s."
-msgstr "Die Datei ist zu groß. Maximale Dateigröße %s."
+msgid "This file is too big. Maximum filesize %(max_filesize)s."
+msgstr "Die Datei ist zu groß. Maximale Dateigröße %(max_filesize)s."
 
 msgid "Full width"
 msgstr "Ganze Breite"
@@ -424,19 +444,19 @@ msgstr ""
 
 #, python-format
 msgid ""
-"You haven't uploaded any images in this collection. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images in this collection. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
 "Sie haben noch keine Bilder in dieser Sammlung hochgeladen. Warum nicht "
 "jetzt <a href=\"%(wagtailimages_add_image_url)s\">eines hochladen</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any images. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"Sie haben noch keine Bilder hochgeladen. Warum nicht jetzt <a href="
-"\"%(wagtailimages_add_image_url)s\">eines hochladen</a>?"
+"Sie haben noch keine Bilder hochgeladen. Warum nicht jetzt <a "
+"href=\"%(wagtailimages_add_image_url)s\">eines hochladen</a>?"
 
 msgid "Generating URL"
 msgstr "URL wird erzeugt"
@@ -595,9 +615,9 @@ msgstr "Dateigröße: (hoch bis niedrig)"
 msgid "Search images"
 msgstr "Nach Bildern suchen"
 
-#, python-brace-format
-msgid "Image '{0}' updated."
-msgstr "Bild ‚{0}‘ aktualisiert."
+#, python-format
+msgid "Image '%(image_title)s' updated."
+msgstr "Bild ‚%(image_title)s‘ aktualisiert."
 
 msgid "Edit again"
 msgstr "Nochmal bearbeiten"
@@ -612,24 +632,24 @@ msgstr ""
 "Die Bild-Quelldatei konnte nicht gefunden werden. Bitte ändern Sie die "
 "Quelle oder löschen Sie das Bild."
 
-#, python-brace-format
-msgid "Image '{0}' deleted."
-msgstr "Bild ‚{0}‘ gelöscht."
+#, python-format
+msgid "Image '%(image_title)s' deleted."
+msgstr "Bild ‚%(image_title)s‘ gelöscht."
 
-#, python-brace-format
-msgid "Image '{0}' added."
-msgstr "Bild ‚{0}‘ hinzugefügt."
+#, python-format
+msgid "Image '%(image_title)s' added."
+msgstr "Bild ‚%(image_title)s‘ hinzugefügt."
 
 msgid "The image could not be created due to errors."
 msgstr "Aufgrund von Fehlern konnte das Bild nicht erstellt werden."
 
 #, python-format
-msgid "(Private %s)"
-msgstr "(%s, privat)"
+msgid "(Private %(object)s)"
+msgstr "(%(object)s, privat)"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "%s bearbeiten"
+msgid "Edit this %(object)s"
+msgstr "%(object)s bearbeiten"
 
 msgid "Image"
 msgstr "Bild"

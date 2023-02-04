@@ -3,11 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2015
+# Diogo Gomes, 2021
 # Diogo Gomes, 2021
 # Diogo Silva <diogo_silva30@hotmail.com>, 2021
 # Jose Lourenco <jose@lourenco.ws>, 2014-2016
 # Luís Tiago Favas <traducoes@favas.eu>, 2020
 # Luís Tiago Favas <traducoes@favas.eu>, 2021
+# Luís Tiago Favas <traducoes@favas.eu>, 2020-2021
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2015
 # 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2015
 # Tiago Henriques <trinosauro@gmail.com>, 2015-2016,2022
@@ -15,9 +18,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: Tiago Henriques <trinosauro@gmail.com>, 2015-2016,2022\n"
+"Last-Translator: 425fe09b3064b9f906f637fff94056ae_a00ea56 "
+"<0fa3588fa89906bfcb3a354600956e0e_308047>, 2015\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/torchbox/"
 "wagtail/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -34,12 +38,12 @@ msgid "Add Comment"
 msgstr "Adicionar Comentário"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "O número mínimo de itens é %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "O número mínimo de itens é %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "O numero máximo de itens é %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "O numero máximo de itens é %(max_num)d"
 
 msgid "Move up"
 msgstr "Subir"
@@ -75,23 +79,16 @@ msgstr "Introduziu uma senha incorreta. Por favor tente novamente."
 msgid "Comment"
 msgstr "Comentar"
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
-msgstr "<b>Página '{}' foi bloqueada</b> por <b>si</b> a <b>{}</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "<b>Página {page_title} está bloqueada</b> por <b>si</b>."
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "<b>Página {} está bloqueada</b> por <b>si</b>."
-
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr "<b>A página '{}' foi bloqueada</b> por <b>{}</b> a <b>{}</b>."
-
-msgid "<b>Page '{}' is locked</b>."
-msgstr "<b>A página '{}'  está bloqueada</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "<b>A página '{page_title}'  está bloqueada</b>."
 
 msgid "This page is currently awaiting moderation."
 msgstr "Esta página está à espera de moderação"
-
-msgid "This page is awaiting <b>'{}'</b> in the <b>'{}'</b> workflow."
-msgstr "A página está à espera <b>'{}'</b> no fluxo de trabalho <b>'{}'</b>."
 
 msgid "Only reviewers for this task can edit the page."
 msgstr "Apenas revisores desta tarefa podem alterar esta página."
@@ -200,9 +197,6 @@ msgstr ""
 
 msgid "latest revision created at"
 msgstr "última versão criada em"
-
-msgid "This slug is already in use"
-msgstr "Esta referência já está a ser utilizada"
 
 msgid "in moderation"
 msgstr "em moderação"
@@ -384,9 +378,10 @@ msgstr ""
 "Só pode haver um estado de fluxo de trabalho a decorrer ou a precisar de "
 "mudanças por página."
 
-#, python-brace-format
-msgid "Workflow '{0}' on Page '{1}': {2}"
-msgstr "Fluxo de trabalho '{0}' na Página '{1}': {2}"
+#, python-format
+msgid "Workflow '%(workflow_name)s' on Page '%(page_title)s': %(status)s"
+msgstr ""
+"Fluxo de trabalho '%(workflow_name)s' na Página '%(page_title)s': %(status)s"
 
 msgid "Not started"
 msgstr "Não iniciado"
@@ -418,9 +413,10 @@ msgstr "terminado a"
 msgid "finished by"
 msgstr "terminado por"
 
-#, python-brace-format
-msgid "Task '{0}' on Page Revision '{1}': {2}"
-msgstr "Tarefa '{0}' na Versão de Página '{1}': {2}"
+#, python-format
+msgid "Task '%(task_name)s' on Page Revision '%(revision_info)s': %(status)s"
+msgstr ""
+"Tarefa '%(task_name)s' na Versão de Página '%(revision_info)s': %(status)s"
 
 msgid "Task state"
 msgstr "Estado da tarefa"
@@ -458,12 +454,9 @@ msgstr "entrada no diário"
 msgid "log entries"
 msgstr "entradas no diário"
 
-msgid "The log action '{}' has not been registered."
-msgstr "A ação de diário '{}' não foi registada."
-
 #, python-format
-msgid "user %(id)s (deleted)"
-msgstr "utilizador %(id)s (apagado)"
+msgid "The log action '%(action_name)s' has not been registered."
+msgstr "A ação de diário '%(action_name)s' não foi registada."
 
 msgid "system"
 msgstr "sistema"

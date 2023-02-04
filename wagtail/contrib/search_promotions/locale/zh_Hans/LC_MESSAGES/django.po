@@ -4,18 +4,20 @@
 #
 # Translators:
 # Ed <724195301@qq.com>, 2018
+# Ed <724195301@qq.com>, 2018
 # hanfeng <appweb.cn@gmail.com>, 2014
 # 祝沙军 <zhushajun@gmail.com>, 2017
 # Vincent Zhao <zhaopu2008@gmail.com>, 2017
 # 祝沙军 <zhushajun@gmail.com>, 2017
 # 汇民 王 <whuim@qq.com>, 2019-2020
+# 祝沙军 <zhushajun@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
-"Last-Translator: 汇民 王 <whuim@qq.com>, 2019-2020\n"
+"Last-Translator: 祝沙军 <zhushajun@gmail.com>, 2017\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/torchbox/wagtail/"
 "language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -120,8 +122,8 @@ msgstr "对不起，没有匹配\"<em>%(query_string)s</em>\"的推广结果"
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
 "还没有创建过推广结果。为何不<a href=\"%(wagtailsearchpromotions_add_url)s\">"
 "创建一个</a>？"
@@ -129,9 +131,9 @@ msgstr ""
 msgid "Search promoted results"
 msgstr "搜索推广结果"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "为'{0}'的编辑精选已被创建。"
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "为'%(query)s'的编辑精选已被创建。"
 
 msgid "Edit"
 msgstr "编辑"
@@ -139,9 +141,9 @@ msgstr "编辑"
 msgid "Recommendations have not been created due to errors"
 msgstr "无法创建推荐，出现错误。"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "为'{0}'的编辑精选已被更新。"
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "为'%(query)s'的编辑精选已被更新。"
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "无法保存推荐，出现错误。"

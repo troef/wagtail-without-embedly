@@ -16,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
-"Last-Translator: Storm Heg <storm@stormbase.digital>, 2022\n"
+"Last-Translator: Thijs Kramer <thijskramer@gmail.com>, 2015-2016,2022\n"
 "Language-Team: Dutch (http://www.transifex.com/torchbox/wagtail/language/"
 "nl/)\n"
 "MIME-Version: 1.0\n"
@@ -153,23 +153,23 @@ msgstr[1] "Er zijn %(counter)s resultaten"
 #, python-format
 msgid "Sorry, no promoted results match \"<em>%(query_string)s</em>\""
 msgstr ""
-"Sorry, geen gepromoveerde resultaten komen overeen met de zoekterm \"<em>"
-"%(query_string)s</em>\""
+"Sorry, geen gepromoveerde resultaten komen overeen met de zoekterm "
+"\"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
-"Er zijn nog geen gepromoveerde zoekresultaten aangemaakt. Waarom <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">voegt u er niet een toe</a>?"
+"Er zijn nog geen gepromoveerde zoekresultaten aangemaakt. Waarom <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">voegt u er niet een toe</a>?"
 
 msgid "Search promoted results"
 msgstr "Zoek gepromote resultaten"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "Editor aanbevelingen voor '{0}' aangemaakt."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "Editor aanbevelingen voor '%(query)s' aangemaakt."
 
 msgid "Edit"
 msgstr "Wijzig"
@@ -177,9 +177,9 @@ msgstr "Wijzig"
 msgid "Recommendations have not been created due to errors"
 msgstr "Aanbevelingen zijn vanwege fouten niet aangemaakt."
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "Editor aanbevelingen voor '{0}' gewijzigd."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "Editor aanbevelingen voor '%(query)s' gewijzigd."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "Aanbeveling is niet opgeslagen door fouten"

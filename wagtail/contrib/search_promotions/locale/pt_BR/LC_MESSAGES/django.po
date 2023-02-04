@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
 "Last-Translator: Luiz Boaretto <lboaretto@gmail.com>, 2016,2018,2021\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/torchbox/"
@@ -122,18 +122,18 @@ msgstr "Desculpe, nenhum resultado promovido com \"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
-"Nenhum resultado promovido foi criado. Porque não <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">adicionar um</a>?"
+"Nenhum resultado promovido foi criado. Porque não <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">adicionar um</a>?"
 
 msgid "Search promoted results"
 msgstr "Pesquisar resultados promovidos"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "Sugestões dos editores para '{0}' criados."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "Sugestões dos editores para '%(query)s' criados."
 
 msgid "Edit"
 msgstr "Editar"
@@ -141,9 +141,9 @@ msgstr "Editar"
 msgid "Recommendations have not been created due to errors"
 msgstr "As recomendações não poderiam ser criadas devido a erros"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "Sugestões do editor para '{0}' atualizado."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "Sugestões do editor para '%(query)s' atualizado."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "As recomendações não puderam ser salvas devido a erros"

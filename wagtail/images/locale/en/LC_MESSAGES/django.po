@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2023-01-20 13:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,45 +22,50 @@ msgstr ""
 msgid "Wagtail images"
 msgstr ""
 
-#: fields.py:11
+#: fields.py:13
 msgid "GIF, JPEG, PNG, WEBP"
 msgstr ""
 
-#: fields.py:30
+#: fields.py:34
 #, python-format
 msgid ""
 "Supported formats: %(supported_formats)s. Maximum filesize: "
 "%(max_upload_size)s."
 msgstr ""
 
-#: fields.py:36
+#: fields.py:40
 #, python-format
 msgid "Supported formats: %(supported_formats)s."
 msgstr ""
 
-#: fields.py:42
+#: fields.py:48
 #, python-format
-msgid "Not a supported image format. Supported formats: %s."
+msgid "Not a supported image format. Supported formats: %(supported_formats)s."
 msgstr ""
 
-#: fields.py:46
+#: fields.py:52
 #, python-format
-msgid "Not a valid %s image."
+msgid ""
+"Not a valid .%(extension)s image. The extension does not match the file "
+"format (%(image_format)s)"
 msgstr ""
 
-#: fields.py:49
+#: fields.py:56
 #, python-format
-msgid "This file is too big (%%s). Maximum filesize %s."
+msgid ""
+"This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
 msgstr ""
 
-#: fields.py:53
+#: fields.py:60
 #, python-format
-msgid "This file has too many pixels (%%s). Maximum pixels %s."
+msgid ""
+"This file has too many pixels (%(num_pixels)s). Maximum pixels "
+"%(max_pixels_count)s."
 msgstr ""
 
-#: fields.py:58
+#: fields.py:64
 #, python-format
-msgid "This file is too big. Maximum filesize %s."
+msgid "This file is too big. Maximum filesize %(max_filesize)s."
 msgstr ""
 
 #: formats.py:101
@@ -143,7 +148,7 @@ msgstr ""
 msgid "Add/edit images you own"
 msgstr ""
 
-#: forms.py:196 views/images.py:381
+#: forms.py:196 views/images.py:385
 msgid "Edit"
 msgstr ""
 
@@ -159,39 +164,39 @@ msgstr ""
 msgid "Select images in choosers"
 msgstr ""
 
-#: models.py:191
+#: models.py:229
 msgid "title"
 msgstr ""
 
-#: models.py:193
+#: models.py:232
 msgid "file"
 msgstr ""
 
-#: models.py:198
+#: models.py:237
 msgid "width"
 msgstr ""
 
-#: models.py:199
+#: models.py:238
 msgid "height"
 msgstr ""
 
-#: models.py:201
+#: models.py:240
 msgid "created at"
 msgstr ""
 
-#: models.py:205 models.py:907
+#: models.py:244 models.py:947
 msgid "uploaded by user"
 msgstr ""
 
-#: models.py:213
+#: models.py:252
 msgid "tags"
 msgstr ""
 
-#: models.py:574
+#: models.py:613
 msgid "image"
 msgstr ""
 
-#: models.py:575
+#: models.py:614
 msgid "images"
 msgstr ""
 
@@ -326,15 +331,20 @@ msgstr ""
 msgid "Latest images"
 msgstr ""
 
-#: templates/wagtailimages/chooser/results.html:22
+#: templates/wagtailimages/chooser/results.html:14
+#, python-format
+msgid "Select %(title)s"
+msgstr ""
+
+#: templates/wagtailimages/chooser/results.html:32
 msgid "You haven't uploaded any images in this collection."
 msgstr ""
 
-#: templates/wagtailimages/chooser/results.html:24
+#: templates/wagtailimages/chooser/results.html:34
 msgid "You haven't uploaded any images."
 msgstr ""
 
-#: templates/wagtailimages/chooser/results.html:27
+#: templates/wagtailimages/chooser/results.html:37
 msgid ""
 "Why not <a class=\"upload-one-now\" href=\"#tab-upload\" data-tab-"
 "trigger>upload one now</a>?"
@@ -364,7 +374,7 @@ msgid "Change image file:"
 msgstr ""
 
 #: templates/wagtailimages/images/add.html:4
-#: templates/wagtailimages/images/index.html:42
+#: templates/wagtailimages/images/index.html:26
 msgid "Add an image"
 msgstr ""
 
@@ -450,28 +460,28 @@ msgid "Usage"
 msgstr ""
 
 #: templates/wagtailimages/images/index.html:6
-#: templates/wagtailimages/images/index.html:39 wagtail_hooks.py:54
+#: templates/wagtailimages/images/index.html:23 wagtail_hooks.py:54
 #: wagtail_hooks.py:168
 msgid "Images"
 msgstr ""
 
-#: templates/wagtailimages/images/index.html:60
+#: templates/wagtailimages/images/index.html:44
 msgid "Sort by"
 msgstr ""
 
-#: templates/wagtailimages/images/index.html:69
+#: templates/wagtailimages/images/index.html:53
 msgid "Entries per page"
 msgstr ""
 
-#: templates/wagtailimages/images/index.html:81
+#: templates/wagtailimages/images/index.html:65
 msgid "Popular Tags:"
 msgstr ""
 
-#: templates/wagtailimages/images/index.html:90
+#: templates/wagtailimages/images/index.html:74
 msgid "Clear"
 msgstr ""
 
-#: templates/wagtailimages/images/index.html:99
+#: templates/wagtailimages/images/index.html:83
 msgid "Select all images in listing"
 msgstr ""
 
@@ -498,15 +508,15 @@ msgstr ""
 #: templates/wagtailimages/images/results.html:47
 #, python-format
 msgid ""
-"You haven't uploaded any images in this collection. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images in this collection. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
 
 #: templates/wagtailimages/images/results.html:49
 #, python-format
 msgid ""
-"You haven't uploaded any images. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
 
 #: templates/wagtailimages/images/url_generator.html:7
@@ -638,7 +648,7 @@ msgid_plural "%(num_parent_objects)d images have been added to %(collection)s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/bulk_actions/delete.py:8 views/images.py:232
+#: views/bulk_actions/delete.py:8 views/images.py:233
 msgid "Delete"
 msgstr ""
 
@@ -653,23 +663,23 @@ msgid_plural "%(num_parent_objects)d images have been deleted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: views/chooser.py:49 views/chooser.py:301
+#: views/chooser.py:51 views/chooser.py:318
 msgid "Upload"
 msgstr ""
 
-#: views/chooser.py:50 views/chooser.py:302
+#: views/chooser.py:52 views/chooser.py:319
 msgid "Uploading…"
 msgstr ""
 
-#: views/chooser.py:300 widgets.py:15
+#: views/chooser.py:317 widgets.py:13
 msgid "Choose an image"
 msgstr ""
 
-#: views/chooser.py:303
+#: views/chooser.py:320
 msgid "Choose another image"
 msgstr ""
 
-#: views/chooser.py:304 widgets.py:17
+#: views/chooser.py:321 widgets.py:15
 msgid "Edit this image"
 msgstr ""
 
@@ -702,8 +712,8 @@ msgid "Search images"
 msgstr ""
 
 #: views/images.py:206
-#, python-brace-format
-msgid "Image '{0}' updated."
+#, python-format
+msgid "Image '%(image_title)s' updated."
 msgstr ""
 
 #: views/images.py:207
@@ -720,28 +730,28 @@ msgid ""
 "the image."
 msgstr ""
 
-#: views/images.py:352
-#, python-brace-format
-msgid "Image '{0}' deleted."
-msgstr ""
-
-#: views/images.py:378
-#, python-brace-format
-msgid "Image '{0}' added."
-msgstr ""
-
-#: views/images.py:387
-msgid "The image could not be created due to errors."
-msgstr ""
-
-#: views/images.py:418
+#: views/images.py:355
 #, python-format
-msgid "(Private %s)"
+msgid "Image '%(image_title)s' deleted."
+msgstr ""
+
+#: views/images.py:382
+#, python-format
+msgid "Image '%(image_title)s' added."
+msgstr ""
+
+#: views/images.py:391
+msgid "The image could not be created due to errors."
 msgstr ""
 
 #: views/images.py:422
 #, python-format
-msgid "Edit this %s"
+msgid "(Private %(object)s)"
+msgstr ""
+
+#: views/images.py:426
+#, python-format
+msgid "Edit this %(object)s"
 msgstr ""
 
 #: wagtail_hooks.py:93
@@ -755,6 +765,6 @@ msgid_plural "%(count)s images"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widgets.py:16
+#: widgets.py:14
 msgid "Change image"
 msgstr ""

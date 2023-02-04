@@ -4,6 +4,7 @@
 #
 # Translators:
 # Amir Mahmoodi, 2022
+# Amir Mahmoodi, 2022
 # Matt Westcott <matthew@torchbox.com>, 2022
 # Mohammad Hossein Mojtahedi <Mhm5000@gmail.com>, 2017
 # pyzenberg <pyzenberg@gmail.com>, 2017
@@ -12,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 13:14+0100\n"
 "PO-Revision-Date: 2014-02-20 21:05+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>, 2022\n"
+"Last-Translator: pyzenberg <pyzenberg@gmail.com>, 2017\n"
 "Language-Team: Persian (http://www.transifex.com/torchbox/wagtail/language/"
 "fa/)\n"
 "MIME-Version: 1.0\n"
@@ -39,20 +40,20 @@ msgid "Supported formats: %(supported_formats)s."
 msgstr "فورمت‌های پشتیبانی‌شده: %(supported_formats)s."
 
 #, python-format
-msgid "Not a supported image format. Supported formats: %s."
-msgstr "فورمت تصویر پشتیبانی نمی‌شود. فورمت های مورد قبول: %s."
+msgid "Not a supported image format. Supported formats: %(supported_formats)s."
+msgstr ""
+"فورمت تصویر پشتیبانی نمی‌شود. فورمت های مورد قبول: %(supported_formats)s."
 
 #, python-format
-msgid "Not a valid %s image."
-msgstr "تصویر %s معتبری نیست."
+msgid ""
+"This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
+msgstr ""
+"این فایل بیش از حد بزرگ است (%(file_size)s). حداکثر ظرفیت ممکن "
+"%(max_filesize)s است."
 
 #, python-format
-msgid "This file is too big (%%s). Maximum filesize %s."
-msgstr "این فایل بیش از حد بزرگ است (%%s). حداکثر ظرفیت ممکن %s است."
-
-#, python-format
-msgid "This file is too big. Maximum filesize %s."
-msgstr "این فایل بیش از حد بزرگ است. حداکثر اندازه %s."
+msgid "This file is too big. Maximum filesize %(max_filesize)s."
+msgstr "این فایل بیش از حد بزرگ است. حداکثر اندازه %(max_filesize)s."
 
 msgid "Full width"
 msgstr "عرض کامل"
@@ -253,19 +254,19 @@ msgstr "متاسفانه هیچ تصویری با «<em>%(query_string)s</em>» 
 
 #, python-format
 msgid ""
-"You haven't uploaded any images in this collection. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images in this collection. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"هنوز به این مجموعه تصویری آپلود نشده. می‌توانید یکی را الان <a href="
-"\"%(wagtailimages_add_image_url)s\">آپلود</a> کنید"
+"هنوز به این مجموعه تصویری آپلود نشده. می‌توانید یکی را الان <a "
+"href=\"%(wagtailimages_add_image_url)s\">آپلود</a> کنید"
 
 #, python-format
 msgid ""
-"You haven't uploaded any images. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"هنوز تصویر آپلود نکرده اید. می‌توانید یکی را الان <a href="
-"\"%(wagtailimages_add_image_url)s\">آپلود</a> کنید"
+"هنوز تصویر آپلود نکرده اید. می‌توانید یکی را الان <a "
+"href=\"%(wagtailimages_add_image_url)s\">آپلود</a> کنید"
 
 msgid "Generating URL"
 msgstr "ایجاد نشانی"
@@ -364,9 +365,9 @@ msgstr "ویرایش این تصویر"
 msgid "Search images"
 msgstr "جستجوی تصاویر"
 
-#, python-brace-format
-msgid "Image '{0}' updated."
-msgstr "تصویر '{0}' بروزرسانی شد."
+#, python-format
+msgid "Image '%(image_title)s' updated."
+msgstr "تصویر '%(image_title)s' بروزرسانی شد."
 
 msgid "Edit again"
 msgstr "ویرایش مجدد"
@@ -379,20 +380,20 @@ msgid ""
 "the image."
 msgstr "تصویر منبع پیدا نشد. لطفا منبع را تغییر دهید یا تصویر را حذف نمایید."
 
-#, python-brace-format
-msgid "Image '{0}' deleted."
-msgstr "تصویر '{0}' حذف شد."
+#, python-format
+msgid "Image '%(image_title)s' deleted."
+msgstr "تصویر '%(image_title)s' حذف شد."
 
-#, python-brace-format
-msgid "Image '{0}' added."
-msgstr "تصویر '{0}' اضافه شد."
+#, python-format
+msgid "Image '%(image_title)s' added."
+msgstr "تصویر '%(image_title)s' اضافه شد."
 
 msgid "The image could not be created due to errors."
 msgstr "به دلیل بروز خطا تصویر ایجاد نشد."
 
 #, python-format
-msgid "Edit this %s"
-msgstr "ویرایش این %s"
+msgid "Edit this %(object)s"
+msgstr "ویرایش این %(object)s"
 
 msgid "Image"
 msgstr "تصویر"

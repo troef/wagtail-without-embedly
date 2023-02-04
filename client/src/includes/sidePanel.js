@@ -23,7 +23,11 @@ export default function initSidePanel() {
     return { minWidth, maxWidth, width, range, percentage };
   };
 
+  let hidePanelTimeout;
+
   const setPanel = (panelName) => {
+    clearTimeout(hidePanelTimeout);
+
     const body = document.querySelector('body');
     const selectedPanel = document.querySelector(
       `[data-side-panel-toggle="${panelName}"]`,
@@ -62,13 +66,18 @@ export default function initSidePanel() {
           body.classList.add('side-panel-open');
         }
       } else if (!panel.hidden) {
-        // eslint-disable-next-line no-param-reassign
-        panel.hidden = true;
-        panel.dispatchEvent(new CustomEvent('hide'));
-        sidePanelWrapper.classList.remove(`form-side--${name}`);
+        const hidePanel = () => {
+          // eslint-disable-next-line no-param-reassign
+          panel.hidden = true;
+          panel.dispatchEvent(new CustomEvent('hide'));
+          sidePanelWrapper.classList.remove(`form-side--${name}`);
+        };
 
         if (panelName === '') {
           body.classList.remove('side-panel-open');
+          hidePanelTimeout = setTimeout(hidePanel, 500);
+        } else {
+          hidePanel();
         }
       }
     });
@@ -133,10 +142,11 @@ export default function initSidePanel() {
       parseInt(Math.max(minWidth, Math.min(targetWidth, maxWidth)), 10) ||
       width;
 
-    const valueText = ngettext('{num} pixel', '{num} pixels', newWidth).replace(
-      '{num}',
+    const valueText = ngettext(
+      '%(num)s pixel',
+      '%(num)s pixels',
       newWidth,
-    );
+    ).replace('%(num)s', newWidth);
 
     sidePanelWrapper.style.width = `${newWidth}px`;
     widthInput.value = 100 - ((newWidth - minWidth) / range) * 100;

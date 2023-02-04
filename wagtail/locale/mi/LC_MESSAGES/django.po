@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
 "Last-Translator: Awatea Randall <awatea@octave.nz>, 2021\n"
 "Language-Team: Maori (http://www.transifex.com/torchbox/wagtail/language/"
@@ -23,12 +23,12 @@ msgid "Wagtail core"
 msgstr "Iho-a-Wagtail"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "Te nama iti rawa mō ēnei tūemi ko %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "Te nama iti rawa mō ēnei tūemi ko %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "Te nama nui rawa mō ēnei tūemi ko %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "Te nama nui rawa mō ēnei tūemi ko %(max_num)d"
 
 msgid "Move up"
 msgstr "Mū ki runga"
@@ -145,9 +145,6 @@ msgstr ""
 
 msgid "latest revision created at"
 msgstr "I hanga whakahou ki"
-
-msgid "This slug is already in use"
-msgstr "E mahi tonu ana tēnei ngata"
 
 msgid "in moderation"
 msgstr "kia whakaōrite"
@@ -329,9 +326,10 @@ msgstr ""
 "Tēra pea kōtahi anake e haere ana, a, ka hiahia te mahi pūheke ngā kōrure "
 "rānei ki ia whārangi."
 
-#, python-brace-format
-msgid "Workflow '{0}' on Page '{1}': {2}"
-msgstr "Mahi pūheke '{0}' kī whārangi '{1}': {2}"
+#, python-format
+msgid "Workflow '%(workflow_name)s' on Page '%(page_title)s': %(status)s"
+msgstr ""
+"Mahi pūheke '%(workflow_name)s' kī whārangi '%(page_title)s': %(status)s"
 
 msgid "Not started"
 msgstr "Kāhore ē timata"
@@ -363,9 +361,11 @@ msgstr "I mutu ī"
 msgid "finished by"
 msgstr "I mutu a"
 
-#, python-brace-format
-msgid "Task '{0}' on Page Revision '{1}': {2}"
-msgstr "Mahi '{0}' kī te whakahou-a-whārangi '{1}': {2}"
+#, python-format
+msgid "Task '%(task_name)s' on Page Revision '%(revision_info)s': %(status)s"
+msgstr ""
+"Mahi '%(task_name)s' kī te whakahou-a-whārangi '%(revision_info)s': "
+"%(status)s"
 
 msgid "Task state"
 msgstr "Mahi tātaku"

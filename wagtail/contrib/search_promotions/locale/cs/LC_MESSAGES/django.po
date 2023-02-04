@@ -4,13 +4,14 @@
 #
 # Translators:
 # IT Management <hudan@itmanagement.cz>, 2018
+# IT Management <hudan@itmanagement.cz>, 2018,2020
 # IT Management <hudan@itmanagement.cz>, 2020
 # Mirek Zvolský <zvolsky@seznam.cz>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
 "Last-Translator: Mirek Zvolský <zvolsky@seznam.cz>, 2020\n"
 "Language-Team: Czech (http://www.transifex.com/torchbox/wagtail/language/"
@@ -121,8 +122,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
 "Nebyly nalezeny žádné upřednostněné výsledky. Nové upřednostněné vyhledávání "
 "můžete přidat <a href=\"%(wagtailsearchpromotions_add_url)s\">zde</a>?"
@@ -130,9 +131,9 @@ msgstr ""
 msgid "Search promoted results"
 msgstr "Upřednostněné výsledky hledání"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "Editorův výběr pro '{0}' byl vytvořen."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "Editorův výběr pro '%(query)s' byl vytvořen."
 
 msgid "Edit"
 msgstr "Upravit"
@@ -140,9 +141,9 @@ msgstr "Upravit"
 msgid "Recommendations have not been created due to errors"
 msgstr "Doporučení nelze vytvořit, zkontrolujte správné vyplnění polí."
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "Editorův výběr pro '{0}' byl upraven."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "Editorův výběr pro '%(query)s' byl upraven."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "Doporučení nelze uložit, zkontrolujte správné vyplnění polí."

@@ -259,11 +259,15 @@ WAGTAIL_AUTO_UPDATE_PREVIEW_INTERVAL = 500
 
 The interval (in milliseconds) to check for changes made in the page editor before updating the preview. The default value is `500`.
 
-(wagtailadmin_global_page_edit_lock)=
+(wagtailadmin_global_edit_lock)=
 
-### `WAGTAILADMIN_GLOBAL_PAGE_EDIT_LOCK`
+### `WAGTAILADMIN_GLOBAL_EDIT_LOCK`
 
-`WAGTAILADMIN_GLOBAL_PAGE_EDIT_LOCK` can be set to `True` to prevent users from editing pages that they have locked.
+`WAGTAILADMIN_GLOBAL_EDIT_LOCK` can be set to `True` to prevent users from editing pages and snippets that they have locked.
+
+```{versionchanged} 4.2
+This setting was previously named ``WAGTAILADMIN_GLOBAL_PAGE_EDIT_LOCK``, using ``WAGTAILADMIN_GLOBAL_PAGE_EDIT_LOCK`` will be removed in a future release.
+```
 
 (wagtailadmin_unsafe_page_deletion_limit)=
 
@@ -356,6 +360,17 @@ This setting allows image renditions to be stored using an alternative storage b
 
 Custom storage classes should subclass `django.core.files.storage.Storage`. See the {doc}`Django file storage API <django:ref/files/storage>`.
 
+### `WAGTAILIMAGES_EXTENSIONS`
+
+```python
+WAGTAILIMAGES_EXTENSIONS = ['png', 'jpg']
+```
+
+A list of allowed image extensions that will be validated during image uploading.
+If this isn't supplied, all of GIF, JPG, JPEG, PNG, WEBP are allowed.
+Warning: this doesn't always ensure that the uploaded file is valid as files can
+be renamed to have an extension no matter what data they contain.
+
 ## Documents
 
 ### `WAGTAILDOCS_DOCUMENT_MODEL`
@@ -383,7 +398,7 @@ You can use it to specify or override the widgets to use in the admin form.
 WAGTAILDOCS_SERVE_METHOD = 'redirect'
 ```
 
-Determines how document downloads will be linked to and served. Normally, requests for documents are sent through a Django view, to perform privacy checks (see [](collection_privacy_settings)) and potentially other housekeeping tasks such as hit counting. To fully protect against users bypassing this check, it needs to happen in the same request where the document is served; however, this incurs a performance hit as the document then needs to be served by the Django server. In particular, this cancels out much of the benefit of hosting documents on external storage, such as S3 or a CDN.
+Determines how document downloads will be linked to and served. Normally, requests for documents are sent through a Django view, to perform privacy checks (see [Collection Privacy settings](https://guide.wagtail.org/en-latest/how-to-guides/manage-collections/#privacy-settings)) and potentially other housekeeping tasks such as hit counting. To fully protect against users bypassing this check, it needs to happen in the same request where the document is served; however, this incurs a performance hit as the document then needs to be served by the Django server. In particular, this cancels out much of the benefit of hosting documents on external storage, such as S3 or a CDN.
 
 For this reason, Wagtail provides a number of serving methods which trade some of the strictness of the permission check for performance:
 

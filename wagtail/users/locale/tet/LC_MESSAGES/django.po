@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 11:54+0000\n"
 "Last-Translator: Peter Coward <peter@catalpa.io>, 2019\n"
 "Language-Team: Tetum (Tetun) (http://www.transifex.com/torchbox/wagtail/"
@@ -167,11 +167,11 @@ msgstr "Deskulpa, laiha grupu sira apar \"1%(query)s\""
 
 #, python-format
 msgid ""
-"There are no groups configured. Why not <a href="
-"\"%(wagtailusers_create_group_url)s\">add some</a>?"
+"There are no groups configured. Why not <a "
+"href=\"%(wagtailusers_create_group_url)s\">add some</a>?"
 msgstr ""
-"Laiha grupu sira maka konfigura. Tamba sa labele<a href="
-"\"%(wagtailusers_create_group_url)s\">hatama balu</a>?"
+"Laiha grupu sira maka konfigura. Tamba sa labele<a "
+"href=\"%(wagtailusers_create_group_url)s\">hatama balu</a>?"
 
 msgid "Delete user"
 msgstr "Hamoos usuariu"
@@ -228,35 +228,35 @@ msgstr "Hatama grupu"
 msgid "Search groups"
 msgstr "Buka grupu sira"
 
-#, python-brace-format
-msgid "Group '{0}' created."
-msgstr "Grupu '{0}' kria ona."
+#, python-format
+msgid "Group '%(object)s' created."
+msgstr "Grupu '%(object)s' kria ona."
 
-#, python-brace-format
-msgid "Group '{0}' updated."
-msgstr "Grupu '{0}' troka ona."
+#, python-format
+msgid "Group '%(object)s' updated."
+msgstr "Grupu '%(object)s' troka ona."
 
 msgid "The group could not be saved due to errors."
 msgstr "Grupu labele rai tamba erru."
 
-#, python-brace-format
-msgid "Group '{0}' deleted."
-msgstr "Grupu '{0}' hamoos ona."
+#, python-format
+msgid "Group '%(object)s' deleted."
+msgstr "Grupu '%(object)s' hamoos ona."
 
-#, python-brace-format
-msgid "User '{0}' updated."
-msgstr "Usuariu '{0}' troka ona"
+#, python-format
+msgid "User '%(object)s' updated."
+msgstr "Usuariu '%(object)s' troka ona"
 
 msgid "The user could not be saved due to errors."
 msgstr "Usuariu labele rai tamba erru."
 
 #, python-format
-msgid "Editing %s"
-msgstr "Hadia hela %s"
+msgid "Editing %(object)s"
+msgstr "Hadia hela %(object)s"
 
-#, python-brace-format
-msgid "User '{0}' deleted."
-msgstr "Usuariu '{0}' hamoos ona."
+#, python-format
+msgid "User '%(object)s' deleted."
+msgstr "Usuariu '%(object)s' hamoos ona."
 
 msgid "Edit"
 msgstr "Hadia"

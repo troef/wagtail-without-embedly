@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
 "Last-Translator: Istvan Farkas <istvan.farkas@gmail.com>, 2019-2020,2022\n"
 "Language-Team: Hungarian (http://www.transifex.com/torchbox/wagtail/language/"
@@ -151,18 +151,18 @@ msgstr ""
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
-"Nincs kiemelt keresés hozzáadva. Miért nem <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">ad hozzá egyet</a>?"
+"Nincs kiemelt keresés hozzáadva. Miért nem <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">ad hozzá egyet</a>?"
 
 msgid "Search promoted results"
 msgstr "Kiemelt találatok keresése"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "Szerkesztői ajánlat létrehozva ehhez: '{0}'"
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "Szerkesztői ajánlat létrehozva ehhez: '%(query)s'"
 
 msgid "Edit"
 msgstr "Szerkeszt"
@@ -170,9 +170,9 @@ msgstr "Szerkeszt"
 msgid "Recommendations have not been created due to errors"
 msgstr "Hiba történt a javaslatok mentése közben"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "Szerkesztői ajánlat frissítve ehhez: '{0}'"
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "Szerkesztői ajánlat frissítve ehhez: '%(query)s'"
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "Hiba történt a javaslatok mentése közben"

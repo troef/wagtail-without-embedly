@@ -5,21 +5,22 @@
 # Translators:
 # hanfeng <appweb.cn@gmail.com>, 2014-2015
 # Ed <724195301@qq.com>, 2018
+# Ed <724195301@qq.com>, 2018
 # Favo Yang <favoyang@gmail.com>, 2022
 # Feng Wang <wangfeng.w@gmail.com>, 2015
 # First Last <abc+github@mynook.info>, 2019
 # Yin Guanhao <sopium@mysterious.site>, 2020
 # Matt Westcott <matthew@torchbox.com>, 2022
 # Vincent Zhao <zhaopu2008@gmail.com>, 2017
-# Yin Guanhao <sopium@mysterious.site>, 2021
+# Yin Guanhao <sopium@mysterious.site>, 2020-2021
 # 汇民 王 <whuim@qq.com>, 2017-2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 13:14+0100\n"
 "PO-Revision-Date: 2014-02-20 21:05+0000\n"
-"Last-Translator: Matt Westcott <matthew@torchbox.com>, 2022\n"
+"Last-Translator: Yin Guanhao <sopium@mysterious.site>, 2020-2021\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/torchbox/wagtail/"
 "language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -45,24 +46,24 @@ msgid "Supported formats: %(supported_formats)s."
 msgstr "支持的格式：%(supported_formats)s。"
 
 #, python-format
-msgid "Not a supported image format. Supported formats: %s."
-msgstr "不支持的图片格式。支持类型如下： %s"
+msgid "Not a supported image format. Supported formats: %(supported_formats)s."
+msgstr "不支持的图片格式。支持类型如下： %(supported_formats)s"
 
 #, python-format
-msgid "Not a valid %s image."
-msgstr "无效的 %s图片。"
+msgid ""
+"This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
+msgstr "文件过大 (%(file_size)s)，文件大小上限为 %(max_filesize)s。"
 
 #, python-format
-msgid "This file is too big (%%s). Maximum filesize %s."
-msgstr "文件过大 (%%s)，文件大小上限为 %s。"
+msgid ""
+"This file has too many pixels (%(num_pixels)s). Maximum pixels "
+"%(max_pixels_count)s."
+msgstr ""
+"文件包含像素过多（%(num_pixels)s）。像素数量上限为 %(max_pixels_count)s。"
 
 #, python-format
-msgid "This file has too many pixels (%%s). Maximum pixels %s."
-msgstr "文件包含像素过多（%%s）。像素数量上限为 %s。"
-
-#, python-format
-msgid "This file is too big. Maximum filesize %s."
-msgstr "文件过大，文件大小上限为 %s。"
+msgid "This file is too big. Maximum filesize %(max_filesize)s."
+msgstr "文件过大，文件大小上限为 %(max_filesize)s。"
 
 msgid "Full width"
 msgstr "全屏宽度"
@@ -313,16 +314,16 @@ msgstr "对不起，没有符合\"<em>%(query_string)s</em>\"的图片。"
 
 #, python-format
 msgid ""
-"You haven't uploaded any images in this collection. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images in this collection. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
 "此集合中还没有图片。为何不 <a href=\"%(wagtailimages_add_image_url)s\">上传一"
 "个</a> ？"
 
 #, python-format
 msgid ""
-"You haven't uploaded any images. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
 "还没上传图片呢。来<a href=\"%(wagtailimages_add_image_url)s\">上传一个</a>吧?"
 
@@ -448,9 +449,9 @@ msgstr "编辑此图片"
 msgid "Search images"
 msgstr "搜索图片"
 
-#, python-brace-format
-msgid "Image '{0}' updated."
-msgstr "图片 '{0}' 已更新。"
+#, python-format
+msgid "Image '%(image_title)s' updated."
+msgstr "图片 '%(image_title)s' 已更新。"
 
 msgid "Edit again"
 msgstr "再次编辑"
@@ -463,20 +464,20 @@ msgid ""
 "the image."
 msgstr "无法找到图片源文件。请修改源文件或者删除图片。"
 
-#, python-brace-format
-msgid "Image '{0}' deleted."
-msgstr "图片'{0}' 已删除。"
+#, python-format
+msgid "Image '%(image_title)s' deleted."
+msgstr "图片'%(image_title)s' 已删除。"
 
-#, python-brace-format
-msgid "Image '{0}' added."
-msgstr "图片'{0}'已添加"
+#, python-format
+msgid "Image '%(image_title)s' added."
+msgstr "图片'%(image_title)s'已添加"
 
 msgid "The image could not be created due to errors."
 msgstr "无法创建图片，出现错误。"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "编辑这个 %s"
+msgid "Edit this %(object)s"
+msgstr "编辑这个 %(object)s"
 
 msgid "Image"
 msgstr "图片"

@@ -4,11 +4,12 @@
 #
 # Translators:
 # Hồng Quân Nguyễn <ng.hong.quan@gmail.com>, 2017
+# Hồng Quân Nguyễn <ng.hong.quan@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2016-05-11 20:22+0000\n"
 "Last-Translator: Hồng Quân Nguyễn <ng.hong.quan@gmail.com>, 2017\n"
 "Language-Team: Vietnamese (http://www.transifex.com/torchbox/wagtail/"
@@ -23,26 +24,26 @@ msgid "Parent page"
 msgstr "Trang cha"
 
 #, python-format
-msgid "Add %s"
-msgstr "Thêm %s"
+msgid "Add %(object)s"
+msgstr "Thêm %(object)s"
 
 #, python-format
-msgid "Add a new %s"
-msgstr "Thêm một %s mới"
+msgid "Add a new %(object)s"
+msgstr "Thêm một %(object)s mới"
 
 msgid "Inspect"
 msgstr "Kiểm tra"
 
 #, python-format
-msgid "Inspect this %s"
-msgstr "Kiểm tra %s này"
+msgid "Inspect this %(object)s"
+msgstr "Kiểm tra %(object)s này"
 
 msgid "Edit"
 msgstr "Biên tập"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Biên tập %s này"
+msgid "Edit this %(object)s"
+msgstr "Biên tập %(object)s này"
 
 msgid "Delete"
 msgstr "Xoá"
@@ -51,8 +52,8 @@ msgid "Unpublish"
 msgstr "Thu hồi xuất bản"
 
 #, python-format
-msgid "Unpublish this %s"
-msgstr "Thu hồi xụất bản %s này"
+msgid "Unpublish this %(object)s"
+msgstr "Thu hồi xụất bản %(object)s này"
 
 msgid "Copy"
 msgstr "Sao chép"
@@ -80,6 +81,9 @@ msgstr "Tải XLSX"
 
 msgid "Download CSV"
 msgstr "Tải CSV"
+
+msgid "New"
+msgstr "Mới"
 
 msgid "Editing"
 msgstr "Chỉnh sửa"

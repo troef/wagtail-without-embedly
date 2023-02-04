@@ -4,12 +4,13 @@
 # Martin Galda <martingalda9@gmail.com>, 2022
 # IT Management <hudan@itmanagement.cz>, 2022
 # Martina Oleksakova <martina.oleksakova@tul.cz>, 2022
-# Mirek Zvolský <zvolsky@seznam.cz>, 2022
 # Marek Turnovec <aesculap@gmail.com>, 2022
+# Mirek Zvolský <zvolsky@seznam.cz>, 2022
+# Loic Teixeira, 2022
 #
 msgid ""
 msgstr ""
-"Last-Translator: Marek Turnovec <aesculap@gmail.com>, 2022\n"
+"Last-Translator: Loic Teixeira, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/torchbox/teams/8009/cs/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: cs\n"
@@ -52,8 +53,8 @@ msgstr "Chyba při rušení"
 msgid "Edit"
 msgstr "Upravit"
 
-msgid "Edit '{title}'"
-msgstr "Editovat '{title}'"
+msgid "Edit '%(title)s'"
+msgstr "Editovat '%(title)s'"
 
 msgid "Edit your account"
 msgstr "Upravte svůj účet"
@@ -140,5 +141,5 @@ msgstr "Přepnout postranní panel"
 msgid "Unfocus comment"
 msgstr "Nezvýrazňovat komentář"
 
-msgid "View child pages of '{title}'"
-msgstr "Ukázat podstránky '{title}'"
+msgid "View child pages of '%(title)s'"
+msgstr "Ukázat podstránky '%(title)s'"

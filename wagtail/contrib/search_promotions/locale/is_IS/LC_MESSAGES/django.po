@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
 "Last-Translator: saevarom <saevar@saevar.is>, 2016,2018-2020,2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/torchbox/"
@@ -144,23 +144,23 @@ msgstr[1] " Það eru %(counter)s niðurstöður        "
 #, python-format
 msgid "Sorry, no promoted results match \"<em>%(query_string)s</em>\""
 msgstr ""
-"Því miður eru engar meðmæltar niðurstöður sem passa við \"<em>"
-"%(query_string)s</em>\""
+"Því miður eru engar meðmæltar niðurstöður sem passa við "
+"\"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
-"Engin meðmæli hafa verið búin til. Hví ekki að <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">bæta við einum</a>?"
+"Engin meðmæli hafa verið búin til. Hví ekki að <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">bæta við einum</a>?"
 
 msgid "Search promoted results"
 msgstr "Meðmæltar niðurstöður"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "Val ritstjóra fyrir  '{0}' búin til."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "Val ritstjóra fyrir  '%(query)s' búin til."
 
 msgid "Edit"
 msgstr "Breyta"
@@ -168,9 +168,9 @@ msgstr "Breyta"
 msgid "Recommendations have not been created due to errors"
 msgstr "Ekki tókst að búa til meðmæli þar sem það stóðst ekki villuprófanir"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "Val ritstjóra fyrir '{0}' uppfært."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "Val ritstjóra fyrir '%(query)s' uppfært."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "Ekki tókst að vista meðmæli þar sem það stóðst ekki villuprófanir"

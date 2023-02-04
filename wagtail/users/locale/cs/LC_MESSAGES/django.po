@@ -4,6 +4,7 @@
 #
 # Translators:
 # IT Management <hudan@itmanagement.cz>, 2018
+# IT Management <hudan@itmanagement.cz>, 2018,2020
 # IT Management <hudan@itmanagement.cz>, 2020
 # Jiri Stepanek <stepiiicz@gmail.com>, 2015
 # Marek Turnovec <aesculap@gmail.com>, 2022
@@ -12,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 11:54+0000\n"
 "Last-Translator: Marek Turnovec <aesculap@gmail.com>, 2022\n"
 "Language-Team: Czech (http://www.transifex.com/torchbox/wagtail/language/"
@@ -194,11 +195,11 @@ msgstr "Bohužel, výrazu \"%(query)s\" neodpovídají žádné skupiny"
 
 #, python-format
 msgid ""
-"There are no groups configured. Why not <a href="
-"\"%(wagtailusers_create_group_url)s\">add some</a>?"
+"There are no groups configured. Why not <a "
+"href=\"%(wagtailusers_create_group_url)s\">add some</a>?"
 msgstr ""
-"Nebyly nalezeny žádné skupiny. Novou skupinu můžete přidat <a href="
-"\"%(wagtailusers_create_group_url)s\">zde</a>."
+"Nebyly nalezeny žádné skupiny. Novou skupinu můžete přidat <a "
+"href=\"%(wagtailusers_create_group_url)s\">zde</a>."
 
 msgid "Delete user"
 msgstr "Smazat uživatele"
@@ -249,19 +250,23 @@ msgstr ""
 
 #, python-format
 msgid ""
-"The %(group_name)s group has no users configured. Why not <a href="
-"\"%(wagtailusers_add_url)s\">add some</a>?"
+"The %(group_name)s group has no users configured. Why not <a "
+"href=\"%(wagtailusers_add_url)s\">add some</a>?"
 msgstr ""
-" %(group_name)s skupina nemá žádné uživatele. Pojďme <a href="
-"\"%(wagtailusers_add_url)s\">nějaké přidat</a>?"
+" %(group_name)s skupina nemá žádné uživatele. Pojďme <a "
+"href=\"%(wagtailusers_add_url)s\">nějaké přidat</a>?"
 
 #, python-format
 msgid ""
-"There are no users configured. Why not <a href=\"%(wagtailusers_add_url)s"
-"\">add some</a>?"
+"There are no users configured. Why not <a "
+"href=\"%(wagtailusers_add_url)s\">add some</a>?"
 msgstr ""
 "Nejsou určeni uživatelé. Pojďme <a href=\"%(wagtailusers_add_url)s\">nějaké "
 "přidat</a>?"
+
+#, python-format
+msgid "user %(id)s (deleted)"
+msgstr "uživatel %(id)s (odstraněn)"
 
 msgid "Groups"
 msgstr "Skupiny"
@@ -272,35 +277,35 @@ msgstr "Přidat skupinu"
 msgid "Search groups"
 msgstr "Hledat skupiny"
 
-#, python-brace-format
-msgid "Group '{0}' created."
-msgstr "Skupina '{0}' byla vytvořena."
+#, python-format
+msgid "Group '%(object)s' created."
+msgstr "Skupina '%(object)s' byla vytvořena."
 
-#, python-brace-format
-msgid "Group '{0}' updated."
-msgstr "Skupina '{0}' byla upravena."
+#, python-format
+msgid "Group '%(object)s' updated."
+msgstr "Skupina '%(object)s' byla upravena."
 
 msgid "The group could not be saved due to errors."
 msgstr "Skupinu nelze uložit, zkontrolujte správné vyplnění polí."
 
-#, python-brace-format
-msgid "Group '{0}' deleted."
-msgstr "Skupina '{0}' byla smazána."
+#, python-format
+msgid "Group '%(object)s' deleted."
+msgstr "Skupina '%(object)s' byla smazána."
 
-#, python-brace-format
-msgid "User '{0}' updated."
-msgstr "Uživatel '{0}' byl upraven."
+#, python-format
+msgid "User '%(object)s' updated."
+msgstr "Uživatel '%(object)s' byl upraven."
 
 msgid "The user could not be saved due to errors."
 msgstr "Uživatele nelze uložit, zkontrolujte správné vyplnění polí."
 
 #, python-format
-msgid "Editing %s"
-msgstr "Editování %s"
+msgid "Editing %(object)s"
+msgstr "Editování %(object)s"
 
-#, python-brace-format
-msgid "User '{0}' deleted."
-msgstr "Uživatel '{0}' byl smazán."
+#, python-format
+msgid "User '%(object)s' deleted."
+msgstr "Uživatel '%(object)s' byl smazán."
 
 msgid "Edit"
 msgstr "Upravit"

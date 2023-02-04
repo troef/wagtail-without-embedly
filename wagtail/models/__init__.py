@@ -67,6 +67,7 @@ from wagtail.actions.unpublish_page import UnpublishPageAction
 from wagtail.coreutils import (
     WAGTAIL_APPEND_SLASH,
     camelcase_to_underscore,
+    get_content_type_label,
     get_supported_content_language_variant,
     resolve_model_string,
 )
@@ -90,7 +91,10 @@ from wagtail.signals import (
     workflow_submitted,
 )
 from wagtail.url_routing import RouteResult
-from wagtail.utils.deprecation import RemovedInWagtail50Warning
+from wagtail.utils.deprecation import (
+    RemovedInWagtail50Warning,
+    RemovedInWagtail60Warning,
+)
 
 from .audit_log import (  # noqa
     BaseLogEntry,
@@ -229,6 +233,11 @@ class RevisionMixin(models.Model):
         blank=True,
         editable=False,
     )
+
+    # An array of additional field names that will not be included when the object is copied.
+    default_exclude_fields_in_copy = [
+        "latest_revision",
+    ]
 
     @property
     def revisions(self):
@@ -487,7 +496,13 @@ class DraftStateMixin(models.Model):
                 return _("live")
 
     def publish(
-        self, revision, user=None, changed=True, log_action=True, previous_revision=None
+        self,
+        revision,
+        user=None,
+        changed=True,
+        log_action=True,
+        previous_revision=None,
+        skip_permission_checks=False,
     ):
         """
         Publish a revision of the object by applying the changes in the revision to the live object.
@@ -506,7 +521,7 @@ class DraftStateMixin(models.Model):
             changed=changed,
             log_action=log_action,
             previous_revision=previous_revision,
-        ).execute()
+        ).execute(skip_permission_checks=skip_permission_checks)
 
     def unpublish(self, set_expired=False, commit=True, user=None, log_action=True):
         """
@@ -578,6 +593,12 @@ class DraftStateMixin(models.Model):
             update_fields.append("has_unpublished_changes")
 
         self.save(update_fields=update_fields)
+
+    def get_lock(self):
+        # Scheduled publishing lock should take precedence over other locks
+        if self.scheduled_revision:
+            return ScheduledForPublishLock(self)
+        return super().get_lock()
 
 
 class PreviewableMixin:
@@ -788,22 +809,43 @@ class LockableMixin(models.Model):
         blank=True,
         editable=False,
         on_delete=models.SET_NULL,
-        related_name="locked_pages",
+        related_name="locked_%(class)ss",
     )
     locked_by.wagtail_reference_index_ignore = True
 
     class Meta:
         abstract = True
 
+    @classmethod
+    def check(cls, **kwargs):
+        return [
+            *super().check(**kwargs),
+            *cls._check_revision_mixin(),
+        ]
+
+    @classmethod
+    def _check_revision_mixin(cls):
+        mro = cls.mro()
+        error = checks.Error(
+            "LockableMixin must be applied before RevisionMixin.",
+            hint="Move LockableMixin in the model's base classes before RevisionMixin.",
+            obj=cls,
+            id="wagtailcore.E005",
+        )
+
+        try:
+            if mro.index(RevisionMixin) < mro.index(LockableMixin):
+                return [error]
+        except ValueError:
+            # LockableMixin can be used without RevisionMixin.
+            return []
+
+        return []
+
     def with_content_json(self, content):
         """
-        Returns a new version of the object with field values updated to reflect changes
-        in the provided ``content`` (which usually comes from a previously-saved revision).
-
-        Certain field values are preserved in order to prevent errors if the returned
-        object is saved, such as ``id``. The following field values are also preserved,
-        as they are considered to be meaningful to the object as a whole, rather than
-        to a specific revision:
+        Similar to :meth:`RevisionMixin.with_content_json`,
+        but with the following fields also preserved:
 
         * ``locked``
         * ``locked_at``
@@ -821,19 +863,196 @@ class LockableMixin(models.Model):
 
     def get_lock(self):
         """
-        Returns a sub-class of BaseLock if the instance is locked, otherwise None
+        Returns a sub-class of ``BaseLock`` if the instance is locked, otherwise ``None``.
         """
         if self.locked:
             return BasicLock(self)
 
-        if isinstance(self, DraftStateMixin) and self.scheduled_revision:
-            return ScheduledForPublishLock(self)
+
+class WorkflowMixin:
+    """A mixin that allows a model to have workflows."""
+
+    @classmethod
+    def check(cls, **kwargs):
+        return [
+            *super().check(**kwargs),
+            *cls._check_draftstate_and_revision_mixins(),
+        ]
+
+    @classmethod
+    def _check_draftstate_and_revision_mixins(cls):
+        mro = cls.mro()
+        error = checks.Error(
+            "WorkflowMixin requires DraftStateMixin and RevisionMixin "
+            "(in that order).",
+            hint=(
+                "Make sure your model's inheritance order is as follows: "
+                "WorkflowMixin, DraftStateMixin, RevisionMixin."
+            ),
+            obj=cls,
+            id="wagtailcore.E006",
+        )
+
+        try:
+            if not (
+                mro.index(WorkflowMixin)
+                < mro.index(DraftStateMixin)
+                < mro.index(RevisionMixin)
+            ):
+                return [error]
+        except ValueError:
+            return [error]
+
+        return []
+
+    @classmethod
+    def get_default_workflow(cls):
+        """
+        Returns the active workflow assigned to the model.
+
+        For non-``Page`` models, workflows are assigned to the model's content type,
+        thus shared across all instances instead of being assigned to individual
+        instances (unless :meth:`~WorkflowMixin.get_workflow` is overridden).
+
+        This method is used to determine the workflow to use when creating new
+        instances of the model. On ``Page`` models, this method is unused as the
+        workflow can be determined from the parent page's workflow.
+        """
+        if not getattr(settings, "WAGTAIL_WORKFLOW_ENABLED", True):
+            return None
+
+        content_type = ContentType.objects.get_for_model(cls, for_concrete_model=False)
+        workflow_content_type = (
+            WorkflowContentType.objects.filter(
+                workflow__active=True,
+                content_type=content_type,
+            )
+            .select_related("workflow")
+            .first()
+        )
+
+        if workflow_content_type:
+            return workflow_content_type.workflow
+        return None
+
+    @property
+    def has_workflow(self):
+        """Returns True if the object has an active workflow assigned, otherwise False."""
+        return self.get_workflow() is not None
+
+    def get_workflow(self):
+        """Returns the active workflow assigned to the object."""
+        return self.get_default_workflow()
+
+    @property
+    def workflow_states(self):
+        """
+        Returns workflow states that belong to the object.
+
+        To allow filtering ``WorkflowState`` queries by the object,
+        subclasses should define a
+        :class:`~django.contrib.contenttypes.fields.GenericRelation` to
+        :class:`~wagtail.models.WorkflowState` with the desired
+        ``related_query_name``. This property can be replaced with the
+        ``GenericRelation`` or overridden to allow custom logic, which can be
+        useful if the model has inheritance.
+        """
+        return WorkflowState.objects.for_instance(self)
+
+    @property
+    def workflow_in_progress(self):
+        """Returns True if a workflow is in progress on the current object, otherwise False."""
+        if not getattr(settings, "WAGTAIL_WORKFLOW_ENABLED", True):
+            return False
+
+        # `_current_workflow_states` may be populated by `prefetch_workflow_states`
+        # on querysets as a performance optimisation
+        if hasattr(self, "_current_workflow_states"):
+            for state in self._current_workflow_states:
+                if state.status == WorkflowState.STATUS_IN_PROGRESS:
+                    return True
+            return False
+
+        return self.workflow_states.filter(
+            status=WorkflowState.STATUS_IN_PROGRESS
+        ).exists()
+
+    @property
+    def current_workflow_state(self):
+        """Returns the in progress or needs changes workflow state on this object, if it exists."""
+        if not getattr(settings, "WAGTAIL_WORKFLOW_ENABLED", True):
+            return None
+
+        # `_current_workflow_states` may be populated by `prefetch_workflow_states`
+        # on querysets as a performance optimisation
+        if hasattr(self, "_current_workflow_states"):
+            try:
+                return self._current_workflow_states[0]
+            except IndexError:
+                return
+
+        return (
+            self.workflow_states.active()
+            .select_related("current_task_state__task")
+            .first()
+        )
+
+    @property
+    def current_workflow_task_state(self):
+        """Returns (specific class of) the current task state of the workflow on this object, if it exists."""
+        current_workflow_state = self.current_workflow_state
+        if (
+            current_workflow_state
+            and current_workflow_state.status == WorkflowState.STATUS_IN_PROGRESS
+            and current_workflow_state.current_task_state
+        ):
+            return current_workflow_state.current_task_state.specific
+
+    @property
+    def current_workflow_task(self):
+        """Returns (specific class of) the current task in progress on this object, if it exists."""
+        current_workflow_task_state = self.current_workflow_task_state
+        if current_workflow_task_state:
+            return current_workflow_task_state.task.specific
+
+    @property
+    def status_string(self):
+        if not self.live:
+            if self.expired:
+                return _("expired")
+            elif self.approved_schedule:
+                return _("scheduled")
+            elif self.workflow_in_progress:
+                return _("in moderation")
+            else:
+                return _("draft")
+        else:
+            if self.approved_schedule:
+                return _("live + scheduled")
+            elif self.workflow_in_progress:
+                return _("live + in moderation")
+            elif self.has_unpublished_changes:
+                return _("live + draft")
+            else:
+                return _("live")
+
+    def get_lock(self):
+        # Standard locking should take precedence over workflow locking
+        # because it's possible for both to be used at the same time
+        lock = super().get_lock()
+        if lock:
+            return lock
+
+        current_workflow_task = self.current_workflow_task
+        if current_workflow_task:
+            return WorkflowLock(self, current_workflow_task)
 
 
 class AbstractPage(
-    LockableMixin,
+    WorkflowMixin,
     PreviewableMixin,
     DraftStateMixin,
+    LockableMixin,
     RevisionMixin,
     TranslatableMixin,
     MP_Node,
@@ -916,6 +1135,18 @@ class Page(AbstractPage, index.Indexed, ClusterableModel, metaclass=PageBase):
     )
 
     _revisions = GenericRelation("wagtailcore.Revision", related_query_name="page")
+
+    # Add GenericRelation to allow WorkflowState.objects.filter(page=...) queries.
+    # There is no need to override the workflow_states property, as the default
+    # implementation in WorkflowMixin already ensures that the queryset uses the
+    # base Page content type.
+    _workflow_states = GenericRelation(
+        "wagtailcore.WorkflowState",
+        content_type_field="base_content_type",
+        object_id_field="object_id",
+        related_query_name="page",
+        for_concrete_model=False,
+    )
 
     # If non-null, this page is an alias of the linked page
     # This means the page is kept in sync with the live version
@@ -1098,8 +1329,16 @@ class Page(AbstractPage, index.Indexed, ClusterableModel, metaclass=PageBase):
 
     def clean(self):
         super().clean()
-        if not Page._slug_is_available(self.slug, self.get_parent(), self):
-            raise ValidationError({"slug": _("This slug is already in use")})
+        parent_page = self.get_parent()
+        if not Page._slug_is_available(self.slug, parent_page, self):
+            raise ValidationError(
+                {
+                    "slug": _(
+                        "The slug '%(page_slug)s' is already in use within the parent page at '%(parent_url_path)s'"
+                    )
+                    % {"page_slug": self.slug, "parent_url_path": parent_page.url}
+                }
+            )
 
     def is_site_root(self):
         """
@@ -1713,7 +1952,13 @@ class Page(AbstractPage, index.Indexed, ClusterableModel, metaclass=PageBase):
     update_aliases.alters_data = True
 
     def publish(
-        self, revision, user=None, changed=True, log_action=True, previous_revision=None
+        self,
+        revision,
+        user=None,
+        changed=True,
+        log_action=True,
+        previous_revision=None,
+        skip_permission_checks=False,
     ):
         return PublishPageRevisionAction(
             revision,
@@ -1721,7 +1966,7 @@ class Page(AbstractPage, index.Indexed, ClusterableModel, metaclass=PageBase):
             changed=changed,
             log_action=log_action,
             previous_revision=previous_revision,
-        ).execute()
+        ).execute(skip_permission_checks=skip_permission_checks)
 
     def unpublish(self, set_expired=False, commit=True, user=None, log_action=True):
         return UnpublishPageAction(
@@ -2124,27 +2369,6 @@ class Page(AbstractPage, index.Indexed, ClusterableModel, metaclass=PageBase):
             return ""
 
     @property
-    def status_string(self):
-        if not self.live:
-            if self.expired:
-                return _("expired")
-            elif self.approved_schedule:
-                return _("scheduled")
-            elif self.workflow_in_progress:
-                return _("in moderation")
-            else:
-                return _("draft")
-        else:
-            if self.approved_schedule:
-                return _("live + scheduled")
-            elif self.workflow_in_progress:
-                return _("live + in moderation")
-            elif self.has_unpublished_changes:
-                return _("live + draft")
-            else:
-                return _("live")
-
-    @property
     def approved_schedule(self):
         # `_approved_schedule` may be populated by `annotate_approved_schedule` on `PageQuerySet` as a
         # performance optimisation
@@ -2266,17 +2490,6 @@ class Page(AbstractPage, index.Indexed, ClusterableModel, metaclass=PageBase):
 
         return bool(page.preview_modes)
 
-    def get_lock(self):
-        # Standard locking should take precedence over workflow locking
-        # because it's possible for both to be used at the same time
-        lock = super().get_lock()
-        if lock:
-            return lock
-
-        current_workflow_task = self.current_workflow_task
-        if current_workflow_task:
-            return WorkflowLock(current_workflow_task, self)
-
     def get_route_paths(self):
         """
         .. versionadded:: 2.16
@@ -2314,19 +2527,6 @@ class Page(AbstractPage, index.Indexed, ClusterableModel, metaclass=PageBase):
                 "lastmod": (self.last_published_at or self.latest_revision_created_at),
             }
         ]
-
-    def get_static_site_paths(self):
-        """
-        This is a generator of URL paths to feed into a static site generator
-        Override this if you would like to create static versions of subpages
-        """
-        # Yield path for this page
-        yield "/"
-
-        # Yield paths for child pages
-        for child in self.get_children().live():
-            for path in child.specific.get_static_site_paths():
-                yield "/" + child.slug + path
 
     def get_ancestors(self, inclusive=False):
         """
@@ -2521,65 +2721,6 @@ class Page(AbstractPage, index.Indexed, ClusterableModel, metaclass=PageBase):
             except AttributeError:
                 workflow = None
             return workflow
-
-    @property
-    def workflow_in_progress(self):
-        """Returns True if a workflow is in progress on the current page, otherwise False"""
-        if not getattr(settings, "WAGTAIL_WORKFLOW_ENABLED", True):
-            return False
-
-        # `_current_workflow_states` may be populated by `prefetch_workflow_states` on `PageQuerySet` as a
-        # performance optimisation
-        if hasattr(self, "_current_workflow_states"):
-            for state in self._current_workflow_states:
-                if state.status == WorkflowState.STATUS_IN_PROGRESS:
-                    return True
-            return False
-
-        return WorkflowState.objects.filter(
-            page=self, status=WorkflowState.STATUS_IN_PROGRESS
-        ).exists()
-
-    @property
-    def current_workflow_state(self):
-        """Returns the in progress or needs changes workflow state on this page, if it exists"""
-        if not getattr(settings, "WAGTAIL_WORKFLOW_ENABLED", True):
-            return None
-
-        # `_current_workflow_states` may be populated by `prefetch_workflow_states` on `pagequeryset` as a
-        # performance optimisation
-        if hasattr(self, "_current_workflow_states"):
-            try:
-                return self._current_workflow_states[0]
-            except IndexError:
-                return
-
-        try:
-            return (
-                WorkflowState.objects.active()
-                .select_related("current_task_state__task")
-                .get(page=self)
-            )
-        except WorkflowState.DoesNotExist:
-            return
-
-    @property
-    def current_workflow_task_state(self):
-        """Returns (specific class of) the current task state of the workflow on this page, if it exists"""
-        current_workflow_state = self.current_workflow_state
-        if (
-            current_workflow_state
-            and current_workflow_state.status == WorkflowState.STATUS_IN_PROGRESS
-            and current_workflow_state.current_task_state
-        ):
-            return current_workflow_state.current_task_state.specific
-
-    @property
-    def current_workflow_task(self):
-        """Returns (specific class of) the current task in progress on this page, if it exists"""
-        current_workflow_task_state = self.current_workflow_task_state
-        if current_workflow_task_state:
-            return current_workflow_task_state.task.specific
 
     class Meta:
         verbose_name = _("page")
@@ -2794,15 +2935,17 @@ class Revision(models.Model):
             # special case: a revision without an ID is presumed to be newly-created and is thus
             # newer than any revision that might exist in the database
             return True
-        latest_revision = (
+
+        latest_revision_id = (
             Revision.objects.filter(
                 base_content_type_id=self.base_content_type_id,
                 object_id=self.object_id,
             )
             .order_by("-created_at", "-id")
+            .values_list("id", flat=True)
             .first()
         )
-        return latest_revision == self
+        return latest_revision_id == self.id
 
     def delete(self):
         # Update revision_created fields for comments that reference the current revision, if applicable.
@@ -2818,13 +2961,21 @@ class Revision(models.Model):
 
         return super().delete()
 
-    def publish(self, user=None, changed=True, log_action=True, previous_revision=None):
+    def publish(
+        self,
+        user=None,
+        changed=True,
+        log_action=True,
+        previous_revision=None,
+        skip_permission_checks=False,
+    ):
         return self.content_object.publish(
             self,
             user=user,
             changed=changed,
             log_action=log_action,
             previous_revision=previous_revision,
+            skip_permission_checks=skip_permission_checks,
         )
 
     def get_previous(self):
@@ -3418,6 +3569,27 @@ class WorkflowPage(models.Model):
         verbose_name_plural = _("workflow pages")
 
 
+class WorkflowContentType(models.Model):
+    content_type = models.OneToOneField(
+        ContentType,
+        related_name="wagtail_workflow_content_type",
+        verbose_name=_("content type"),
+        on_delete=models.CASCADE,
+        primary_key=True,
+        unique=True,
+    )
+    workflow = models.ForeignKey(
+        "Workflow",
+        related_name="workflow_content_types",
+        verbose_name=_("workflow"),
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        content_type_label = get_content_type_label(self.content_type)
+        return f"WorkflowContentType: {content_type_label} - {self.workflow}"
+
+
 class WorkflowTask(Orderable):
     workflow = ParentalKey(
         "Workflow",
@@ -3509,7 +3681,7 @@ class Task(models.Model):
             # Cannot locate a model class for this content type. This might happen
             # if the codebase and database are out of sync (e.g. the model exists
             # on a different git branch and we haven't rolled back migrations before
-            # switching branches); if so, the best we can do is return the page
+            # switching branches); if so, the best we can do is return the task
             # unchanged.
             return self
         elif isinstance(self, model_class):
@@ -3528,7 +3700,7 @@ class Task(models.Model):
         """Start this task on the provided workflow state by creating an instance of TaskState"""
         task_state = self.get_task_state_class()(workflow_state=workflow_state)
         task_state.status = TaskState.STATUS_IN_PROGRESS
-        task_state.page_revision = workflow_state.page.get_latest_revision()
+        task_state.revision = workflow_state.content_object.get_latest_revision()
         task_state.task = self
         task_state.save()
         task_submitted.send(
@@ -3546,29 +3718,43 @@ class Task(models.Model):
         elif action_name == "reject":
             task_state.reject(user=user, **kwargs)
 
-    def user_can_access_editor(self, page, user):
-        """Returns True if a user who would not normally be able to access the editor for the page should be able to if the page is currently on this task.
+    def user_can_access_editor(self, obj, user):
+        """Returns True if a user who would not normally be able to access the editor for the object should be able to if the object is currently on this task.
         Note that returning False does not remove permissions from users who would otherwise have them."""
         return False
 
-    def page_locked_for_user(self, page, user):
-        """Returns True if the page should be locked to a given user's edits. This can be used to prevent editing by non-reviewers."""
+    def locked_for_user(self, obj, user):
+        """
+        Returns True if the object should be locked to a given user's edits.
+        This can be used to prevent editing by non-reviewers.
+
+        .. versionchanged:: 4.2
+          This method has been renamed from ``page_locked_for_user`` to ``locked_for_user``.
+        """
+        if hasattr(self, "page_locked_for_user"):
+            warnings.warn(
+                "Tasks should use .locked_for_user() instead of "
+                ".page_locked_for_user().",
+                category=RemovedInWagtail60Warning,
+                stacklevel=2,
+            )
+            return self.page_locked_for_user(obj, user)
         return False
 
-    def user_can_lock(self, page, user):
-        """Returns True if a user who would not normally be able to lock the page should be able to if the page is currently on this task.
+    def user_can_lock(self, obj, user):
+        """Returns True if a user who would not normally be able to lock the object should be able to if the object is currently on this task.
         Note that returning False does not remove permissions from users who would otherwise have them."""
         return False
 
-    def user_can_unlock(self, page, user):
-        """Returns True if a user who would not normally be able to unlock the page should be able to if the page is currently on this task.
+    def user_can_unlock(self, obj, user):
+        """Returns True if a user who would not normally be able to unlock the object should be able to if the object is currently on this task.
         Note that returning False does not remove permissions from users who would otherwise have them."""
         return False
 
-    def get_actions(self, page, user):
+    def get_actions(self, obj, user):
         """
         Get the list of action strings (name, verbose_name, whether the action requires additional data - see
-        ``get_form_for_action``) for actions the current user can perform for this task on the given page.
+        ``get_form_for_action``) for actions the current user can perform for this task on the given object.
         These strings should be the same as those able to be passed to ``on_action``
         """
         return []
@@ -3615,7 +3801,7 @@ class Workflow(ClusterableModel):
         verbose_name=_("active"),
         default=True,
         help_text=_(
-            "Active workflows can be added to pages. Deactivating a workflow does not remove it from existing pages."
+            "Active workflows can be added to pages/snippets. Deactivating a workflow does not remove it from existing pages/snippets."
         ),
     )
     objects = WorkflowManager()
@@ -3631,10 +3817,12 @@ class Workflow(ClusterableModel):
         )
 
     @transaction.atomic
-    def start(self, page, user):
+    def start(self, obj, user):
         """Initiates a workflow by creating an instance of ``WorkflowState``"""
         state = WorkflowState(
-            page=page,
+            content_type=obj.get_content_type(),
+            base_content_type=obj.get_base_content_type(),
+            object_id=str(obj.pk),
             workflow=self,
             status=WorkflowState.STATUS_IN_PROGRESS,
             requested_by=user,
@@ -3650,7 +3838,7 @@ class Workflow(ClusterableModel):
                 "title": state.current_task_state.task.name,
             }
         log(
-            instance=page,
+            instance=obj,
             action="wagtail.workflow.start",
             data={
                 "workflow": {
@@ -3663,7 +3851,7 @@ class Workflow(ClusterableModel):
                     else None,
                 }
             },
-            revision=page.get_latest_revision(),
+            revision=obj.get_latest_revision(),
             user=user,
         )
 
@@ -3679,6 +3867,7 @@ class Workflow(ClusterableModel):
         for state in in_progress_states:
             state.cancel(user=user)
         WorkflowPage.objects.filter(workflow=self).delete()
+        WorkflowContentType.objects.filter(workflow=self).delete()
         self.save()
 
     def all_pages(self):
@@ -3702,7 +3891,7 @@ class GroupApprovalTask(Task):
         Group,
         verbose_name=_("groups"),
         help_text=_(
-            "Pages at this step in a workflow will be moderated or approved by these groups of users"
+            "Pages/snippets at this step in a workflow will be moderated or approved by these groups of users"
         ),
     )
 
@@ -3712,37 +3901,40 @@ class GroupApprovalTask(Task):
     }
 
     def start(self, workflow_state, user=None):
-        if workflow_state.page.locked_by:
-            # If the person who locked the page isn't in one of the groups, unlock the page
-            if not workflow_state.page.locked_by.groups.filter(
+        if (
+            isinstance(workflow_state, LockableMixin)
+            and workflow_state.content_object.locked_by
+        ):
+            # If the person who locked the object isn't in one of the groups, unlock the object
+            if not workflow_state.content_object.locked_by.groups.filter(
                 id__in=self.groups.all()
             ).exists():
-                workflow_state.page.locked = False
-                workflow_state.page.locked_by = None
-                workflow_state.page.locked_at = None
-                workflow_state.page.save(
+                workflow_state.content_object.locked = False
+                workflow_state.content_object.locked_by = None
+                workflow_state.content_object.locked_at = None
+                workflow_state.content_object.save(
                     update_fields=["locked", "locked_by", "locked_at"]
                 )
 
         return super().start(workflow_state, user=user)
 
-    def user_can_access_editor(self, page, user):
+    def user_can_access_editor(self, obj, user):
         return (
             self.groups.filter(id__in=user.groups.all()).exists() or user.is_superuser
         )
 
-    def page_locked_for_user(self, page, user):
+    def locked_for_user(self, obj, user):
         return not (
             self.groups.filter(id__in=user.groups.all()).exists() or user.is_superuser
         )
 
-    def user_can_lock(self, page, user):
+    def user_can_lock(self, obj, user):
         return self.groups.filter(id__in=user.groups.all()).exists()
 
-    def user_can_unlock(self, page, user):
+    def user_can_unlock(self, obj, user):
         return False
 
-    def get_actions(self, page, user):
+    def get_actions(self, obj, user):
         if self.groups.filter(id__in=user.groups.all()).exists() or user.is_superuser:
             return [
                 ("reject", _("Request changes"), True),
@@ -3769,7 +3961,7 @@ class GroupApprovalTask(Task):
         verbose_name_plural = _("Group approval tasks")
 
 
-class WorkflowStateManager(models.Manager):
+class WorkflowStateQuerySet(models.QuerySet):
     def active(self):
         """
         Filters to only STATUS_IN_PROGRESS and STATUS_NEEDS_CHANGES WorkflowStates
@@ -3779,9 +3971,31 @@ class WorkflowStateManager(models.Manager):
             | Q(status=WorkflowState.STATUS_NEEDS_CHANGES)
         )
 
+    def for_instance(self, instance):
+        """
+        Filters to only WorkflowStates for the given instance
+        """
+        try:
+            # Use RevisionMixin.get_base_content_type() if available
+            return self.filter(
+                base_content_type=instance.get_base_content_type(),
+                object_id=str(instance.pk),
+            )
+        except AttributeError:
+            # Fallback to ContentType for the model
+            return self.filter(
+                content_type=ContentType.objects.get_for_model(
+                    instance, for_concrete_model=False
+                ),
+                object_id=str(instance.pk),
+            )
+
+
+WorkflowStateManager = models.Manager.from_queryset(WorkflowStateQuerySet)
+
 
 class WorkflowState(models.Model):
-    """Tracks the status of a started Workflow on a Page."""
+    """Tracks the status of a started Workflow on an object."""
 
     STATUS_IN_PROGRESS = "in_progress"
     STATUS_APPROVED = "approved"
@@ -3794,12 +4008,19 @@ class WorkflowState(models.Model):
         (STATUS_CANCELLED, _("Cancelled")),
     )
 
-    page = models.ForeignKey(
-        "Page",
-        on_delete=models.CASCADE,
-        verbose_name=_("page"),
-        related_name="workflow_states",
+    content_type = models.ForeignKey(
+        ContentType, on_delete=models.CASCADE, related_name="+"
     )
+    base_content_type = models.ForeignKey(
+        ContentType, on_delete=models.CASCADE, related_name="+"
+    )
+    object_id = models.CharField(max_length=255, verbose_name=_("object id"))
+
+    content_object = GenericForeignKey(
+        "base_content_type", "object_id", for_concrete_model=False
+    )
+    content_object.wagtail_reference_index_ignore = True
+
     workflow = models.ForeignKey(
         "Workflow",
         on_delete=models.CASCADE,
@@ -3848,13 +4069,16 @@ class WorkflowState(models.Model):
             # The unique constraint is conditional, and so not supported on the MySQL backend - so an additional check is done here
             if (
                 WorkflowState.objects.active()
-                .filter(page=self.page)
+                .filter(
+                    base_content_type_id=self.base_content_type_id,
+                    object_id=self.object_id,
+                )
                 .exclude(pk=self.pk)
                 .exists()
             ):
                 raise ValidationError(
                     _(
-                        "There may only be one in progress or needs changes workflow state per page."
+                        "There may only be one in progress or needs changes workflow state per page/snippet."
                     )
                 )
 
@@ -3863,22 +4087,31 @@ class WorkflowState(models.Model):
         return super().save(*args, **kwargs)
 
     def __str__(self):
-        return _("Workflow '{0}' on Page '{1}': {2}").format(
-            self.workflow, self.page, self.status
-        )
+        return _(
+            "Workflow '%(workflow_name)s' on %(model_name)s '%(title)s': %(status)s"
+        ) % {
+            "workflow_name": self.workflow,
+            "model_name": self.content_object._meta.verbose_name,
+            "title": self.content_object,
+            "status": self.status,
+        }
 
     def resume(self, user=None):
         """Put a STATUS_NEEDS_CHANGES workflow state back into STATUS_IN_PROGRESS, and restart the current task"""
         if self.status != self.STATUS_NEEDS_CHANGES:
             raise PermissionDenied
-        revision = self.current_task_state.page_revision
+        revision = self.current_task_state.revision
         current_task_state = self.current_task_state
         self.current_task_state = None
         self.status = self.STATUS_IN_PROGRESS
         self.save()
 
+        instance = self.content_object
+        if isinstance(instance, Page):
+            instance = self.content_object.specific
+
         log(
-            instance=self.page.specific,
+            instance=instance,
             action="wagtail.workflow.resume",
             data={
                 "workflow": {
@@ -3898,11 +4131,15 @@ class WorkflowState(models.Model):
         return self.update(user=user, next_task=current_task_state.task)
 
     def user_can_cancel(self, user):
-        if self.page.locked and self.page.locked_by != user:
+        if (
+            isinstance(self.content_object, LockableMixin)
+            and self.content_object.locked
+            and self.content_object.locked_by != user
+        ):
             return False
         return (
             user == self.requested_by
-            or user == self.page.owner
+            or user == getattr(self.content_object, "owner", None)
             or (
                 self.current_task_state
                 and self.current_task_state.status
@@ -3911,7 +4148,7 @@ class WorkflowState(models.Model):
                 in [
                     action[0]
                     for action in self.current_task_state.task.get_actions(
-                        self.page, user
+                        self.content_object, user
                     )
                 ]
             )
@@ -3962,7 +4199,7 @@ class WorkflowState(models.Model):
         )
         if getattr(settings, "WAGTAIL_WORKFLOW_REQUIRE_REAPPROVAL_ON_EDIT", False):
             successful_task_states = successful_task_states.filter(
-                page_revision=self.page.get_latest_revision()
+                revision=self.content_object.get_latest_revision()
             )
 
         return successful_task_states
@@ -3984,8 +4221,12 @@ class WorkflowState(models.Model):
         self.status = self.STATUS_CANCELLED
         self.save()
 
+        instance = self.content_object
+        if isinstance(instance, Page):
+            instance = self.content_object.specific
+
         log(
-            instance=self.page.specific,
+            instance=instance,
             action="wagtail.workflow.cancel",
             data={
                 "workflow": {
@@ -3999,7 +4240,7 @@ class WorkflowState(models.Model):
                     },
                 }
             },
-            revision=self.current_task_state.page_revision,
+            revision=self.current_task_state.revision,
             user=user,
         )
 
@@ -4019,18 +4260,19 @@ class WorkflowState(models.Model):
         workflow_approved.send(sender=self.__class__, instance=self, user=user)
 
     def copy_approved_task_states_to_revision(self, revision):
-        """This creates copies of previously approved task states with page_revision set to a different revision."""
+        """This creates copies of previously approved task states with revision set to a different revision."""
         approved_states = TaskState.objects.filter(
             workflow_state=self, status=TaskState.STATUS_APPROVED
         )
         for state in approved_states:
-            state.copy(update_attrs={"page_revision": revision})
+            state.copy(update_attrs={"revision": revision})
 
     def revisions(self):
-        """Returns all page revisions associated with task states linked to the current workflow state"""
-        return Revision.page_revisions.filter(
-            object_id=str(self.page_id),
-            id__in=self.task_states.values_list("page_revision_id", flat=True),
+        """Returns all revisions associated with task states linked to the current workflow state"""
+        return Revision.objects.filter(
+            base_content_type_id=self.base_content_type_id,
+            object_id=self.object_id,
+            id__in=self.task_states.values_list("revision_id", flat=True),
         ).defer("content")
 
     def _get_applicable_task_states(self):
@@ -4045,7 +4287,7 @@ class WorkflowState(models.Model):
                 .values_list("id", flat=True)
                 .first()
             )
-            task_states = task_states.filter(page_revision_id=latest_revision_id)
+            task_states = task_states.filter(revision_id=latest_revision_id)
         return task_states
 
     def all_tasks_with_status(self):
@@ -4129,13 +4371,23 @@ class WorkflowState(models.Model):
     class Meta:
         verbose_name = _("Workflow state")
         verbose_name_plural = _("Workflow states")
-        # prevent multiple STATUS_IN_PROGRESS/STATUS_NEEDS_CHANGES workflows for the same page. This is only supported by specific databases (e.g. Postgres, SQL Server), so is checked additionally on save.
+        # prevent multiple STATUS_IN_PROGRESS/STATUS_NEEDS_CHANGES workflows for the same object. This is only supported by specific databases (e.g. Postgres, SQL Server), so is checked additionally on save.
         constraints = [
             models.UniqueConstraint(
-                fields=["page"],
+                fields=["base_content_type", "object_id"],
                 condition=Q(status__in=("in_progress", "needs_changes")),
                 name="unique_in_progress_workflow",
             )
+        ]
+        indexes = [
+            models.Index(
+                fields=["content_type", "object_id"],
+                name="workflowstate_ct_id_idx",
+            ),
+            models.Index(
+                fields=["base_content_type", "object_id"],
+                name="workflowstate_base_ct_id_idx",
+            ),
         ]
 
 
@@ -4147,9 +4399,29 @@ class TaskStateManager(models.Manager):
             states = states | task.specific.get_task_states_user_can_moderate(user=user)
         return states
 
+    def for_instance(self, instance):
+        """
+        Filters to only TaskStates for the given instance
+        """
+        queryset = self.get_queryset()
+        try:
+            # Use RevisionMixin.get_base_content_type() if available
+            return queryset.filter(
+                workflow_state__base_content_type=instance.get_base_content_type(),
+                workflow_state__object_id=str(instance.pk),
+            )
+        except AttributeError:
+            # Fallback to ContentType for the model
+            return queryset.filter(
+                workflow_state__content_type=ContentType.objects.get_for_model(
+                    instance, for_concrete_model=False
+                ),
+                workflow_state__object_id=str(instance.pk),
+            )
+
 
 class TaskState(models.Model):
-    """Tracks the status of a given Task for a particular page revision."""
+    """Tracks the status of a given Task for a particular revision."""
 
     STATUS_IN_PROGRESS = "in_progress"
     STATUS_APPROVED = "approved"
@@ -4170,10 +4442,10 @@ class TaskState(models.Model):
         verbose_name=_("workflow state"),
         related_name="task_states",
     )
-    page_revision = models.ForeignKey(
+    revision = models.ForeignKey(
         "Revision",
         on_delete=models.CASCADE,
-        verbose_name=_("page revision"),
+        verbose_name=_("revision"),
         related_name="task_states",
     )
     task = models.ForeignKey(
@@ -4223,9 +4495,11 @@ class TaskState(models.Model):
                 self.content_type = ContentType.objects.get_for_model(self)
 
     def __str__(self):
-        return _("Task '{0}' on Page Revision '{1}': {2}").format(
-            self.task, self.page_revision, self.status
-        )
+        return _("Task '%(task_name)s' on Revision '%(revision_info)s': %(status)s") % {
+            "task_name": self.task,
+            "revision_info": self.revision,
+            "status": self.status,
+        }
 
     @cached_property
     def specific(self):
@@ -4240,7 +4514,7 @@ class TaskState(models.Model):
             # Cannot locate a model class for this content type. This might happen
             # if the codebase and database are out of sync (e.g. the model exists
             # on a different git branch and we haven't rolled back migrations before
-            # switching branches); if so, the best we can do is return the page
+            # switching branches); if so, the best we can do is return the task state
             # unchanged.
             return self
         elif isinstance(self, model_class):
@@ -4346,13 +4620,13 @@ class TaskState(models.Model):
 
     def log_state_change_action(self, user, action):
         """Log the approval/rejection action"""
-        page = self.page_revision.as_object()
+        obj = self.revision.as_object()
         next_task = self.workflow_state.get_next_task()
         next_task_data = None
         if next_task:
             next_task_data = {"id": next_task.id, "title": next_task.name}
         log(
-            instance=page,
+            instance=obj,
             action="wagtail.workflow.{}".format(action),
             user=user,
             data={
@@ -4369,7 +4643,7 @@ class TaskState(models.Model):
                 },
                 "comment": self.get_comment(),
             },
-            revision=self.page_revision,
+            revision=self.revision,
         )
 
     class Meta:

@@ -20,11 +20,17 @@ class SnippetStatusSidePanel(BaseStatusSidePanel):
         inherit = [
             "view",
             "history_url",
+            "workflow_history_url",
+            "revisions_compare_url_name",
             "revision_enabled",
             "draftstate_enabled",
             "live_last_updated_info",
             "locale",
             "translations",
+            "lock_url",
+            "unlock_url",
+            "user_can_lock",
+            "user_can_unlock",
         ]
         context.update({k: parent_context.get(k) for k in inherit})
 

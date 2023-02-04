@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2020-10-23 10:41+0000\n"
 "Last-Translator: Loic Teixeira, 2022\n"
 "Language-Team: French (https://www.transifex.com/torchbox/teams/8009/fr/)\n"
@@ -59,13 +59,13 @@ msgstr "Utilisation"
 msgid "Add locale"
 msgstr "Ajouter la région"
 
-#, python-brace-format
-msgid "Locale '{0}' created."
-msgstr "Région « {0} » créée."
+#, python-format
+msgid "Locale '%(object)s' created."
+msgstr "Région « %(object)s » créée."
 
-#, python-brace-format
-msgid "Locale '{0}' updated."
-msgstr "Région « {0} » mise à jour."
+#, python-format
+msgid "Locale '%(object)s' updated."
+msgstr "Région « %(object)s » mise à jour."
 
 msgid "The locale could not be saved due to errors."
 msgstr "La région ne peut être enregistrée du fait d'erreurs."
@@ -73,9 +73,9 @@ msgstr "La région ne peut être enregistrée du fait d'erreurs."
 msgid "Delete locale"
 msgstr "Supprimer région"
 
-#, python-brace-format
-msgid "Locale '{0}' deleted."
-msgstr "Région « {0} » supprimée."
+#, python-format
+msgid "Locale '%(object)s' deleted."
+msgstr "Région « %(object)s » supprimée."
 
 msgid "Are you sure you want to delete this locale?"
 msgstr "Êtes-vous sûr(e) de vouloir supprimer cette région ?"

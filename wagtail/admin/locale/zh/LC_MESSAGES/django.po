@@ -4,15 +4,16 @@
 #
 # Translators:
 # hanfeng <appweb.cn@gmail.com>, 2014,2017
+# hanfeng <appweb.cn@gmail.com>, 2014,2017
 # Leway Colin <colin4124@gmail.com>, 2016
 # Orangle Liu <orangleliu@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:50+0000\n"
-"Last-Translator: hanfeng <appweb.cn@gmail.com>, 2014,2017\n"
+"Last-Translator: Orangle Liu <orangleliu@gmail.com>, 2017\n"
 "Language-Team: Chinese (http://www.transifex.com/torchbox/wagtail/language/"
 "zh/)\n"
 "MIME-Version: 1.0\n"
@@ -74,9 +75,6 @@ msgstr "删除"
 
 msgid "New title"
 msgstr "新标题"
-
-msgid "This slug is already in use"
-msgstr "这个唯一的地址已被占用"
 
 msgid "Page title"
 msgstr "页面标题"
@@ -370,13 +368,13 @@ msgstr "查看草稿"
 msgid "View live"
 msgstr "查看在线版"
 
-#, python-brace-format
-msgid "Page '{0}' created."
-msgstr "第 '{0}' 页已创建。"
+#, python-format
+msgid "Page '%(page_title)s' created."
+msgstr "第 '%(page_title)s' 页已创建。"
 
-#, python-brace-format
-msgid "Page '{0}' deleted."
-msgstr "第 '{0}' 页已删除"
+#, python-format
+msgid "Page '%(page_title)s' deleted."
+msgstr "第 '%(page_title)s' 页已删除"
 
 msgid "This page is currently awaiting moderation"
 msgstr "这页正在等待审核"
@@ -384,25 +382,25 @@ msgstr "这页正在等待审核"
 msgid "The page could not be saved due to validation errors"
 msgstr "这页无法保存，因为页面发生验证错误"
 
-#, python-brace-format
-msgid "The page '{0}' is not currently awaiting moderation."
-msgstr "第 '{0}' 页当前不需要等待审核。"
+#, python-format
+msgid "The page '%(page_title)s' is not currently awaiting moderation."
+msgstr "第 '%(page_title)s' 页当前不需要等待审核。"
 
-#, python-brace-format
-msgid "Page '{0}' published."
-msgstr "第 '{0}' 页已发布。"
+#, python-format
+msgid "Page '%(page_title)s' published."
+msgstr "第 '%(page_title)s' 页已发布。"
 
-#, python-brace-format
-msgid "Page '{0}' rejected for publication."
-msgstr "第 '{0}' 页已被拒绝发布。"
+#, python-format
+msgid "Page '%(page_title)s' rejected for publication."
+msgstr "第 '%(page_title)s' 页已被拒绝发布。"
 
-#, python-brace-format
-msgid "Page '{0}' moved."
-msgstr "第 '{0}' 页已移动。"
+#, python-format
+msgid "Page '%(page_title)s' moved."
+msgstr "第 '%(page_title)s' 页已移动。"
 
-#, python-brace-format
-msgid "Page '{0}' unpublished."
-msgstr "第 '{0}' 页已取消发布"
+#, python-format
+msgid "Page '%(page_title)s' unpublished."
+msgstr "第 '%(page_title)s' 页已取消发布"
 
 msgid "Add child page"
 msgstr "添加子页面"

@@ -5,12 +5,13 @@
 # Translators:
 # dellax <michalnebbia@gmail.com>, 2015
 # Martin Janšto <mato@jansto.sk>, 2017
+# Martin Janšto <mato@jansto.sk>, 2017
 # dellax <michalnebbia@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 19:01+0000\n"
 "Last-Translator: dellax <michalnebbia@gmail.com>, 2015\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/torchbox/wagtail/"
@@ -65,8 +66,8 @@ msgstr "Snipety"
 
 #, python-format
 msgid ""
-"No %(snippet_type_name_plural)s have been created. Why not <a href="
-"\"%(wagtailsnippets_create_url)s\">add one</a>?"
+"No %(snippet_type_name_plural)s have been created. Why not <a "
+"href=\"%(wagtailsnippets_create_url)s\">add one</a>?"
 msgstr ""
 "Zatiaľ neboli vytvorené žiadne %(snippet_type_name_plural)s. Prečo "
 "nevytvoriť <a href=\"%(wagtailsnippets_create_url)s\">jeden teraz</a>?"
@@ -114,8 +115,8 @@ msgid "The snippet could not be saved due to errors."
 msgstr "Snipet nemôže byť uložený kvôli chybám."
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Upraviť toto %s"
+msgid "Edit this %(object)s"
+msgstr "Upraviť toto %(object)s"
 
 msgid "User"
 msgstr "Používateľ"
@@ -124,9 +125,13 @@ msgid "Date"
 msgstr "Dátum"
 
 #, python-format
-msgid "Choose %s"
-msgstr "Vybrať %s"
+msgid "Edit '%(title)s'"
+msgstr "Upraviť '%(title)s'"
 
 #, python-format
-msgid "Choose another %s"
-msgstr "Vybrať iný %s"
+msgid "Choose %(object)s"
+msgstr "Vybrať %(object)s"
+
+#, python-format
+msgid "Choose another %(object)s"
+msgstr "Vybrať iný %(object)s"

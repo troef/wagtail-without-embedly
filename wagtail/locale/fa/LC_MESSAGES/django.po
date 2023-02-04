@@ -4,6 +4,7 @@
 #
 # Translators:
 # Amir Mahmoodi, 2022
+# Amir Mahmoodi, 2022
 # pyzenberg <pyzenberg@gmail.com>, 2017
 # pyzenberg <pyzenberg@gmail.com>, 2017
 # pyzenberg <pyzenberg@gmail.com>, 2017
@@ -11,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: Amir Mahmoodi, 2022\n"
+"Last-Translator: pyzenberg <pyzenberg@gmail.com>, 2017\n"
 "Language-Team: Persian (http://www.transifex.com/torchbox/wagtail/language/"
 "fa/)\n"
 "MIME-Version: 1.0\n"
@@ -23,12 +24,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "کمترین تعداد آیتم ها %d مورد است"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "کمترین تعداد آیتم ها %(min_num)d مورد است"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "حداکثر تعداد آیتم ها %d مورد میباشد"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "حداکثر تعداد آیتم ها %(max_num)d مورد میباشد"
 
 msgid "Move up"
 msgstr "حرکت به بالا"
@@ -54,17 +55,13 @@ msgstr "رمزعبور"
 msgid "The password you have entered is not correct. Please try again."
 msgstr "رمزعبور وارد شده درست نیست. لطفا مجددا سعی کنید."
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
-msgstr "<b>صفحه {} توسط <b>شما</b> در <b>{}</b> قفل شد."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "<b>صفحه {page_title} توسط <b>شما</b> قفل شد."
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "<b>صفحه {} توسط <b>شما</b> قفل شد."
-
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr "<b>صفحه {} توسط <b>{}</b> در <b>{}</b> قفل شد."
-
-msgid "<b>Page '{}' is locked</b>."
-msgstr "<b>صفحه '{}' قفل شده است.</b>"
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "<b>صفحه '{page_title}' قفل شده است.</b>"
 
 msgid "live"
 msgstr "زنده"
@@ -137,9 +134,6 @@ msgstr ""
 
 msgid "latest revision created at"
 msgstr "آخرین بازبینی ایجاد شده در"
-
-msgid "This slug is already in use"
-msgstr "این اسلاگ در حال استفاده است"
 
 msgid "page"
 msgstr "صفحه"

@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Erlend Eelmets <debcf78e@opayq.com>, 2020
+# Erlend <debcf78e@opayq.com>, 2020
+# Erlend <debcf78e@opayq.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
-"Last-Translator: Erlend Eelmets <debcf78e@opayq.com>, 2020\n"
+"Last-Translator: Erlend <debcf78e@opayq.com>, 2020\n"
 "Language-Team: Estonian (http://www.transifex.com/torchbox/wagtail/language/"
 "et/)\n"
 "MIME-Version: 1.0\n"
@@ -119,18 +120,18 @@ msgstr ""
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
-" Reklaamitud tulemusi pole loodud. Lisa <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">üks</a>?"
+" Reklaamitud tulemusi pole loodud. Lisa <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">üks</a>?"
 
 msgid "Search promoted results"
 msgstr "Otsige reklaamitud tulemusi"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "Toimetaja valikud '{0}' jaoks loodi."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "Toimetaja valikud '%(query)s' jaoks loodi."
 
 msgid "Edit"
 msgstr "Muuda"
@@ -138,9 +139,9 @@ msgstr "Muuda"
 msgid "Recommendations have not been created due to errors"
 msgstr "Soovitusi ei loodud vigade tõttu."
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "Toimetaja valikud '{0}' jaoks uuendati."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "Toimetaja valikud '%(query)s' jaoks uuendati."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "Soovitusi ei salvestatud vigade tõttu."

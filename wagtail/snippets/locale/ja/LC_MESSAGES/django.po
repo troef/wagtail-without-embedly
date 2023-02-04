@@ -3,7 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# bayside kent, 2022
 # Daigo Shitara <stain.witness@gmail.com>, 2016
+# shuhei hirota, 2019
 # shuhei hirota, 2019
 # 小口英昭 <oguchi@bluff-lab.com>, 2019
 # 石田秀 <ishidashu@gmail.com>, 2015
@@ -11,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 19:01+0000\n"
-"Last-Translator: 小口英昭 <oguchi@bluff-lab.com>, 2019\n"
+"Last-Translator: bayside kent, 2022\n"
 "Language-Team: Japanese (http://www.transifex.com/torchbox/wagtail/language/"
 "ja/)\n"
 "MIME-Version: 1.0\n"
@@ -37,6 +39,9 @@ msgstr "保存"
 msgid "Wagtail snippets"
 msgstr "Wagtail スニペット"
 
+msgid "Delete selected snippets"
+msgstr "選択したスニペットを削除します"
+
 #, python-format
 msgid "Delete %(snippet_type_name)s"
 msgstr "%(snippet_type_name)sを削除"
@@ -56,6 +61,14 @@ msgstr "%(snippet_type_name)sを削除してよろしいですか？"
 #, python-format
 msgid "Are you sure you want to delete %(count)s %(snippet_type_name)s?"
 msgstr "%(count)s件の%(snippet_type_name)sを削除してよろしいですか？"
+
+#, python-format
+msgid "You don't have permission to delete this %(snippet_type_name)s"
+msgstr "この %(snippet_type_name)s を削除する権限がありません"
+
+#, python-format
+msgid "You don't have permission to delete these %(snippet_plural_name)s"
+msgstr "これらの %(snippet_plural_name)s を削除する権限がありません"
 
 msgid "Yes, delete"
 msgstr "はい、削除します"
@@ -100,13 +113,16 @@ msgstr "パンくず"
 msgid "Snippets"
 msgstr "スニペット"
 
+msgid "Edit this snippet"
+msgstr "スニペットを編集"
+
 #, python-format
 msgid ""
-"No %(snippet_type_name_plural)s have been created. Why not <a href="
-"\"%(wagtailsnippets_create_url)s\">add one</a>?"
+"No %(snippet_type_name_plural)s have been created. Why not <a "
+"href=\"%(wagtailsnippets_create_url)s\">add one</a>?"
 msgstr ""
-"まだ%(snippet_type_name_plural)sは作成されていません。 <a href="
-"\"%(wagtailsnippets_create_url)s\">新しく追加</a>しますか？"
+"まだ%(snippet_type_name_plural)sは作成されていません。 <a "
+"href=\"%(wagtailsnippets_create_url)s\">新しく追加</a>しますか？"
 
 msgid "Live version"
 msgstr "ライブ版"
@@ -119,6 +135,9 @@ msgstr "プレビュー"
 
 msgid "Edit"
 msgstr "編集"
+
+msgid "Compare with previous version"
+msgstr "前の改定と比較する"
 
 msgid "Cancel scheduled publish"
 msgstr "予定された公開を取り消す"
@@ -154,8 +173,8 @@ msgid "The snippet could not be saved due to errors."
 msgstr "このスニペットはエラーにより保存されませんでした。"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "%sを編集"
+msgid "Edit this %(object)s"
+msgstr "%(object)sを編集"
 
 msgid "Action"
 msgstr "アクション"
@@ -167,9 +186,13 @@ msgid "Date"
 msgstr "日付"
 
 #, python-format
-msgid "Choose %s"
-msgstr "%sを選択"
+msgid "Edit '%(title)s'"
+msgstr "'%(title)s'を編集します"
 
 #, python-format
-msgid "Choose another %s"
-msgstr "別の%sを選択"
+msgid "Choose %(object)s"
+msgstr "%(object)sを選択"
+
+#, python-format
+msgid "Choose another %(object)s"
+msgstr "別の%(object)sを選択"

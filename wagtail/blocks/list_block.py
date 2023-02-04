@@ -62,7 +62,8 @@ class ListValue(MutableSequence):
     class ListChild(BoundBlock):
         # a wrapper for list values that keeps track of the associated block type and ID
         def __init__(self, *args, **kwargs):
-            self.id = kwargs.pop("id", None) or str(uuid.uuid4())
+            self.original_id = kwargs.pop("id", None)
+            self.id = self.original_id or str(uuid.uuid4())
             super().__init__(*args, **kwargs)
 
         def get_prep_value(self):
@@ -175,14 +176,16 @@ class ListBlock(Block):
         if self.meta.min_num is not None and self.meta.min_num > len(value):
             non_block_errors.append(
                 ValidationError(
-                    _("The minimum number of items is %d") % self.meta.min_num
+                    _("The minimum number of items is %(min_num)d")
+                    % {"min_num": self.meta.min_num}
                 )
             )
 
         if self.meta.max_num is not None and self.meta.max_num < len(value):
             non_block_errors.append(
                 ValidationError(
-                    _("The maximum number of items is %d") % self.meta.max_num
+                    _("The maximum number of items is %(max_num)d")
+                    % {"max_num": self.meta.max_num}
                 )
             )
 

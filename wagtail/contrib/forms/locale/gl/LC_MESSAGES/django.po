@@ -5,12 +5,13 @@
 # Translators:
 # Amós Oviedo <amos.oviedo@gmail.com>, 2016
 # Amós Oviedo <amos.oviedo@gmail.com>, 2016
+# Amós Oviedo <amos.oviedo@gmail.com>, 2016
 # X Bello <xbello@gmail.com>, 2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-09-11 15:42+0000\n"
 "Last-Translator: X Bello <xbello@gmail.com>, 2022\n"
 "Language-Team: Galician (http://www.transifex.com/torchbox/wagtail/language/"
@@ -31,8 +32,10 @@ msgid "Date to"
 msgstr "Data ata"
 
 #, python-format
-msgid "There is another field with the label %s, please change one of them."
-msgstr "Hai outro campo ca etiqueta %s, por favor cambia un deles."
+msgid ""
+"There is another field with the label %(label_name)s, please change one of "
+"them."
+msgstr "Hai outro campo ca etiqueta %(label_name)s, por favor cambia un deles."
 
 msgid "Single line text"
 msgstr "Liña de texto simple"
@@ -149,8 +152,8 @@ msgid "subject"
 msgstr "Asunto"
 
 #, python-format
-msgid "%s submissions"
-msgstr "%s envíos"
+msgid "%(model_name)s submissions"
+msgstr "%(model_name)s envíos"
 
 #, python-format
 msgid "Delete form data %(title)s"

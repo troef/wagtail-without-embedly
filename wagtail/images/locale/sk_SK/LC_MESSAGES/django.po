@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 13:14+0100\n"
 "PO-Revision-Date: 2014-02-20 21:05+0000\n"
 "Last-Translator: dellax <michalnebbia@gmail.com>, 2015\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/torchbox/wagtail/"
@@ -36,20 +36,22 @@ msgid "Supported formats: %(supported_formats)s."
 msgstr "Podporované formáty sú: %(supported_formats)s."
 
 #, python-format
-msgid "Not a supported image format. Supported formats: %s."
-msgstr "Nie je podporovaný formát obrázkov. Podporované formáty sú: %s."
+msgid "Not a supported image format. Supported formats: %(supported_formats)s."
+msgstr ""
+"Nie je podporovaný formát obrázkov. Podporované formáty sú: "
+"%(supported_formats)s."
 
 #, python-format
-msgid "Not a valid %s image."
-msgstr "Nie je validný %s obrázok."
+msgid ""
+"This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
+msgstr ""
+"Tento súbor je príliž veľký (%(file_size)s). Maximálna povolená veľkosť je "
+"%(max_filesize)s."
 
 #, python-format
-msgid "This file is too big (%%s). Maximum filesize %s."
-msgstr "Tento súbor je príliž veľký (%%s). Maximálna povolená veľkosť je %s."
-
-#, python-format
-msgid "This file is too big. Maximum filesize %s."
-msgstr "Tento súbor je príliž veľký. Maximálna veľkosť súboru je %s."
+msgid "This file is too big. Maximum filesize %(max_filesize)s."
+msgstr ""
+"Tento súbor je príliž veľký. Maximálna veľkosť súboru je %(max_filesize)s."
 
 msgid "Full width"
 msgstr "Plná šírka"
@@ -201,19 +203,19 @@ msgstr ""
 
 #, python-format
 msgid ""
-"You haven't uploaded any images in this collection. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images in this collection. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"Zatiaľ ste nenahrali do kolekcie žiadne obrázky. Prečo nenahrať <a href="
-"\"%(wagtailimages_add_image_url)s\">jeden práve teraz</a>?"
+"Zatiaľ ste nenahrali do kolekcie žiadne obrázky. Prečo nenahrať <a "
+"href=\"%(wagtailimages_add_image_url)s\">jeden práve teraz</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any images. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"Zatiaľ ste nenahrali žiadne obrázky. Prečo nenahrať <a href="
-"\"%(wagtailimages_add_image_url)s\">jeden práve teraz</a>?"
+"Zatiaľ ste nenahrali žiadne obrázky. Prečo nenahrať <a "
+"href=\"%(wagtailimages_add_image_url)s\">jeden práve teraz</a>?"
 
 msgid "Generating URL"
 msgstr "Generovanie URL"
@@ -304,9 +306,9 @@ msgstr "Upraviť tento obrázok"
 msgid "Search images"
 msgstr "Hľadat obrázky"
 
-#, python-brace-format
-msgid "Image '{0}' updated."
-msgstr "Obrázok '{0}' bol aktualizovaný."
+#, python-format
+msgid "Image '%(image_title)s' updated."
+msgstr "Obrázok '%(image_title)s' bol aktualizovaný."
 
 msgid "Edit again"
 msgstr "Upraviť znovu"
@@ -320,20 +322,20 @@ msgid ""
 msgstr ""
 "Zdroj obrázku nebol nájdený. Prosím aktualizujte zdroj alebo zmažte obrázok."
 
-#, python-brace-format
-msgid "Image '{0}' deleted."
-msgstr "Obrázok '{0}' bol zmazaný."
+#, python-format
+msgid "Image '%(image_title)s' deleted."
+msgstr "Obrázok '%(image_title)s' bol zmazaný."
 
-#, python-brace-format
-msgid "Image '{0}' added."
-msgstr "Obrázok '{0}' bol pridaný."
+#, python-format
+msgid "Image '%(image_title)s' added."
+msgstr "Obrázok '%(image_title)s' bol pridaný."
 
 msgid "The image could not be created due to errors."
 msgstr "Obrázok nemôže byť vytvorený kvôli chybám."
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Upraviť toto %s"
+msgid "Edit this %(object)s"
+msgstr "Upraviť toto %(object)s"
 
 #, python-format
 msgid "%(count)s image"

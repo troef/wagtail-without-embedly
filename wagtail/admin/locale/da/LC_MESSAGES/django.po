@@ -7,13 +7,14 @@
 # Benjamin Bach <benjaoming@gmail.com>, 2022
 # Mads Kronborg <madskronborg99@gmail.com>, 2018
 # MRostgaard <Mrostgaard@gmail.com>, 2019
+# MRostgaard <Mrostgaard@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:50+0000\n"
-"Last-Translator: Benjamin Bach <benjaoming@gmail.com>, 2022\n"
+"Last-Translator: MRostgaard <Mrostgaard@gmail.com>, 2019\n"
 "Language-Team: Danish (http://www.transifex.com/torchbox/wagtail/language/"
 "da/)\n"
 "MIME-Version: 1.0\n"
@@ -87,8 +88,8 @@ msgid "Enter password"
 msgstr "Skriv adgangskode"
 
 #, python-format
-msgid "Enter your %s"
-msgstr "Skriv din %s"
+msgid "Enter your %(username_field_name)s"
+msgstr "Skriv din %(username_field_name)s"
 
 msgid "Enter your email address to reset your password"
 msgstr "Skriv din email addresse for at genindstille din adgangskode"
@@ -172,15 +173,14 @@ msgstr "Du har ikke tilladelse til at kopiere til side \"%(page_title)s\""
 
 #, python-format
 msgid ""
-"This slug is already in use within the context of its parent page \"%s\""
+"This slug is already in use within the context of its parent page "
+"\"%(parent_page_title)s\""
 msgstr ""
-"Dette slug er allerede i brug inden for konteksten af forældresiden \"%s\""
+"Dette slug er allerede i brug inden for konteksten af forældresiden "
+"\"%(parent_page_title)s\""
 
 msgid "You cannot copy a page into itself when copying subpages"
 msgstr "Du kan ikke kopiere en side til sig selv når du kopierer undersider"
-
-msgid "This slug is already in use"
-msgstr "Dette slug er allerede i brug"
 
 msgid "Visibility"
 msgstr "Synlighed"
@@ -646,13 +646,13 @@ msgstr "Seneste"
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#, python-brace-format
-msgid "Page '{0}' and {1} subpages copied."
-msgstr "SIde '{0}' og {1} undersider blev kopieret."
+#, python-format
+msgid "Page '%(page_title)s' and %(subpages_count)s subpages copied."
+msgstr "SIde '%(page_title)s' og %(subpages_count)s undersider blev kopieret."
 
-#, python-brace-format
-msgid "Page '{0}' copied."
-msgstr "SIde '{0}' kopieret."
+#, python-format
+msgid "Page '%(page_title)s' copied."
+msgstr "SIde '%(page_title)s' kopieret."
 
 msgid "View draft"
 msgstr "Vis skitse"
@@ -660,36 +660,40 @@ msgstr "Vis skitse"
 msgid "View live"
 msgstr "Vis live"
 
-#, python-brace-format
-msgid "Page '{0}' created."
-msgstr "Side  '{0}' lavet."
+#, python-format
+msgid "Page '%(page_title)s' created."
+msgstr "Side  '%(page_title)s' lavet."
 
-#, python-brace-format
-msgid "Page '{0}' deleted."
-msgstr "Side '{0}' slettet."
+#, python-format
+msgid "Page '%(page_title)s' deleted."
+msgstr "Side '%(page_title)s' slettet."
 
-#, python-brace-format
-msgid "Page '{0}' has been updated."
-msgstr "Side '{0}' er blevet opdateret."
+#, python-format
+msgid "Page '%(page_title)s' has been updated."
+msgstr "Side '%(page_title)s' er blevet opdateret."
 
-#, python-brace-format
-msgid "Page '{0}' has been published."
-msgstr "Side '{0}' er blevet udgivet."
+#, python-format
+msgid "Page '%(page_title)s' has been published."
+msgstr "Side '%(page_title)s' er blevet udgivet."
 
-#, python-brace-format
-msgid "Page '{0}' has been submitted for moderation."
-msgstr "Side '{0}' er blivet indsendt til moderation."
+#, python-format
+msgid "Page '%(page_title)s' has been submitted for moderation."
+msgstr "Side '%(page_title)s' er blivet indsendt til moderation."
 
-#, python-brace-format
-msgid "Page '{0}' moved."
-msgstr "SIde '{0}' flyttet."
+#, python-format
+msgid "Page '%(page_title)s' moved."
+msgstr "SIde '%(page_title)s' flyttet."
 
-#, python-brace-format
-msgid "Page '{0}' unpublished."
-msgstr "SIde '{0}' afpubliceret."
+#, python-format
+msgid "Page '%(page_title)s' unpublished."
+msgstr "SIde '%(page_title)s' afpubliceret."
 
 msgid "Pages"
 msgstr "Sider"
+
+#, python-format
+msgid "Edit '%(title)s'"
+msgstr "Rediger '%(title)s'"
 
 msgid "Add child page"
 msgstr "Tilføj en underside"

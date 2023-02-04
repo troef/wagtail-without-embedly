@@ -5,6 +5,7 @@
 # Translators:
 # Ales Dvorak <mail@alesdvorak.cz>, 2017
 # IT Management <hudan@itmanagement.cz>, 2018
+# IT Management <hudan@itmanagement.cz>, 2018,2020
 # IT Management <hudan@itmanagement.cz>, 2020
 # Jiri Stepanek <stepiiicz@gmail.com>, 2015
 # Kryštof Pilnáček <krystof.pilnacek@rossum.ai>, 2022
@@ -14,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: Kryštof Pilnáček <krystof.pilnacek@rossum.ai>, 2022\n"
+"Last-Translator: Vláďa Macek <macek@sandbox.cz>, 2021\n"
 "Language-Team: Czech (http://www.transifex.com/torchbox/wagtail/language/"
 "cs/)\n"
 "MIME-Version: 1.0\n"
@@ -36,12 +37,12 @@ msgid "Add Comment"
 msgstr "Přidat komentář"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "Minimální počet položek je %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "Minimální počet položek je %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "Maximální počet položek je %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "Maximální počet položek je %(max_num)d"
 
 msgid "Move up"
 msgstr "Posunout nahoru"
@@ -77,23 +78,16 @@ msgstr "Zadané heslo není správné. Prosím, zkuste to znovu."
 msgid "Comment"
 msgstr "Komentář"
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
-msgstr "<b>Stránku '{}' jste uzamknul</b>:<b>{}</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "<b>Stránku '{page_title}' jste uzamknul</b>."
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "<b>Stránku '{}' jste uzamknul</b>."
-
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr "<b>Stránka '{}' byla uzamčena</b> uživatelem <b>{}</b>: <b>{}</b>."
-
-msgid "<b>Page '{}' is locked</b>."
-msgstr "<b>Stránka '{}' je uzamčena</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "<b>Stránka '{page_title}' je uzamčena</b>."
 
 msgid "This page is currently awaiting moderation."
 msgstr "Tato stránka nyní čeká na posouzení."
-
-msgid "This page is awaiting <b>'{}'</b> in the <b>'{}'</b> workflow."
-msgstr "Tato stránka čeká <b>'{}'</b> v postupu <b>'{}'</b> ."
 
 msgid "Only reviewers for this task can edit the page."
 msgstr "Pouze recenzenti této úlohy mohou stránku upravit."
@@ -196,9 +190,6 @@ msgstr "Popisný text, který se zobrazí pod nadpisem ve výsledcích vyhledáv
 
 msgid "latest revision created at"
 msgstr "poslední verze vytvořena:"
-
-msgid "This slug is already in use"
-msgstr "Slug (identifikátor) je už používán"
 
 msgid "in moderation"
 msgstr "probíhá schvalování"
@@ -379,9 +370,9 @@ msgstr ""
 "Smí být jen jediný postup se stavem \"probíhá\" nebo \"vyžaduje úpravy\" pro "
 "danou stránku."
 
-#, python-brace-format
-msgid "Workflow '{0}' on Page '{1}': {2}"
-msgstr "Postup '{0}' na stránce '{1}': {2}"
+#, python-format
+msgid "Workflow '%(workflow_name)s' on Page '%(page_title)s': %(status)s"
+msgstr "Postup '%(workflow_name)s' na stránce '%(page_title)s': %(status)s"
 
 msgid "Not started"
 msgstr "Není spuštěno"
@@ -413,9 +404,10 @@ msgstr "dokončeno v"
 msgid "finished by"
 msgstr "dokončeno (kým)"
 
-#, python-brace-format
-msgid "Task '{0}' on Page Revision '{1}': {2}"
-msgstr "Úloha '{0}' pro Stránku Verze '{1}': {2}"
+#, python-format
+msgid "Task '%(task_name)s' on Page Revision '%(revision_info)s': %(status)s"
+msgstr ""
+"Úloha '%(task_name)s' pro Stránku Verze '%(revision_info)s': %(status)s"
 
 msgid "Task state"
 msgstr "Stav úlohy"
@@ -453,12 +445,9 @@ msgstr "položka logu"
 msgid "log entries"
 msgstr "položky logu"
 
-msgid "The log action '{}' has not been registered."
-msgstr "Akce logu '{}' není registrována."
-
 #, python-format
-msgid "user %(id)s (deleted)"
-msgstr "uživatel %(id)s (odstraněn)"
+msgid "The log action '%(action_name)s' has not been registered."
+msgstr "Akce logu '%(action_name)s' není registrována."
 
 msgid "system"
 msgstr "systém"

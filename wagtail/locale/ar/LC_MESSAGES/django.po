@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: abdulaziz alfuhigi <abajall@gmail.com>, 2018\n"
+"Last-Translator: ultraify media <ultraify@gmail.com>, 2018\n"
 "Language-Team: Arabic (http://www.transifex.com/torchbox/wagtail/language/"
 "ar/)\n"
 "MIME-Version: 1.0\n"
@@ -27,12 +27,12 @@ msgid "Wagtail core"
 msgstr "Wagtail core"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "الحد الأدنى لعدد العناصر هو %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "الحد الأدنى لعدد العناصر هو %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "الحد الأقصى لعدد العناصر هو %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "الحد الأقصى لعدد العناصر هو %(max_num)d"
 
 msgid "Move up"
 msgstr "تقدم إلى فوق "
@@ -133,9 +133,6 @@ msgstr ""
 
 msgid "latest revision created at"
 msgstr "أحدث نسخة تم إنشاؤها في"
-
-msgid "This slug is already in use"
-msgstr "هذه السقالة هي بالفعل قيد الاستخدام"
 
 msgid "page"
 msgstr "صفحة"

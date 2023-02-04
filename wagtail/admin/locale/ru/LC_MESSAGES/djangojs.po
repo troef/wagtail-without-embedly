@@ -9,6 +9,8 @@
 # Мирон Левицкий <miron200504@gmail.com>, 2022
 # Sergey Mazanov <mvver@outlook.com>, 2022
 # Mikalai Radchuk <radchuk.m@gmail.com>, 2022
+# Виктор Виктор <spam.vitek@gmail.com>, 2022
+# Loic Teixeira, 2022
 # Влад <integration.into.society@gmail.com>, 2022
 #
 msgid ""
@@ -17,18 +19,32 @@ msgstr ""
 "Language-Team: Russian (https://www.transifex.com/torchbox/teams/8009/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-msgid "({number} new items in this menu)"
-msgstr "({number} новых элементов в этом меню)"
+msgid "(%(number)s new items in this menu)"
+msgstr "(%(number)s новых элементов в этом меню)"
 
 msgid "(1 new item in this menu)"
 msgstr "(1 новый элемент в этом меню)"
 
 msgid "(New)"
 msgstr "(New)"
+
+msgid "%(num)s error"
+msgid_plural "%(num)s errors"
+msgstr[0] "%(num)s ошибка"
+msgstr[1] "%(num)s ошибок"
+msgstr[2] "%(num)s ошибок"
+msgstr[3] "%(num)s ошибок"
+
+msgid "%(num)s pixel"
+msgid_plural "%(num)s pixels"
+msgstr[0] "%(num)s пиксель"
+msgstr[1] "%(num)s пикселей"
+msgstr[2] "%(num)s пикселей"
+msgstr[3] "%(num)s пикселей"
 
 msgid "Add a comment"
 msgstr "Добавить комментарий"
@@ -78,8 +94,8 @@ msgstr "Удаление"
 msgid "Edit"
 msgstr "Редактировать"
 
-msgid "Edit '{title}'"
-msgstr "Редактировать '{title}'"
+msgid "Edit '%(title)s'"
+msgstr "Редактировать '%(title)s'"
 
 msgid "Edit your account"
 msgstr "Редактировать ваш аккаунт"
@@ -212,8 +228,8 @@ msgstr "Переключить боковую панель"
 msgid "Unfocus comment"
 msgstr "Убрать фокус"
 
-msgid "View child pages of '{title}'"
-msgstr "Показать дочерние страницы '{title}'"
+msgid "View child pages of '%(title)s'"
+msgstr "Показать дочерние страницы '%(title)s'"
 
 msgid "Write something or type ‘/’ to insert a block"
 msgstr "Напишите что-нибудь или введите «/», чтобы вставить блок"

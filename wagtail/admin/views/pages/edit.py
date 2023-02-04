@@ -57,14 +57,19 @@ class EditView(TemplateResponseMixin, ContextMixin, HookResponseMixin, View):
 
     def add_save_confirmation_message(self):
         if self.is_reverting:
-            message = _("Page '{0}' has been replaced with version from {1}.").format(
-                self.page.get_admin_display_title(),
-                self.previous_revision.created_at.strftime("%d %b %Y %H:%M"),
-            )
+            message = _(
+                "Page '%(page_title)s' has been replaced "
+                "with version from %(previous_revision_datetime)s."
+            ) % {
+                "page_title": self.page.get_admin_display_title(),
+                "previous_revision_datetime": self.previous_revision.created_at.strftime(
+                    "%d %b %Y %H:%M"
+                ),
+            }
         else:
-            message = _("Page '{0}' has been updated.").format(
-                self.page.get_admin_display_title()
-            )
+            message = _("Page '%(page_title)s' has been updated.") % {
+                "page_title": self.page.get_admin_display_title()
+            }
 
         messages.success(self.request, message)
 
@@ -386,7 +391,7 @@ class EditView(TemplateResponseMixin, ContextMixin, HookResponseMixin, View):
             if lock_message:
                 if isinstance(self.lock, BasicLock) and self.page_perms.can_unlock():
                     lock_message = format_html(
-                        '{} <span class="buttons"><button type="button" class="button button-small button-secondary" data-action-lock-unlock data-url="{}">{}</button></span>',
+                        '{} <span class="buttons"><button type="button" class="button button-small button-secondary" data-action="w-action#post" data-controller="w-action" data-w-action-url-value="{}">{}</button></span>',
                         lock_message,
                         reverse("wagtailadmin_pages:unlock", args=(self.page.id,)),
                         _("Unlock"),
@@ -397,7 +402,7 @@ class EditView(TemplateResponseMixin, ContextMixin, HookResponseMixin, View):
                     and self.page_perms.can_unschedule()
                 ):
                     lock_message = format_html(
-                        '{} <span class="buttons"><button type="button" class="button button-small button-secondary" data-action-lock-unlock data-url="{}">{}</button></span>',
+                        '{} <span class="buttons"><button type="button" class="button button-small button-secondary" data-action="w-action#post" data-controller="w-action" data-w-action-url-value="{}">{}</button></span>',
                         lock_message,
                         reverse(
                             "wagtailadmin_pages:revisions_unschedule",
@@ -424,9 +429,9 @@ class EditView(TemplateResponseMixin, ContextMixin, HookResponseMixin, View):
         return self.render_to_response(self.get_context_data())
 
     def add_cancel_workflow_confirmation_message(self):
-        message = _("Workflow on page '{0}' has been cancelled.").format(
-            self.page.get_admin_display_title()
-        )
+        message = _("Workflow on page '%(page_title)s' has been cancelled.") % {
+            "page_title": self.page.get_admin_display_title()
+        }
 
         messages.success(
             self.request,
@@ -578,21 +583,24 @@ class EditView(TemplateResponseMixin, ContextMixin, HookResponseMixin, View):
 
             if self.is_reverting:
                 message = _(
-                    "Version from {0} of page '{1}' has been scheduled for publishing."
-                ).format(
-                    self.previous_revision.created_at.strftime("%d %b %Y %H:%M"),
-                    self.page.get_admin_display_title(),
-                )
+                    "Version from %(previous_revision_datetime)s "
+                    "of page '%(page_title)s' has been scheduled for publishing."
+                ) % {
+                    "previous_revision_datetime": self.previous_revision.created_at.strftime(
+                        "%d %b %Y %H:%M"
+                    ),
+                    "page_title": self.page.get_admin_display_title(),
+                }
             else:
                 if self.page.live:
                     message = _(
-                        "Page '{0}' is live and this version has been scheduled for publishing."
-                    ).format(self.page.get_admin_display_title())
+                        "Page '%(page_title)s' is live and this version has been scheduled for publishing."
+                    ) % {"page_title": self.page.get_admin_display_title()}
 
                 else:
-                    message = _("Page '{0}' has been scheduled for publishing.").format(
-                        self.page.get_admin_display_title()
-                    )
+                    message = _(
+                        "Page '%(page_title)s' has been scheduled for publishing."
+                    ) % {"page_title": self.page.get_admin_display_title()}
 
             messages.success(
                 self.request, message, buttons=[self.get_edit_message_button()]
@@ -603,15 +611,17 @@ class EditView(TemplateResponseMixin, ContextMixin, HookResponseMixin, View):
 
             if self.is_reverting:
                 message = _(
-                    "Version from {0} of page '{1}' has been published."
-                ).format(
-                    self.previous_revision.created_at.strftime("%d %b %Y %H:%M"),
-                    self.page.get_admin_display_title(),
-                )
+                    "Version from %(datetime)s of page '%(page_title)s' has been published."
+                ) % {
+                    "datetime": self.previous_revision.created_at.strftime(
+                        "%d %b %Y %H:%M"
+                    ),
+                    "page_title": self.page.get_admin_display_title(),
+                }
             else:
-                message = _("Page '{0}' has been published.").format(
-                    self.page.get_admin_display_title()
-                )
+                message = _("Page '%(page_title)s' has been published.") % {
+                    "page_title": self.page.get_admin_display_title()
+                }
 
             buttons = []
             if self.page.url is not None:
@@ -653,9 +663,9 @@ class EditView(TemplateResponseMixin, ContextMixin, HookResponseMixin, View):
             workflow = self.page.get_workflow()
             workflow.start(self.page, self.request.user)
 
-        message = _("Page '{0}' has been submitted for moderation.").format(
-            self.page.get_admin_display_title()
-        )
+        message = _("Page '%(page_title)s' has been submitted for moderation.") % {
+            "page_title": self.page.get_admin_display_title()
+        }
 
         messages.success(
             self.request,
@@ -695,9 +705,9 @@ class EditView(TemplateResponseMixin, ContextMixin, HookResponseMixin, View):
         workflow = self.page.get_workflow()
         workflow.start(self.page, self.request.user)
 
-        message = _("Workflow on page '{0}' has been restarted.").format(
-            self.page.get_admin_display_title()
-        )
+        message = _("Workflow on page '%(page_title)s' has been restarted.") % {
+            "page_title": self.page.get_admin_display_title()
+        }
 
         messages.success(
             self.request,
@@ -802,7 +812,12 @@ class EditView(TemplateResponseMixin, ContextMixin, HookResponseMixin, View):
             self.workflow_state.cancel(user=self.request.user)
             self.add_cancel_workflow_confirmation_message()
 
-        if self.locked_for_user:
+            # Refresh the lock object as now WorkflowLock no longer applies
+            self.lock = self.page.get_lock()
+            self.locked_for_user = self.lock is not None and self.lock.for_user(
+                self.request.user
+            )
+        elif self.locked_for_user:
             messages.error(
                 self.request, _("The page could not be saved as it is locked")
             )
@@ -867,6 +882,10 @@ class EditView(TemplateResponseMixin, ContextMixin, HookResponseMixin, View):
                 "current_task_state": self.page.current_workflow_task_state,
                 "publishing_will_cancel_workflow": self.workflow_tasks
                 and getattr(settings, "WAGTAIL_WORKFLOW_CANCEL_ON_PUBLISH", True),
+                "confirm_workflow_cancellation_url": reverse(
+                    "wagtailadmin_pages:confirm_workflow_cancellation",
+                    args=(self.page.id,),
+                ),
                 "locale": None,
                 "translations": [],
                 "media": bound_panel.media

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 19:01+0000\n"
 "Last-Translator: Myagmarjav Enkhbileg <miigaa.lucky@gmail.com>, 2019\n"
 "Language-Team: Mongolian (http://www.transifex.com/torchbox/wagtail/language/"
@@ -33,6 +33,10 @@ msgstr "Хадгалах"
 
 msgid "Wagtail snippets"
 msgstr "Туслах хэсгүүд"
+
+#, python-format
+msgid "%(model_name)s '%(object)s' deleted."
+msgstr "%(model_name)s%(object)s устгагдлаа."
 
 #, python-format
 msgid "Delete %(snippet_type_name)s"
@@ -73,6 +77,9 @@ msgstr "Түүх"
 msgid "Publishing…"
 msgstr "Нийтэлж байна..."
 
+msgid "Publish this version"
+msgstr "Энэ хувилбарыг нийтлэх"
+
 msgid "Saving…"
 msgstr "Хадгалж байна"
 
@@ -94,11 +101,11 @@ msgstr "Хэсэг"
 
 #, python-format
 msgid ""
-"No %(snippet_type_name_plural)s have been created. Why not <a href="
-"\"%(wagtailsnippets_create_url)s\">add one</a>?"
+"No %(snippet_type_name_plural)s have been created. Why not <a "
+"href=\"%(wagtailsnippets_create_url)s\">add one</a>?"
 msgstr ""
-"Үгүй %(snippet_type_name_plural)s үүссэн байна. Яагаад <a href="
-"\"%(wagtailsnippets_create_url)s\">нэмж</a> болохгүй гэж?"
+"Үгүй %(snippet_type_name_plural)s үүссэн байна. Яагаад <a "
+"href=\"%(wagtailsnippets_create_url)s\">нэмж</a> болохгүй гэж?"
 
 msgid "Live version"
 msgstr "Нийтлэгдсэн хувилбар"
@@ -142,12 +149,20 @@ msgstr "Нэр"
 msgid "The snippet could not be created due to errors."
 msgstr "Хэсэг дээрх алдаанаас болж хадгалагдсангүй."
 
+#, python-format
+msgid "%(model_name)s '%(object)s' created."
+msgstr "%(model_name)s%(object)s боллоо."
+
 msgid "The snippet could not be saved due to errors."
 msgstr "Хэсэг дээрх алдаанаас болж шинэчлэгдсэнгүй."
 
 #, python-format
-msgid "Edit this %s"
-msgstr "%s-г засах"
+msgid "%(model_name)s '%(object)s' updated."
+msgstr "%(model_name)s%(object)s шинэчлэгдлээ."
+
+#, python-format
+msgid "Edit this %(object)s"
+msgstr "%(object)s-г засах"
 
 msgid "Action"
 msgstr "Үйлдэл"
@@ -156,9 +171,13 @@ msgid "Date"
 msgstr "Огноо"
 
 #, python-format
-msgid "Choose %s"
-msgstr "%s сонгох"
+msgid "Edit '%(title)s'"
+msgstr "'%(title)s' засах"
 
 #, python-format
-msgid "Choose another %s"
-msgstr "Өөр %s сонгох"
+msgid "Choose %(object)s"
+msgstr "%(object)s сонгох"
+
+#, python-format
+msgid "Choose another %(object)s"
+msgstr "Өөр %(object)s сонгох"

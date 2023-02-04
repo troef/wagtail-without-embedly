@@ -6,6 +6,7 @@
 # Aarni Koskela, 2016
 # Aarni Koskela, 2016
 # Eetu Häivälä, 2017
+# Eetu Häivälä, 2017
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2020,2022
 # Rauli Laine <rauli.laine@iki.fi>, 2016
 # Rauli Laine <rauli.laine@iki.fi>, 2016
@@ -14,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-20 21:06+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>, 2020,2022\n"
+"Last-Translator: Valter Maasalo <vmaasalo@gmail.com>, 2020\n"
 "Language-Team: Finnish (http://www.transifex.com/torchbox/wagtail/language/"
 "fi/)\n"
 "MIME-Version: 1.0\n"
@@ -240,24 +241,24 @@ msgstr[1] "Löytyi %(counter)s osumaa"
 #, python-format
 msgid "Sorry, no documents match \"<em>%(query_string)s</em>\""
 msgstr ""
-"Pahoittelut, yksikään dokumentti ei täsmää hakuun \"<em>%(query_string)s</em>"
-"\""
+"Pahoittelut, yksikään dokumentti ei täsmää hakuun \"<em>%(query_string)s</"
+"em>\""
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents in this collection. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents in this collection. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Et ole lisännyt yhtään dokumenttia tähän kokoelmaan. Mikset vaikka <a href="
-"\"%(wagtaildocs_add_document_url)s\">lisäisi yhtä nyt</a>?"
+"Et ole lisännyt yhtään dokumenttia tähän kokoelmaan. Mikset vaikka <a "
+"href=\"%(wagtaildocs_add_document_url)s\">lisäisi yhtä nyt</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Et ole lisännyt yhtään dokumenttia. Mikset vaikka <a href="
-"\"%(wagtaildocs_add_document_url)s\">lisäisi yhtä nyt</a>?"
+"Et ole lisännyt yhtään dokumenttia. Mikset vaikka <a "
+"href=\"%(wagtaildocs_add_document_url)s\">lisäisi yhtä nyt</a>?"
 
 #, python-format
 msgid "Usage of %(title)s"
@@ -372,32 +373,32 @@ msgstr "Muokkaa tätä dokumenttia"
 msgid "Search documents"
 msgstr "Hae dokumentteja"
 
-#, python-brace-format
-msgid "Document '{0}' added."
-msgstr "Dokumentti '{0}' lisätty."
+#, python-format
+msgid "Document '%(document_title)s' added."
+msgstr "Dokumentti '%(document_title)s' lisätty."
 
 msgid "The document could not be saved due to errors."
 msgstr "Dokumenttia ei voitu tallentaa virheiden vuoksi."
 
-#, python-brace-format
-msgid "Document '{0}' updated"
-msgstr "Dokumentti '{0}' päivitetty"
+#, python-format
+msgid "Document '%(document_title)s' updated"
+msgstr "Dokumentti '%(document_title)s' päivitetty"
 
 msgid ""
 "The file could not be found. Please change the source or delete the document"
 msgstr "Tiedostoa ei löydy. Vaihda lähde tai poista dokumentti"
 
-#, python-brace-format
-msgid "Document '{0}' deleted."
-msgstr "Dokumentti '{0}' poistettu."
+#, python-format
+msgid "Document '%(document_title)s' deleted."
+msgstr "Dokumentti '%(document_title)s' poistettu."
 
 #, python-format
-msgid "(Private %s)"
-msgstr "(Yksityinen %s)"
+msgid "(Private %(object)s)"
+msgstr "(Yksityinen %(object)s)"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Muokkaa %s-kohdetta"
+msgid "Edit this %(object)s"
+msgstr "Muokkaa %(object)s-kohdetta"
 
 msgid "Document"
 msgstr "Dokumentti"

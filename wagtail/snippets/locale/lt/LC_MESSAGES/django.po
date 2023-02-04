@@ -5,11 +5,12 @@
 # Translators:
 # Matas Dailyda <matas@dailyda.com>, 2017-2018
 # Naglis Jonaitis, 2022
+# Naglis Jonaitis, 2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 19:01+0000\n"
 "Last-Translator: Naglis Jonaitis, 2022\n"
 "Language-Team: Lithuanian (http://www.transifex.com/torchbox/wagtail/"
@@ -38,8 +39,8 @@ msgid "Wagtail snippets"
 msgstr "Wagtail nuokarpos"
 
 #, python-format
-msgid "%(snippet_type)s '%(instance)s' deleted."
-msgstr "%(snippet_type)s '%(instance)s' ištrinta."
+msgid "%(model_name)s '%(object)s' deleted."
+msgstr "%(model_name)s '%(object)s' ištrinta."
 
 #, python-format
 msgid "Delete %(snippet_type_name)s"
@@ -112,11 +113,11 @@ msgstr "Nuokarpos"
 
 #, python-format
 msgid ""
-"No %(snippet_type_name_plural)s have been created. Why not <a href="
-"\"%(wagtailsnippets_create_url)s\">add one</a>?"
+"No %(snippet_type_name_plural)s have been created. Why not <a "
+"href=\"%(wagtailsnippets_create_url)s\">add one</a>?"
 msgstr ""
-"Nebuvo sukurti jokios %(snippet_type_name_plural)s. Kodėl gi <a href="
-"\"%(wagtailsnippets_create_url)s\">nesukūrus vienos</a>?"
+"Nebuvo sukurti jokios %(snippet_type_name_plural)s. Kodėl gi <a "
+"href=\"%(wagtailsnippets_create_url)s\">nesukūrus vienos</a>?"
 
 msgid "Live version"
 msgstr "Publikuota versija"
@@ -170,19 +171,19 @@ msgid "The snippet could not be created due to errors."
 msgstr "Nuokarpa negalėjo būti sukurta dėl klaidų."
 
 #, python-format
-msgid "%(snippet_type)s '%(instance)s' created."
-msgstr "%(snippet_type)s '%(instance)s' sukurta."
+msgid "%(model_name)s '%(object)s' created."
+msgstr "%(model_name)s '%(object)s' sukurta."
 
 msgid "The snippet could not be saved due to errors."
 msgstr "Nuokarpa negalėjo būti išsaugota dėl klaidų."
 
 #, python-format
-msgid "%(snippet_type)s '%(instance)s' updated."
-msgstr "%(snippet_type)s '%(instance)s' atnaujinta."
+msgid "%(model_name)s '%(object)s' updated."
+msgstr "%(model_name)s '%(object)s' atnaujinta."
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Redaguoti šį %s"
+msgid "Edit this %(object)s"
+msgstr "Redaguoti šį %(object)s"
 
 msgid "Action"
 msgstr "Veiksmas"
@@ -205,9 +206,9 @@ msgid "Delete '%(title)s'"
 msgstr "Ištrinti '%(title)s'"
 
 #, python-format
-msgid "Choose %s"
-msgstr "Pasirinkti %s"
+msgid "Choose %(object)s"
+msgstr "Pasirinkti %(object)s"
 
 #, python-format
-msgid "Choose another %s"
-msgstr "Pasirinkti kitą %s"
+msgid "Choose another %(object)s"
+msgstr "Pasirinkti kitą %(object)s"

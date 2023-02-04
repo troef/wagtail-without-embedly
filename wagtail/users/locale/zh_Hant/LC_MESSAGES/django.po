@@ -4,15 +4,17 @@
 #
 # Translators:
 # Chih Wang <ihcgno@icloud.com>, 2020
+# Chih Wang <ihcgno@icloud.com>, 2020
+# Ocin Leung, 2020
 # Ocin Leung, 2020
 # Yeh Yen-Ke <yyken@outlook.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 11:54+0000\n"
-"Last-Translator: Chih Wang <ihcgno@icloud.com>, 2020\n"
+"Last-Translator: Yeh Yen-Ke <yyken@outlook.com>, 2019\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/torchbox/"
 "wagtail/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -167,8 +169,8 @@ msgstr "對不起，沒有符合“%(query)s”的群組"
 
 #, python-format
 msgid ""
-"There are no groups configured. Why not <a href="
-"\"%(wagtailusers_create_group_url)s\">add some</a>?"
+"There are no groups configured. Why not <a "
+"href=\"%(wagtailusers_create_group_url)s\">add some</a>?"
 msgstr ""
 "目前還沒有群組。<a href=\"%(wagtailusers_create_group_url)s\">新增</a>一個？"
 
@@ -227,35 +229,35 @@ msgstr "新增一個群組"
 msgid "Search groups"
 msgstr "搜索群組"
 
-#, python-brace-format
-msgid "Group '{0}' created."
-msgstr "群組 '{0}' 已創建"
+#, python-format
+msgid "Group '%(object)s' created."
+msgstr "群組 '%(object)s' 已創建"
 
-#, python-brace-format
-msgid "Group '{0}' updated."
-msgstr "群組 '{0}' 已更新。"
+#, python-format
+msgid "Group '%(object)s' updated."
+msgstr "群組 '%(object)s' 已更新。"
 
 msgid "The group could not be saved due to errors."
 msgstr "無法儲存該群組。出現錯誤。"
 
-#, python-brace-format
-msgid "Group '{0}' deleted."
-msgstr "群組 '{0}' 已刪除。"
+#, python-format
+msgid "Group '%(object)s' deleted."
+msgstr "群組 '%(object)s' 已刪除。"
 
-#, python-brace-format
-msgid "User '{0}' updated."
-msgstr "使用者 '{0}' 已更新。"
+#, python-format
+msgid "User '%(object)s' updated."
+msgstr "使用者 '%(object)s' 已更新。"
 
 msgid "The user could not be saved due to errors."
 msgstr "無法儲存使用者。出現錯誤。"
 
 #, python-format
-msgid "Editing %s"
-msgstr "正在編輯%s"
+msgid "Editing %(object)s"
+msgstr "正在編輯%(object)s"
 
-#, python-brace-format
-msgid "User '{0}' deleted."
-msgstr "使用者 '{0}' 已刪除。"
+#, python-format
+msgid "User '%(object)s' deleted."
+msgstr "使用者 '%(object)s' 已刪除。"
 
 msgid "Edit"
 msgstr "編輯"

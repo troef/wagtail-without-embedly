@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-19 11:54+0000\n"
 "Last-Translator: Luan Nguyen <lihavim@gmail.com>, 2015\n"
 "Language-Team: Vietnamese (http://www.transifex.com/torchbox/wagtail/"
@@ -122,24 +122,24 @@ msgstr "Tạo nhóm"
 msgid "Search groups"
 msgstr "Tìm nhóm"
 
-#, python-brace-format
-msgid "Group '{0}' created."
-msgstr "Nhóm '{0}' đã được tạo."
+#, python-format
+msgid "Group '%(object)s' created."
+msgstr "Nhóm '%(object)s' đã được tạo."
 
-#, python-brace-format
-msgid "Group '{0}' updated."
-msgstr "Nhóm '{0}' đã được cập nhật."
+#, python-format
+msgid "Group '%(object)s' updated."
+msgstr "Nhóm '%(object)s' đã được cập nhật."
 
 msgid "The group could not be saved due to errors."
 msgstr "Nhóm không thể lưu vì lỗi."
 
-#, python-brace-format
-msgid "Group '{0}' deleted."
-msgstr "Nhóm '{0}' đã được xoá."
+#, python-format
+msgid "Group '%(object)s' deleted."
+msgstr "Nhóm '%(object)s' đã được xoá."
 
-#, python-brace-format
-msgid "User '{0}' updated."
-msgstr "Người dùng '{0}' đã được cập nhật."
+#, python-format
+msgid "User '%(object)s' updated."
+msgstr "Người dùng '%(object)s' đã được cập nhật."
 
 msgid "The user could not be saved due to errors."
 msgstr "Không thể lưu người dùng vì lỗi."

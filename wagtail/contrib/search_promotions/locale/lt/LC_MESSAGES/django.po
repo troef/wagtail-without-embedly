@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2015-08-26 14:04+0000\n"
 "Last-Translator: Matas Dailyda <matas@dailyda.com>, 2017\n"
 "Language-Team: Lithuanian (http://www.transifex.com/torchbox/wagtail/"
@@ -101,23 +101,23 @@ msgstr "Joks"
 #, python-format
 msgid "Sorry, no promoted results match \"<em>%(query_string)s</em>\""
 msgstr ""
-"Atsiprašome, jokie reklamuojami rezultatai neatitiko <em>\"%(query_string)s"
-"\"</em>"
+"Atsiprašome, jokie reklamuojami rezultatai neatitiko "
+"<em>\"%(query_string)s\"</em>"
 
 #, python-format
 msgid ""
-"No promoted results have been created. Why not <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
+"No promoted results have been created. Why not <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">add one</a>?"
 msgstr ""
-"Nebuvo sukurti jokie reklamuojami rezultatai. Kodėl gi <a href="
-"\"%(wagtailsearchpromotions_add_url)s\">nesukūrus vieno</a>?"
+"Nebuvo sukurti jokie reklamuojami rezultatai. Kodėl gi <a "
+"href=\"%(wagtailsearchpromotions_add_url)s\">nesukūrus vieno</a>?"
 
 msgid "Search promoted results"
 msgstr "Ieškoti reklamuojamų rezultatų"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' created."
-msgstr "Redaktoriaus pasirinkimai '{0}' sukurti."
+#, python-format
+msgid "Editor's picks for '%(query)s' created."
+msgstr "Redaktoriaus pasirinkimai '%(query)s' sukurti."
 
 msgid "Edit"
 msgstr "Redaguoti"
@@ -125,9 +125,9 @@ msgstr "Redaguoti"
 msgid "Recommendations have not been created due to errors"
 msgstr "Rekomendacijos nebuvo sukurtos dėl klaidų"
 
-#, python-brace-format
-msgid "Editor's picks for '{0}' updated."
-msgstr "Redaktoriaus pasirinkimai '{0}' atnaujinti."
+#, python-format
+msgid "Editor's picks for '%(query)s' updated."
+msgstr "Redaktoriaus pasirinkimai '%(query)s' atnaujinti."
 
 msgid "Recommendations have not been saved due to errors"
 msgstr "Rekomendacijos nebuvo išsaugotos dėl klaidų"

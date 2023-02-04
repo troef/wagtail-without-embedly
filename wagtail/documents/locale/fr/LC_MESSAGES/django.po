@@ -6,7 +6,10 @@
 # Benoît Vogel <contact@spicy-informatique.com>, 2017,2019
 # Bertrand Bordage <bordage.bertrand@gmail.com>, 2015-2018
 # fpoulain <fpoulain@metrodore.fr>, 2018
+# fpoulain <fpoulain@metrodore.fr>, 2018
+# incognitae <pierre@onoffdesign.com>, 2016
 # Léo <leo@naeka.fr>, 2016
+# Loic Teixeira, 2018
 # Loic Teixeira, 2020-2022
 # Loic Teixeira, 2018
 # nahuel, 2014
@@ -17,9 +20,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-20 21:06+0000\n"
-"Last-Translator: Loic Teixeira, 2020-2022\n"
+"Last-Translator: Sebastien Andrivet <sebastien@andrivet.com>, 2016\n"
 "Language-Team: French (http://www.transifex.com/torchbox/wagtail/language/"
 "fr/)\n"
 "MIME-Version: 1.0\n"
@@ -272,19 +275,19 @@ msgstr "Désolé, aucun document ne correspond à \"<em>%(query_string)s</em>\""
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents in this collection. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents in this collection. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
 "Vous n’avez pas encore transféré de document dans cette collection. Pourquoi "
 "ne pas <a href=\"%(wagtaildocs_add_document_url)s\">en transférer un</a> ?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Vous n'avez pas encore transféré de document. Pourquoi ne pas <a href="
-"\"%(wagtaildocs_add_document_url)s\">en transférer un maintenant</a> ?"
+"Vous n'avez pas encore transféré de document. Pourquoi ne pas <a "
+"href=\"%(wagtaildocs_add_document_url)s\">en transférer un maintenant</a> ?"
 
 #, python-format
 msgid "Usage of %(title)s"
@@ -421,16 +424,16 @@ msgstr "Modifier ce document"
 msgid "Search documents"
 msgstr "Rechercher des documents"
 
-#, python-brace-format
-msgid "Document '{0}' added."
-msgstr "Document « {0} » ajouté."
+#, python-format
+msgid "Document '%(document_title)s' added."
+msgstr "Document « %(document_title)s » ajouté."
 
 msgid "The document could not be saved due to errors."
 msgstr "Le document ne peut être enregistré du fait d'erreurs."
 
-#, python-brace-format
-msgid "Document '{0}' updated"
-msgstr "Document « {0} » mis à jour"
+#, python-format
+msgid "Document '%(document_title)s' updated"
+msgstr "Document « %(document_title)s » mis à jour"
 
 msgid ""
 "The file could not be found. Please change the source or delete the document"
@@ -438,17 +441,17 @@ msgstr ""
 "Le fichier n'a pas été trouvé. Veuillez changer la source ou supprimer le "
 "document."
 
-#, python-brace-format
-msgid "Document '{0}' deleted."
-msgstr "Document « {0} » supprimé."
+#, python-format
+msgid "Document '%(document_title)s' deleted."
+msgstr "Document « %(document_title)s » supprimé."
 
 #, python-format
-msgid "(Private %s)"
-msgstr "(%s Privé(e))"
+msgid "(Private %(object)s)"
+msgstr "(%(object)s Privé(e))"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Modifier ce/cette %s"
+msgid "Edit this %(object)s"
+msgstr "Modifier ce/cette %(object)s"
 
 msgid "Document"
 msgstr "Document"

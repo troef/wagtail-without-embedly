@@ -8,6 +8,7 @@
 # Éder Brito <britoederr@gmail.com>, 2021
 # Gladson <gladsonbrito@gmail.com>, 2014,2017
 # Iuri L. Machado, 2021
+# Iuri L. Machado, 2021
 # Joao Garcia <joaosdgarcia@gmail.com>, 2017
 # João Luiz Lorencetti <me@dirtycoder.net>, 2016
 # Luiz Boaretto <lboaretto@gmail.com>, 2016
@@ -19,10 +20,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: Rodrigo de Almeida Sottomaior Macedo "
-"<rmsolucoeseminformatica@protonmail.com>, 2022\n"
+"Last-Translator: Thiago Cangussu <cng.thg@gmail.com>, 2014\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/torchbox/"
 "wagtail/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -42,12 +42,12 @@ msgid "Add Comment"
 msgstr "Adicionar comentário"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "O número mínimo de itens é %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "O número mínimo de itens é %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "O número máximo de itens é %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "O número máximo de itens é %(max_num)d"
 
 msgid "Move up"
 msgstr "Mover para cima"
@@ -92,30 +92,19 @@ msgstr "A senha que você digitou não está correta. Por favor, tente novamente
 msgid "Comment"
 msgstr "Comentário"
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
-msgstr "<b>Página '{}' estava bloqueada</b> por <b>você</b> em <b>{}</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "<b>Página '{page_title}' está bloqueada</b> por <b>você</b>."
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "<b>Página '{}' está bloqueada</b> por <b>você</b>."
-
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr "<b>Página '{}' estava bloqueada</b> por <b>{}</b> em <b>{}</b>."
-
-msgid "<b>Page '{}' is locked</b>."
-msgstr "<b>Página '{}' está bloqueada</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "<b>Página '{page_title}' está bloqueada</b>."
 
 msgid "This page is currently awaiting moderation."
 msgstr "Esta página está aguardando moderação."
 
-msgid "This page is awaiting <b>'{}'</b> in the <b>'{}'</b> workflow."
-msgstr ""
-"Esta página está aguardando <b>'{}'</b> no fluxo de trabalho <b>'{}'</b>."
-
 msgid "Only reviewers for this task can edit the page."
 msgstr "Apenas os revisores desta tarefa podem editar a página."
-
-msgid "Page '{}' is locked and has been scheduled to go live at {}"
-msgstr "A página '{}' está bloqueada e foi programada para ser publicada em {}"
 
 msgid "latest revision"
 msgstr "última revisão"
@@ -223,9 +212,6 @@ msgstr ""
 
 msgid "latest revision created at"
 msgstr "revisão mais recente criada em"
-
-msgid "This slug is already in use"
-msgstr "Este slug já está em uso"
 
 msgid "in moderation"
 msgstr "em moderação"
@@ -416,9 +402,9 @@ msgstr ""
 "Pode haver apenas um em andamento ou precisa alterar o estado do workflow "
 "por página."
 
-#, python-brace-format
-msgid "Workflow '{0}' on Page '{1}': {2}"
-msgstr "O Workflow '{0}' na Página '{1}': {2}"
+#, python-format
+msgid "Workflow '%(workflow_name)s' on Page '%(page_title)s': %(status)s"
+msgstr "O Workflow '%(workflow_name)s' na Página '%(page_title)s': %(status)s"
 
 msgid "Not started"
 msgstr "Não foi iniciado"
@@ -450,9 +436,10 @@ msgstr "terminou às"
 msgid "finished by"
 msgstr "terminado por"
 
-#, python-brace-format
-msgid "Task '{0}' on Page Revision '{1}': {2}"
-msgstr "A tarefa '{0}' na Revisão de Página '{1}': {2}"
+#, python-format
+msgid "Task '%(task_name)s' on Page Revision '%(revision_info)s': %(status)s"
+msgstr ""
+"A tarefa '%(task_name)s' na Revisão de Página '%(revision_info)s': %(status)s"
 
 msgid "Task state"
 msgstr "Situação da tarefa"
@@ -490,12 +477,9 @@ msgstr "entrada de log"
 msgid "log entries"
 msgstr "entradas de log"
 
-msgid "The log action '{}' has not been registered."
-msgstr "A ação de log '{}' não foi registrada."
-
 #, python-format
-msgid "user %(id)s (deleted)"
-msgstr "usuário%(id)s(excluído)"
+msgid "The log action '%(action_name)s' has not been registered."
+msgstr "A ação de log '%(action_name)s' não foi registrada."
 
 msgid "system"
 msgstr "sistema"

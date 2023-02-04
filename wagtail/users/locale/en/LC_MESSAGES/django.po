@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2023-01-20 13:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -183,7 +183,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: templates/wagtailusers/bulk_actions/confirm_bulk_delete.html:7
-#: templates/wagtailusers/groups/includes/formatted_permissions.html:21
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:32
 #: templates/wagtailusers/groups/includes/page_permissions_form.html:13
 #: views/bulk_actions/delete.py:9 wagtail_hooks.py:148
 msgid "Delete"
@@ -290,28 +290,40 @@ msgstr ""
 msgid "Object permissions"
 msgstr ""
 
-#: templates/wagtailusers/groups/includes/formatted_permissions.html:18
-#: templates/wagtailusers/groups/includes/formatted_permissions.html:78
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:29
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:122
 #: templates/wagtailusers/users/list.html:9
 #: templates/wagtailusers/users/list.html:13 views/groups.py:68
 msgid "Name"
 msgstr ""
 
-#: templates/wagtailusers/groups/includes/formatted_permissions.html:19
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:30
 msgid "Add"
 msgstr ""
 
-#: templates/wagtailusers/groups/includes/formatted_permissions.html:20
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:31
 msgid "Change"
 msgstr ""
 
-#: templates/wagtailusers/groups/includes/formatted_permissions.html:23
-#: templates/wagtailusers/groups/includes/formatted_permissions.html:53
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:34
+msgid "Publish"
+msgstr ""
+
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:37
+msgid "Lock"
+msgstr ""
+
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:40
+msgid "Unlock"
+msgstr ""
+
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:43
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:97
 msgid "Custom permissions"
 msgstr ""
 
-#: templates/wagtailusers/groups/includes/formatted_permissions.html:68
-#: templates/wagtailusers/groups/includes/formatted_permissions.html:71
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:112
+#: templates/wagtailusers/groups/includes/formatted_permissions.html:115
 msgid "Other permissions"
 msgstr ""
 
@@ -335,8 +347,8 @@ msgstr ""
 #: templates/wagtailusers/groups/results.html:11
 #, python-format
 msgid ""
-"There are no groups configured. Why not <a href="
-"\"%(wagtailusers_create_group_url)s\">add some</a>?"
+"There are no groups configured. Why not <a "
+"href=\"%(wagtailusers_create_group_url)s\">add some</a>?"
 msgstr ""
 
 #: templates/wagtailusers/users/confirm_delete.html:5
@@ -424,15 +436,20 @@ msgstr ""
 #: templates/wagtailusers/users/results.html:28
 #, python-format
 msgid ""
-"The %(group_name)s group has no users configured. Why not <a href="
-"\"%(wagtailusers_add_url)s\">add some</a>?"
+"The %(group_name)s group has no users configured. Why not <a "
+"href=\"%(wagtailusers_add_url)s\">add some</a>?"
 msgstr ""
 
 #: templates/wagtailusers/users/results.html:31
 #, python-format
 msgid ""
-"There are no users configured. Why not <a href=\"%(wagtailusers_add_url)s"
-"\">add some</a>?"
+"There are no users configured. Why not <a "
+"href=\"%(wagtailusers_add_url)s\">add some</a>?"
+msgstr ""
+
+#: utils.py:52
+#, python-format
+msgid "user %(id)s (deleted)"
 msgstr ""
 
 #: views/bulk_actions/assign_role.py:17
@@ -488,13 +505,13 @@ msgid "Search groups"
 msgstr ""
 
 #: views/groups.py:83
-#, python-brace-format
-msgid "Group '{0}' created."
+#, python-format
+msgid "Group '%(object)s' created."
 msgstr ""
 
 #: views/groups.py:119
-#, python-brace-format
-msgid "Group '{0}' updated."
+#, python-format
+msgid "Group '%(object)s' updated."
 msgstr ""
 
 #: views/groups.py:120
@@ -502,13 +519,18 @@ msgid "The group could not be saved due to errors."
 msgstr ""
 
 #: views/groups.py:157
-#, python-brace-format
-msgid "Group '{0}' deleted."
+#, python-format
+msgid "Group '%(object)s' deleted."
+msgstr ""
+
+#: views/users.py:149
+#, python-format
+msgid "User '%(object)s' created."
 msgstr ""
 
 #: views/users.py:181
-#, python-brace-format
-msgid "User '{0}' updated."
+#, python-format
+msgid "User '%(object)s' updated."
 msgstr ""
 
 #: views/users.py:183
@@ -517,12 +539,12 @@ msgstr ""
 
 #: views/users.py:186
 #, python-format
-msgid "Editing %s"
+msgid "Editing %(object)s"
 msgstr ""
 
 #: views/users.py:253
-#, python-brace-format
-msgid "User '{0}' deleted."
+#, python-format
+msgid "User '%(object)s' deleted."
 msgstr ""
 
 #: wagtail_hooks.py:140

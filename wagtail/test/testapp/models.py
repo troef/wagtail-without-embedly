@@ -25,6 +25,7 @@ from wagtail.admin.panels import (
     HelpPanel,
     InlinePanel,
     MultiFieldPanel,
+    MultipleChooserPanel,
     ObjectList,
     PublishingPanel,
     TabbedInterface,
@@ -32,6 +33,7 @@ from wagtail.admin.panels import (
 from wagtail.blocks import (
     CharBlock,
     FieldBlock,
+    ListBlock,
     RawHTMLBlock,
     RichTextBlock,
     StreamBlock,
@@ -60,6 +62,7 @@ from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.models import AbstractImage, AbstractRendition, Image
 from wagtail.models import (
     DraftStateMixin,
+    LockableMixin,
     Orderable,
     Page,
     PageManager,
@@ -68,6 +71,7 @@ from wagtail.models import (
     RevisionMixin,
     Task,
     TranslatableMixin,
+    WorkflowMixin,
 )
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
@@ -512,18 +516,6 @@ class EventIndex(Page):
                 pass
 
         return super().route(request, path_components)
-
-    def get_static_site_paths(self):
-        # Get page count
-        page_count = self.get_paginator().num_pages
-
-        # Yield a path for each page
-        for page in range(page_count):
-            yield "/%d/" % (page + 1)
-
-        # Yield from superclass
-        for path in super().get_static_site_paths():
-            yield path
 
     def get_sitemap_urls(self, request=None):
         # Add past events url to sitemap
@@ -1004,7 +996,7 @@ class RevisableGrandChildModel(RevisableChildModel):
 
 
 # Models with DraftStateMixin
-class DraftStateModel(DraftStateMixin, RevisionMixin, models.Model):
+class DraftStateModel(DraftStateMixin, LockableMixin, RevisionMixin, models.Model):
     text = models.TextField()
 
     panels = [
@@ -1086,6 +1078,62 @@ class NonPreviewableModel(PreviewableMixin, RevisionMixin, models.Model):
 
 
 register_snippet(NonPreviewableModel)
+
+
+# Models with LockableMixin
+
+
+class LockableModel(LockableMixin, models.Model):
+    text = models.TextField()
+
+    def __str__(self):
+        return self.text
+
+
+register_snippet(LockableModel)
+
+
+# Models with WorkflowMixin
+# Note: do not use Workflow in the model name to avoid incorrect counts in tests
+# that look for the word "workflow"
+
+
+class ModeratedModel(WorkflowMixin, DraftStateMixin, RevisionMixin, models.Model):
+    text = models.TextField()
+
+    def __str__(self):
+        return self.text
+
+
+register_snippet(ModeratedModel)
+
+
+# Snippet with all mixins enabled
+
+
+class FullFeaturedSnippet(
+    PreviewableMixin,
+    WorkflowMixin,
+    DraftStateMixin,
+    LockableMixin,
+    RevisionMixin,
+    TranslatableMixin,
+    models.Model,
+):
+    text = models.TextField()
+
+    def __str__(self):
+        return self.text
+
+    def get_preview_template(self, request, mode_name):
+        return "tests/previewable_model.html"
+
+    class Meta(TranslatableMixin.Meta):
+        verbose_name = "full-featured snippet"
+        verbose_name_plural = "full-featured snippets"
+
+
+register_snippet(FullFeaturedSnippet)
 
 
 class StandardIndex(Page):
@@ -1399,6 +1447,10 @@ class StreamPage(Page):
                         ("author", CharBlock()),
                     ]
                 ),
+            ),
+            (
+                "title_list",
+                ListBlock(CharBlock()),
             ),
         ],
         use_json_field=False,
@@ -1986,3 +2038,31 @@ class ModelWithNullableParentalKey(models.Model):
 
     page = ParentalKey(Page, blank=True, null=True)
     content = RichTextField()
+
+
+class GalleryPage(Page):
+    content_panels = Page.content_panels + [
+        MultipleChooserPanel("gallery_images", chooser_field_name="image")
+    ]
+
+
+class GalleryPageImage(Orderable):
+    page = ParentalKey(
+        "tests.GalleryPage", related_name="gallery_images", on_delete=models.CASCADE
+    )
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        on_delete=models.CASCADE,
+        related_name="+",
+    )
+
+
+class GenericSnippetNoIndexPage(GenericSnippetPage):
+    wagtail_reference_index_ignore = True
+
+
+class GenericSnippetNoFieldIndexPage(GenericSnippetPage):
+    snippet_content_type_nonindexed = models.ForeignKey(
+        ContentType, on_delete=models.SET_NULL, null=True, blank=True
+    )
+    snippet_content_type_nonindexed.wagtail_reference_index_ignore = True

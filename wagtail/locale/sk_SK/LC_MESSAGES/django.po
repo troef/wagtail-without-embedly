@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
 "Last-Translator: dellax <michalnebbia@gmail.com>, 2015\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/torchbox/wagtail/"
@@ -24,12 +24,12 @@ msgstr ""
 ">= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);\n"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "Minimálne množstvo je %d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "Minimálne množstvo je %(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "Maximálne množstvo je %d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "Maximálne množstvo je %(max_num)d"
 
 msgid "Move up"
 msgstr "Posunúť vyššie"
@@ -125,9 +125,6 @@ msgstr "Odkaz na túto stránku sa zobrazí v navigácií"
 
 msgid "latest revision created at"
 msgstr "posledná revízia vytvorená"
-
-msgid "This slug is already in use"
-msgstr "Tento slug sa už používa"
 
 msgid "page"
 msgstr "stránka"

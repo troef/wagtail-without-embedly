@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-20 21:06+0000\n"
 "Last-Translator: saevarom <saevar@saevar.is>, 2017-2022\n"
 "Language-Team: Icelandic (Iceland) (http://www.transifex.com/torchbox/"
@@ -235,19 +235,19 @@ msgstr "Því miður eru engar skrár sem passa við \"<em>%(query_string)s</em>
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents in this collection. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents in this collection. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Þú hefur ekki hlaðið neinum skrám í þetta safn. Hví ekki að<a href="
-"\"%(wagtaildocs_add_document_url)s\">hlaða inn nokkrum núna</a>?"
+"Þú hefur ekki hlaðið neinum skrám í þetta safn. Hví ekki að<a "
+"href=\"%(wagtaildocs_add_document_url)s\">hlaða inn nokkrum núna</a>?"
 
 #, python-format
 msgid ""
-"You haven't uploaded any documents. Why not <a href="
-"\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
+"You haven't uploaded any documents. Why not <a "
+"href=\"%(wagtaildocs_add_document_url)s\">upload one now</a>?"
 msgstr ""
-"Þú hefur ekki hlaðið neinum skrám. Hví ekki að<a href="
-"\"%(wagtaildocs_add_document_url)s\">hlaða inn nokkrum núna</a>?"
+"Þú hefur ekki hlaðið neinum skrám. Hví ekki að<a "
+"href=\"%(wagtaildocs_add_document_url)s\">hlaða inn nokkrum núna</a>?"
 
 #, python-format
 msgid "Usage of %(title)s"
@@ -363,32 +363,32 @@ msgstr "Breyta þessari skrá"
 msgid "Search documents"
 msgstr "Leita að skrám"
 
-#, python-brace-format
-msgid "Document '{0}' added."
-msgstr "Skrá '{0}' bætt við."
+#, python-format
+msgid "Document '%(document_title)s' added."
+msgstr "Skrá '%(document_title)s' bætt við."
 
 msgid "The document could not be saved due to errors."
 msgstr "Ekki var hægt að vista skránna vegna villna."
 
-#, python-brace-format
-msgid "Document '{0}' updated"
-msgstr "Skrá '{0}' uppfærð"
+#, python-format
+msgid "Document '%(document_title)s' updated"
+msgstr "Skrá '%(document_title)s' uppfærð"
 
 msgid ""
 "The file could not be found. Please change the source or delete the document"
 msgstr "Skráin fannst ekki. Vinsamlegast breyttu upprunanum eða eyddu skránni"
 
-#, python-brace-format
-msgid "Document '{0}' deleted."
-msgstr "Skrá '{0}' hefur verið eytt."
+#, python-format
+msgid "Document '%(document_title)s' deleted."
+msgstr "Skrá '%(document_title)s' hefur verið eytt."
 
 #, python-format
-msgid "(Private %s)"
-msgstr "(Einka %s)"
+msgid "(Private %(object)s)"
+msgstr "(Einka %(object)s)"
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Breyta þessu %s"
+msgid "Edit this %(object)s"
+msgstr "Breyta þessu %(object)s"
 
 msgid "Document"
 msgstr "Skrá"

@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: Kyungil Choi <hanpama@gmail.com>, 2015,2017,2019-2020\n"
+"Last-Translator: Jihan Chung <jihanchung20@gmail.com>, 2015\n"
 "Language-Team: Korean (http://www.transifex.com/torchbox/wagtail/language/"
 "ko/)\n"
 "MIME-Version: 1.0\n"
@@ -25,12 +25,12 @@ msgid "Wagtail core"
 msgstr "웨그테일 코어"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "항목은 최소 %d개 이상이어야 합니다"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "항목은 최소 %(min_num)d개 이상이어야 합니다"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "항목은 최대 개수는 %d개입니다"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "항목은 최대 개수는 %(max_num)d개입니다"
 
 msgid "Move up"
 msgstr "위로 이동"
@@ -63,23 +63,16 @@ msgstr "입력한 비밀번호가 올바르지 않습니다. 다시 시도해 �
 msgid "Comment"
 msgstr "댓글"
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
-msgstr "<b>'{}' 페이지의 잠금</b>이 <b>당신</b>에 의해 <b>{}</b>에 적용됨."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "<b>'{page_title}' 페이지의 잠금</b>이 <b>당신</b>에 의해 적용됨."
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "<b>'{}' 페이지의 잠금</b>이 <b>당신</b>에 의해 적용됨."
-
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr "<b>'{}' 페이지의 잠금</b>이 <b>{}</b>에 의해 <b>{}</b>에 적용됨."
-
-msgid "<b>Page '{}' is locked</b>."
-msgstr "<b>'{}' 페이지가 잠김</b>."
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "<b>'{page_title}' 페이지가 잠김</b>."
 
 msgid "This page is currently awaiting moderation."
 msgstr "이 페이지는 현재 검토를 기다리고 있습니다"
-
-msgid "This page is awaiting <b>'{}'</b> in the <b>'{}'</b> workflow."
-msgstr "페이지가 <b>'{}'</b>워크플로우에서 <b>'{}'</b>를 기다리고 있습니다"
 
 msgid "Only reviewers for this task can edit the page."
 msgstr "오직 이 작업의 후기만이 페이지 수정 가능"
@@ -163,9 +156,6 @@ msgstr "이 페이지에 대한 링크가 자동적으로 생성된 메뉴에 �
 
 msgid "latest revision created at"
 msgstr "최근 수정안 작성일:"
-
-msgid "This slug is already in use"
-msgstr "이 슬러그는 이미 사용되고 있습니다"
 
 msgid "page"
 msgstr "페이지"

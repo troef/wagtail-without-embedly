@@ -4,6 +4,7 @@
 #
 # Translators:
 # IT Management <hudan@itmanagement.cz>, 2018
+# IT Management <hudan@itmanagement.cz>, 2018,2020
 # IT Management <hudan@itmanagement.cz>, 2020
 # Jiri Stepanek <stepiiicz@gmail.com>, 2015
 # Marek Turnovec <aesculap@gmail.com>, 2016
@@ -13,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 13:14+0100\n"
 "PO-Revision-Date: 2014-02-20 21:05+0000\n"
 "Last-Translator: Matt Westcott <matthew@torchbox.com>, 2022\n"
 "Language-Team: Czech (http://www.transifex.com/torchbox/wagtail/language/"
@@ -44,24 +45,28 @@ msgid "Supported formats: %(supported_formats)s."
 msgstr "Podporované formáty: %(supported_formats)s."
 
 #, python-format
-msgid "Not a supported image format. Supported formats: %s."
-msgstr "Nepodporovaný formát obrázku. Podporovány jsou formáty %s"
+msgid "Not a supported image format. Supported formats: %(supported_formats)s."
+msgstr ""
+"Nepodporovaný formát obrázku. Podporovány jsou formáty %(supported_formats)s"
 
 #, python-format
-msgid "Not a valid %s image."
-msgstr "Toto není validní obrázek %s."
+msgid ""
+"This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
+msgstr ""
+"Soubor je příliš velký (%(file_size)s). Maximální velikost souboru "
+"%(max_filesize)s."
 
 #, python-format
-msgid "This file is too big (%%s). Maximum filesize %s."
-msgstr "Soubor je příliš velký (%%s). Maximální velikost souboru %s."
+msgid ""
+"This file has too many pixels (%(num_pixels)s). Maximum pixels "
+"%(max_pixels_count)s."
+msgstr ""
+"Soubor má příliš mnoho bodů (%(num_pixels)s). Maximum je "
+"%(max_pixels_count)s."
 
 #, python-format
-msgid "This file has too many pixels (%%s). Maximum pixels %s."
-msgstr "Soubor má příliš mnoho bodů (%%s). Maximum je %s."
-
-#, python-format
-msgid "This file is too big. Maximum filesize %s."
-msgstr "Soubor je příliš velký. Maximální velikost souboru %s."
+msgid "This file is too big. Maximum filesize %(max_filesize)s."
+msgstr "Soubor je příliš velký. Maximální velikost souboru %(max_filesize)s."
 
 msgid "Full width"
 msgstr "Plná šířka"
@@ -267,19 +272,19 @@ msgstr ""
 
 #, python-format
 msgid ""
-"You haven't uploaded any images in this collection. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images in this collection. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"V kolekci nebyly nalezeny žádné obrázky. Nový obrázek můžete přidat <a href="
-"\"%(wagtailimages_add_image_url)s\">zde</a>."
+"V kolekci nebyly nalezeny žádné obrázky. Nový obrázek můžete přidat <a "
+"href=\"%(wagtailimages_add_image_url)s\">zde</a>."
 
 #, python-format
 msgid ""
-"You haven't uploaded any images. Why not <a href="
-"\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
+"You haven't uploaded any images. Why not <a "
+"href=\"%(wagtailimages_add_image_url)s\">upload one now</a>?"
 msgstr ""
-"Nebyly nalezeny žádné obrázky. Nový obrázek můžete přidat <a href="
-"\"%(wagtailimages_add_image_url)s\">zde</a>."
+"Nebyly nalezeny žádné obrázky. Nový obrázek můžete přidat <a "
+"href=\"%(wagtailimages_add_image_url)s\">zde</a>."
 
 msgid "Generating URL"
 msgstr "Generuji URL"
@@ -370,9 +375,9 @@ msgstr "Upravit tento obrázek"
 msgid "Search images"
 msgstr "Hledat obrázky"
 
-#, python-brace-format
-msgid "Image '{0}' updated."
-msgstr "Obrázek '{0}' byl upraven."
+#, python-format
+msgid "Image '%(image_title)s' updated."
+msgstr "Obrázek '%(image_title)s' byl upraven."
 
 msgid "Edit again"
 msgstr "Upravit znovu"
@@ -387,20 +392,20 @@ msgstr ""
 "Zdrojový soubor obrázku není možné nalézt. Prosím změňte zdroj nebo obrázek "
 "smažte."
 
-#, python-brace-format
-msgid "Image '{0}' deleted."
-msgstr "Obrázek '{0}' byl smazán."
+#, python-format
+msgid "Image '%(image_title)s' deleted."
+msgstr "Obrázek '%(image_title)s' byl smazán."
 
-#, python-brace-format
-msgid "Image '{0}' added."
-msgstr "Obrázek '{0}' byl přidán."
+#, python-format
+msgid "Image '%(image_title)s' added."
+msgstr "Obrázek '%(image_title)s' byl přidán."
 
 msgid "The image could not be created due to errors."
 msgstr "Obrázek nelze vytvořit, zkontrolujte správné vyplnění polí."
 
 #, python-format
-msgid "Edit this %s"
-msgstr "Edituj %s"
+msgid "Edit this %(object)s"
+msgstr "Edituj %(object)s"
 
 msgid "Image"
 msgstr "Obrázek"

@@ -10,7 +10,6 @@ from django.template.defaultfilters import filesizeformat
 from django.utils.translation import gettext_lazy as _
 
 ALLOWED_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp"]
-SUPPORTED_FORMATS_TEXT = _("GIF, JPEG, PNG, WEBP")
 
 
 class WagtailImageField(ImageField):
@@ -26,49 +25,55 @@ class WagtailImageField(ImageField):
         self.max_image_pixels = getattr(
             settings, "WAGTAILIMAGES_MAX_IMAGE_PIXELS", 128 * 1000000
         )
-        max_upload_size_text = filesizeformat(self.max_upload_size)
+        self.max_upload_size_text = filesizeformat(self.max_upload_size)
+
+        self.allowed_image_extensions = getattr(
+            settings, "WAGTAILIMAGES_EXTENSIONS", ALLOWED_EXTENSIONS
+        )
+
+        self.supported_formats_text = ", ".join(self.allowed_image_extensions).upper()
 
         # Help text
         if self.max_upload_size is not None:
             self.help_text = _(
                 "Supported formats: %(supported_formats)s. Maximum filesize: %(max_upload_size)s."
             ) % {
-                "supported_formats": SUPPORTED_FORMATS_TEXT,
-                "max_upload_size": max_upload_size_text,
+                "supported_formats": self.supported_formats_text,
+                "max_upload_size": self.max_upload_size_text,
             }
         else:
             self.help_text = _("Supported formats: %(supported_formats)s.") % {
-                "supported_formats": SUPPORTED_FORMATS_TEXT,
+                "supported_formats": self.supported_formats_text,
             }
 
         # Error messages
-        self.error_messages["invalid_image_extension"] = (
-            _("Not a supported image format. Supported formats: %s.")
-            % SUPPORTED_FORMATS_TEXT
-        )
+        # Translation placeholders should all be interpolated at the same time to avoid escaping,
+        # either right now if all values are known, otherwise when used.
+        self.error_messages["invalid_image_extension"] = _(
+            "Not a supported image format. Supported formats: %(supported_formats)s."
+        ) % {"supported_formats": self.supported_formats_text}
 
         self.error_messages["invalid_image_known_format"] = _(
-            "Not a valid .%s image. The extension does not match the file format (%s)"
+            "Not a valid .%(extension)s image. The extension does not match the file format (%(image_format)s)"
         )
 
-        self.error_messages["file_too_large"] = (
-            _("This file is too big (%%s). Maximum filesize %s.") % max_upload_size_text
+        self.error_messages["file_too_large"] = _(
+            "This file is too big (%(file_size)s). Maximum filesize %(max_filesize)s."
         )
 
-        self.error_messages["file_too_many_pixels"] = (
-            _("This file has too many pixels (%%s). Maximum pixels %s.")
-            % self.max_image_pixels
+        self.error_messages["file_too_many_pixels"] = _(
+            "This file has too many pixels (%(num_pixels)s). Maximum pixels %(max_pixels_count)s."
         )
 
-        self.error_messages["file_too_large_unknown_size"] = (
-            _("This file is too big. Maximum filesize %s.") % max_upload_size_text
-        )
+        self.error_messages["file_too_large_unknown_size"] = _(
+            "This file is too big. Maximum filesize %(max_filesize)s."
+        ) % {"max_filesize": self.max_upload_size_text}
 
     def check_image_file_format(self, f):
         # Check file extension
         extension = os.path.splitext(f.name)[1].lower()[1:]
 
-        if extension not in ALLOWED_EXTENSIONS:
+        if extension not in self.allowed_image_extensions:
             raise ValidationError(
                 self.error_messages["invalid_image_extension"],
                 code="invalid_image_extension",
@@ -82,7 +87,7 @@ class WagtailImageField(ImageField):
         if extension != f.image.format_name:
             raise ValidationError(
                 self.error_messages["invalid_image_known_format"]
-                % (extension, f.image.format_name),
+                % {"extension": extension, "image_format": f.image.format_name},
                 code="invalid_image_known_format",
             )
 
@@ -94,7 +99,11 @@ class WagtailImageField(ImageField):
         # Check the filesize
         if f.size > self.max_upload_size:
             raise ValidationError(
-                self.error_messages["file_too_large"] % (filesizeformat(f.size),),
+                self.error_messages["file_too_large"]
+                % {
+                    "file_size": filesizeformat(f.size),
+                    "max_filesize": self.max_upload_size_text,
+                },
                 code="file_too_large",
             )
 
@@ -110,7 +119,8 @@ class WagtailImageField(ImageField):
 
         if num_pixels > self.max_image_pixels:
             raise ValidationError(
-                self.error_messages["file_too_many_pixels"] % (num_pixels),
+                self.error_messages["file_too_many_pixels"]
+                % {"num_pixels": num_pixels, "max_pixels_count": self.max_image_pixels},
                 code="file_too_many_pixels",
             )
 
@@ -124,10 +134,11 @@ class WagtailImageField(ImageField):
         if f is None:
             return None
 
-        # We need to get a file object for Pillow. We might have a path or we might
-        # have to read the data into memory.
+        # We need to get a file object for Pillow. When we get a path, we need to open
+        # the file first. And we have to read the data into memory to pass to Willow.
         if hasattr(data, "temporary_file_path"):
-            file = data.temporary_file_path()
+            with open(data.temporary_file_path(), "rb") as fh:
+                file = BytesIO(fh.read())
         else:
             if hasattr(data, "read"):
                 file = BytesIO(data.read())

@@ -6,6 +6,7 @@
 # hanfeng <appweb.cn@gmail.com>, 2014-2015
 # Daniel Hwang <danielblinkhw@gmail.com>, 2015
 # Ed <724195301@qq.com>, 2018
+# Ed <724195301@qq.com>, 2018
 # Favo Yang <favoyang@gmail.com>, 2021
 # First Last <abc+github@mynook.info>, 2019
 # Ford Guo <agile.guo@gmail.com>, 2020
@@ -15,13 +16,14 @@
 # Yin Guanhao <sopium@mysterious.site>, 2021
 # 祝沙军 <zhushajun@gmail.com>, 2017
 # 汇民 王 <whuim@qq.com>, 2017-2021
+# 祝沙军 <zhushajun@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Wagtail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-28 12:02+0100\n"
+"POT-Creation-Date: 2022-11-26 10:53+0100\n"
 "PO-Revision-Date: 2014-02-21 15:51+0000\n"
-"Last-Translator: 汇民 王 <whuim@qq.com>, 2017-2021\n"
+"Last-Translator: 祝沙军 <zhushajun@gmail.com>, 2017\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/torchbox/wagtail/"
 "language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -37,12 +39,12 @@ msgid "Add Comment"
 msgstr "添加评论"
 
 #, python-format
-msgid "The minimum number of items is %d"
-msgstr "条目的最小数是%d"
+msgid "The minimum number of items is %(min_num)d"
+msgstr "条目的最小数是%(min_num)d"
 
 #, python-format
-msgid "The maximum number of items is %d"
-msgstr "条目的最大数是%d"
+msgid "The maximum number of items is %(max_num)d"
+msgstr "条目的最大数是%(max_num)d"
 
 msgid "Move up"
 msgstr "上移"
@@ -78,23 +80,16 @@ msgstr "密码错误，请重新输入"
 msgid "Comment"
 msgstr "评论"
 
-msgid "<b>Page '{}' was locked</b> by <b>you</b> on <b>{}</b>."
-msgstr "<b>页面 '{}' </b> 已被 <b>你</b> 锁定于<b>{}</b>。"
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b> by <b>you</b>."
+msgstr "<b>页面 '{page_title}'</b> 已被<b>你</b>锁定。"
 
-msgid "<b>Page '{}' is locked</b> by <b>you</b>."
-msgstr "<b>页面 '{}'</b> 已被<b>你</b>锁定。"
-
-msgid "<b>Page '{}' was locked</b> by <b>{}</b> on <b>{}</b>."
-msgstr "<b>页面 '{}' </b> 已被 <b>{}</b> 锁定于<b>{}</b>。"
-
-msgid "<b>Page '{}' is locked</b>."
-msgstr "<b>页面 '{}' 已被锁定</b>。"
+#, python-brace-format
+msgid "<b>Page '{page_title}' is locked</b>."
+msgstr "<b>页面 '{page_title}' 已被锁定</b>。"
 
 msgid "This page is currently awaiting moderation."
 msgstr "此页面当前在等待审核。"
-
-msgid "This page is awaiting <b>'{}'</b> in the <b>'{}'</b> workflow."
-msgstr "此页面在等待<b>‘{}’</b>，在<b>'{}'</b>工作流中"
 
 msgid "Only reviewers for this task can edit the page."
 msgstr "只有此任务的审阅者才能编辑页面。"
@@ -195,9 +190,6 @@ msgstr "显示在搜索引擎结果中，位于标题之下的描述性文字。
 
 msgid "latest revision created at"
 msgstr "最近修订版本创建于"
-
-msgid "This slug is already in use"
-msgstr "此缩略名已被使用"
 
 msgid "in moderation"
 msgstr "审核中"
@@ -371,9 +363,9 @@ msgid ""
 "There may only be one in progress or needs changes workflow state per page."
 msgstr "每个页面只能有一个进行中或需要修改的工作流状态。"
 
-#, python-brace-format
-msgid "Workflow '{0}' on Page '{1}': {2}"
-msgstr "工作流‘{0}’在页面‘{1}’： {2}"
+#, python-format
+msgid "Workflow '%(workflow_name)s' on Page '%(page_title)s': %(status)s"
+msgstr "工作流‘%(workflow_name)s’在页面‘%(page_title)s’： %(status)s"
 
 msgid "Not started"
 msgstr "未启动"
@@ -405,9 +397,9 @@ msgstr "完成于"
 msgid "finished by"
 msgstr "完成人"
 
-#, python-brace-format
-msgid "Task '{0}' on Page Revision '{1}': {2}"
-msgstr "任务'{0}'在页面修订版本 '{1}': {2}"
+#, python-format
+msgid "Task '%(task_name)s' on Page Revision '%(revision_info)s': %(status)s"
+msgstr "任务'%(task_name)s'在页面修订版本 '%(revision_info)s': %(status)s"
 
 msgid "Task state"
 msgstr "任务状态"
@@ -445,12 +437,9 @@ msgstr "日志条目"
 msgid "log entries"
 msgstr "日志条目"
 
-msgid "The log action '{}' has not been registered."
-msgstr "日志动作“{}”未被注册"
-
 #, python-format
-msgid "user %(id)s (deleted)"
-msgstr "用户 %(id)s(已删除)"
+msgid "The log action '%(action_name)s' has not been registered."
+msgstr "日志动作“%(action_name)s”未被注册"
 
 msgid "system"
 msgstr "系统"

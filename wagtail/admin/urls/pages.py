@@ -77,17 +77,17 @@ urlpatterns = [
     ),
     path(
         "workflow/confirm_cancellation/<int:page_id>/",
-        workflow.confirm_workflow_cancellation,
+        workflow.ConfirmWorkflowCancellation.as_view(),
         name="confirm_workflow_cancellation",
     ),
     path(
         "workflow/preview/<int:page_id>/<int:task_id>/",
-        workflow.preview_revision_for_task,
+        workflow.PreviewRevisionForTask.as_view(),
         name="workflow_preview",
     ),
     path(
         "workflow/status/<int:page_id>/",
-        workflow.workflow_status,
+        workflow.WorkflowStatus.as_view(),
         name="workflow_status",
     ),
     path(
@@ -106,8 +106,8 @@ urlpatterns = [
         name="preview_for_moderation",
     ),
     path("<int:page_id>/privacy/", page_privacy.set_privacy, name="set_privacy"),
-    path("<int:page_id>/lock/", lock.lock, name="lock"),
-    path("<int:page_id>/unlock/", lock.unlock, name="unlock"),
+    path("<int:page_id>/lock/", lock.LockView.as_view(), name="lock"),
+    path("<int:page_id>/unlock/", lock.UnlockView.as_view(), name="unlock"),
     path("<int:page_id>/revisions/", revisions.revisions_index, name="revisions_index"),
     path(
         "<int:page_id>/revisions/<int:revision_id>/view/",
@@ -131,12 +131,12 @@ urlpatterns = [
     ),
     path(
         "<int:page_id>/workflow_history/",
-        history.workflow_history,
+        history.WorkflowHistoryView.as_view(),
         name="workflow_history",
     ),
     path(
         "<int:page_id>/workflow_history/detail/<int:workflow_state_id>/",
-        history.workflow_history_detail,
+        history.WorkflowHistoryDetailView.as_view(),
         name="workflow_history_detail",
     ),
     path("<int:page_id>/history/", history.PageHistoryView.as_view(), name="history"),

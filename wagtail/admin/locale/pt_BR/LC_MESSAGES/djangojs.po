@@ -8,10 +8,11 @@
 # Gladson <gladsonbrito@gmail.com>, 2022
 # Iuri L. Machado, 2022
 # Luiz Boaretto <lboaretto@gmail.com>, 2022
+# Loic Teixeira, 2022
 #
 msgid ""
 msgstr ""
-"Last-Translator: Luiz Boaretto <lboaretto@gmail.com>, 2022\n"
+"Last-Translator: Loic Teixeira, 2022\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/torchbox/"
 "teams/8009/pt_BR/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,8 +56,8 @@ msgstr "Remover erro"
 msgid "Edit"
 msgstr "Editar"
 
-msgid "Edit '{title}'"
-msgstr "Editar '{title}'"
+msgid "Edit '%(title)s'"
+msgstr "Editar '%(title)s'"
 
 msgid "Edit your account"
 msgstr "Edite sua conta"
@@ -163,5 +164,5 @@ msgstr "Alternar barra lateral"
 msgid "Unfocus comment"
 msgstr "Desfocar comentário"
 
-msgid "View child pages of '{title}'"
-msgstr "Ver páginas filho de '{title}'"
+msgid "View child pages of '%(title)s'"
+msgstr "Ver páginas filho de '%(title)s'"
